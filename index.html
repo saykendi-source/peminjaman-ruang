@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistem Informasi Ketersediaan Ruang TI UMY</title>
+  <style>
+    :root {
+      --umygreen: #004029;
+      --umyyellow: #F6B800;
+      --umyred: #932520;
+      --bg: #f7f8f5;
+      --surface: #ffffff;
+      --surface-soft: #f8faf8;
+      --text: #183126;
+      --muted: #516157;
+      --line: #dfe7e1;
+      --primary: var(--umygreen);
+      --primary-dark: #002d1d;
+      --primary-soft: #e8f1ed;
+      --secondary: var(--umyred);
+      --secondary-soft: #f8eceb;
+      --accent: var(--umyyellow);
+      --accent-soft: #fff6d9;
+      --success: #0f6c43;
+      --success-soft: #e8f6ee;
+      --danger: var(--umyred);
+      --danger-soft: #f9eceb;
+      --warning: #8f6900;
+      --warning-soft: #fff4d1;
+      --shadow: 0 16px 40px rgba(0, 64, 41, 0.10);
+      --radius-xl: 24px;
+      --radius-lg: 18px;
+      --radius-md: 14px;
+      --max: 1240px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(246,184,0,0.12) 0, transparent 22%),
+        radial-gradient(circle at bottom right, rgba(147,37,32,0.08) 0, transparent 25%),
+        linear-gradient(180deg, #f8fbf8 0%, #f3f6f4 100%);
+    }
+
+    .topbar {
+      background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+      color: #fff;
+      padding: 12px 20px;
+      font-size: 14px;
+      letter-spacing: 0.2px;
+      border-bottom: 4px solid var(--accent);
+    }
+
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(0,64,41,0.98), rgba(147,37,32,0.95));
+      color: #fff;
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      margin: 14px 0 24px;
+      border: 1px solid rgba(255,255,255,0.14);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 8px;
+      background: linear-gradient(90deg, var(--accent), #ffd24f);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -55px -55px auto;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.07);
+      filter: blur(2px);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.65fr 0.95fr;
+      gap: 24px;
+      padding: 34px;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .brand-mark {
+      width: 88px;
+      height: 88px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.18);
+      display: grid;
+      place-items: center;
+      padding: 10px;
+      backdrop-filter: blur(6px);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04);
+    }
+
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: white;
+      border-radius: 14px;
+      padding: 6px;
+    }
+
+    .brand-meta small {
+      display: inline-block;
+      background: rgba(246,184,0,0.18);
+      color: #fff8de;
+      padding: 6px 10px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      font-weight: 700;
+    }
+
+    .brand-meta strong {
+      display: block;
+      font-size: 24px;
+      line-height: 1.3;
+    }
+
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: 34px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      margin: 0;
+      color: rgba(255,255,255,0.92);
+      line-height: 1.75;
+      max-width: 760px;
+    }
+
+    .hero-panel {
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 22px;
+      padding: 20px;
+      backdrop-filter: blur(6px);
+    }
+
+    .hero-panel h3 {
+      margin: 0 0 12px;
+      font-size: 17px;
+      color: #fff6d9;
+    }
+
+    .hero-panel ul {
+      margin: 0;
+      padding-left: 18px;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.94);
+      font-size: 14px;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .controls, .meta, .summary, .results, .guide { grid-column: span 12; }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.3;
+      color: var(--primary-dark);
+    }
+
+    .section-head p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .controls {
+      padding: 24px;
+      border-top: 5px solid var(--accent);
+    }
+
+    .status-pill, .meta-pill, .mode-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      padding: 9px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      background: var(--primary-soft);
+      color: var(--primary);
+      white-space: nowrap;
+    }
+
+    .control-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+
+    .field {
+      grid-column: span 4;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .field.hidden { display: none; }
+
+    .field label {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .field select, .field input {
+      width: 100%;
+      min-height: 48px;
+      border: 1px solid #cdd9d1;
+      border-radius: 14px;
+      padding: 12px 14px;
+      font-size: 15px;
+      color: var(--text);
+      background: #fff;
+      outline: none;
+      transition: 0.2s ease;
+    }
+
+    .field select:focus, .field input:focus {
+      border-color: rgba(0,64,41,0.45);
+      box-shadow: 0 0 0 4px rgba(0,64,41,0.10);
+    }
+
+    .actions {
+      grid-column: span 12;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    button {
+      min-height: 46px;
+      border: 0;
+      border-radius: 14px;
+      padding: 12px 18px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.16s ease, box-shadow 0.16s ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(0,64,41,0.12);
+    }
+
+    .btn-primary { background: var(--primary); color: #fff; }
+    .btn-secondary { background: var(--secondary); color: #fff; }
+    .btn-light {
+      background: var(--accent-soft);
+      color: #664d00;
+      border: 1px solid #f1de93;
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 16px;
+      padding: 20px 24px;
+      align-items: center;
+    }
+
+    .meta strong {
+      font-size: 18px;
+      color: var(--primary-dark);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .meta .desc {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+      word-break: break-word;
+    }
+
+    .meta-right {
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .summary-card {
+      padding: 22px;
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .summary-card::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 0;
+      width: 100%; height: 6px;
+      background: var(--accent);
+    }
+
+    .summary-card h3 {
+      margin: 0 0 8px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .summary-card .value {
+      font-size: 34px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .summary-card.available-card .value { color: var(--success); }
+    .summary-card.occupied-card .value { color: var(--danger); }
+    .summary-card.total-card .value { color: var(--primary-dark); }
+
+    .results {
+      padding: 24px;
+      min-height: 320px;
+    }
+
+    .result-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .result-item {
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      background: var(--surface-soft);
+    }
+
+    .result-item.available {
+      background: var(--success-soft);
+      border-color: #c8e7d6;
+    }
+
+    .result-title {
+      margin: 0 0 6px;
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--primary-dark);
+    }
+
+    .result-detail {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+      white-space: pre-line;
+    }
+
+    .empty-state {
+      border: 1px dashed #c7d5cb;
+      border-radius: var(--radius-md);
+      padding: 22px;
+      text-align: center;
+      color: var(--muted);
+      background: #fbfcfb;
+      line-height: 1.7;
+    }
+
+    .guide { padding: 24px; }
+
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .guide-item {
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+      position: relative;
+    }
+
+    .guide-item::before {
+      content: "";
+      position: absolute;
+      left: 18px;
+      top: 0;
+      width: 48px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 0 0 6px 6px;
+    }
+
+    .guide-item h4 {
+      margin: 8px 0 8px;
+      font-size: 16px;
+      color: var(--primary-dark);
+    }
+
+    .guide-item p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .footer {
+      max-width: var(--max);
+      margin: 18px auto 34px;
+      padding: 0 24px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .loading { color: var(--warning); font-weight: 700; }
+    .error { color: var(--danger); font-weight: 700; }
+
+    @media (max-width: 1080px) {
+      .hero-inner, .meta, .summary, .guide-grid { grid-template-columns: 1fr; }
+      .field, .results { grid-column: span 12; }
+      .meta-right { justify-content: flex-start; }
+    }
+
+    @media (max-width: 720px) {
+      .container { padding: 16px; }
+      .hero-inner, .controls, .results, .guide, .meta { padding: 20px; }
+      .hero h1 { font-size: 28px; }
+      .brand-meta strong { font-size: 19px; }
+      .topbar { font-size: 13px; }
+      .actions button { width: 100%; }
+      .brand { align-items: flex-start; }
+      .brand-mark { width: 78px; height: 78px; }
+      .summary { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">Sistem Informasi Ketersediaan Ruang • Program Studi Teknologi Informasi • Universitas Muhammadiyah Yogyakarta</div>
+
+  <div class="container">
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="brand">
+            <div class="brand-mark">
+              <img src="assets/logo-ti-umy.png" alt="Logo TI UMY" />
+            </div>
+            <div class="brand-meta">
+              <small>Identitas Visual UMY</small>
+              <strong>Program Studi Teknologi Informasi<br>Universitas Muhammadiyah Yogyakarta</strong>
+            </div>
+          </div>
+          <h1>Sistem Informasi Ketersediaan Ruang Kuliah</h1>
+          <p>
+            Aplikasi ini menampilkan informasi slot ruang kosong dengan dua cara pencarian:
+            <strong>berdasarkan hari dan ruang</strong> untuk melihat jam kosong, atau
+            <strong>berdasarkan hari dan jam</strong> untuk melihat ruangan kosong.
+          </p>
+        </div>
+
+        <aside class="hero-panel">
+          <h3>Fungsi Utama</h3>
+          <ul>
+            <li>Pilih mode pencarian sesuai kebutuhan mahasiswa.</li>
+            <li>Mengetahui jam kosong pada ruang tertentu.</li>
+            <li>Mengetahui ruangan kosong pada jam tertentu.</li>
+            <li>Menggunakan sumber data spreadsheet yang mudah diperbarui.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <div class="layout">
+      <section class="card controls">
+        <div class="section-head">
+          <div>
+            <h2>Filter Pencarian</h2>
+            <p>Pilih mode pencarian, lalu isi parameter yang dibutuhkan untuk menampilkan ketersediaan ruangan atau jam kosong.</p>
+          </div>
+          <div id="status" class="status-pill">Siap digunakan</div>
+        </div>
+
+        <div class="control-grid">
+          <div class="field">
+            <label for="mode">Mode Pencarian</label>
+            <select id="mode">
+              <option value="hari-ruang">Berdasarkan hari dan ruang</option>
+              <option value="hari-jam">Berdasarkan hari dan jam</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="hari">Hari</label>
+            <select id="hari"></select>
+          </div>
+
+          <div class="field" id="fieldRuang">
+            <label for="ruang">Ruang</label>
+            <select id="ruang"></select>
+          </div>
+
+          <div class="field hidden" id="fieldJam">
+            <label for="jam">Jam</label>
+            <select id="jam"></select>
+          </div>
+
+          <div class="actions">
+            <button class="btn-primary" id="btnCek">Tampilkan Hasil</button>
+            <button class="btn-secondary" id="btnNow">Cek Kondisi Saat Ini</button>
+            <button class="btn-light" id="btnRefresh">Perbarui Data</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="card meta">
+        <div>
+          <strong id="activeLabel">Belum ada pencarian aktif</strong>
+          <div id="sourceInfo" class="desc">Sumber data: Google Spreadsheet CSV</div>
+        </div>
+        <div class="meta-right">
+          <div id="updatedAt" class="meta-pill">Belum dimuat</div>
+        </div>
+      </section>
+
+      <section class="summary">
+        <div class="summary-card available-card">
+          <h3 id="summaryLabel1">Jumlah Hasil Kosong</h3>
+          <div class="value" id="totalAvailable">0</div>
+        </div>
+        <div class="summary-card occupied-card">
+          <h3 id="summaryLabel2">Jumlah Terpakai</h3>
+          <div class="value" id="totalOccupied">0</div>
+        </div>
+        <div class="summary-card total-card">
+          <h3 id="summaryLabel3">Total Referensi</h3>
+          <div class="value" id="totalReference">0</div>
+        </div>
+      </section>
+
+      <section class="card results">
+        <div class="section-head">
+          <div>
+            <h2 id="resultTitle">Hasil Pencarian</h2>
+            <p id="resultDesc">Masukkan parameter pencarian untuk melihat hasil.</p>
+          </div>
+          <div id="modeBadge" class="mode-badge">Mode: Hari dan Ruang</div>
+        </div>
+        <div id="resultList" class="result-grid"></div>
+      </section>
+
+      <section class="card guide">
+        <div class="section-head">
+          <div>
+            <h2>Petunjuk Singkat</h2>
+            <p>Aplikasi ini sekarang mendukung dua pola pencarian agar lebih sesuai untuk kebutuhan peminjaman ruangan.</p>
+          </div>
+        </div>
+        <div class="guide-grid">
+          <div class="guide-item">
+            <h4>1. Hari dan ruang</h4>
+            <p>Pilih hari dan ruang, lalu sistem akan menampilkan daftar jam yang kosong pada ruang tersebut.</p>
+          </div>
+          <div class="guide-item">
+            <h4>2. Hari dan jam</h4>
+            <p>Pilih hari dan jam, lalu sistem akan menampilkan daftar ruangan yang kosong pada jam tersebut.</p>
+          </div>
+          <div class="guide-item">
+            <h4>3. Perbarui data</h4>
+            <p>Jika jadwal berubah di spreadsheet, gunakan tombol <strong>Perbarui Data</strong> agar hasil aplikasi ikut diperbarui.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="footer">
+    Catatan teknis: aplikasi ini paling sesuai apabila sumber CSV berasal dari sheet <strong>Data_Jadwal</strong>
+    dengan kolom <strong>Hari</strong>, <strong>Jam</strong>, <strong>Ruang</strong>, dan <strong>Mata Kuliah</strong>.
+    Sistem juga tetap dapat membaca format jadwal lebar per hari selama struktur jam berada di kolom pertama dan ruang berada di header.
+  </div>
+
+  <script>
+    const CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRypj3EmC8FLDdKZh4uTrqltL8tqlW01tmnnUVlBaErlNJxFPXVvxwC5zcwa1eCZw/pub?output=csv';
+
+    const DAYS = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+    const TIME_SLOTS = [
+      '07.00 - 07.50',
+      '07.50 - 08.40',
+      '08.50 - 09.40',
+      '09.40 - 10.30',
+      '10.40 - 11.30',
+      '12.10 - 13.10',
+      '13.20 - 14.10',
+      '14.10 - 15.00',
+      '15.30 - 16.20',
+      '16.20 - 17.10',
+      '17.10 - 18.00',
+      '18.30 - 19.20',
+      '19.20 - 20.10',
+      '20.10 - 21.00'
+    ];
+
+    const ROOMS = [
+      'RKBesar/F6.001',
+      'F6.002',
+      'F6.003',
+      'F6.004',
+      'F6.101',
+      'F6.102',
+      'F6.103',
+      'F6.202',
+      'F6.203',
+      'F4.001',
+      'F4.002',
+      'F4.003'
+    ];
+
+    const state = {
+      rows: [],
+      occupiedMap: new Map()
+    };
+
+    const els = {
+      mode: document.getElementById('mode'),
+      hari: document.getElementById('hari'),
+      ruang: document.getElementById('ruang'),
+      jam: document.getElementById('jam'),
+      fieldRuang: document.getElementById('fieldRuang'),
+      fieldJam: document.getElementById('fieldJam'),
+      btnCek: document.getElementById('btnCek'),
+      btnNow: document.getElementById('btnNow'),
+      btnRefresh: document.getElementById('btnRefresh'),
+      status: document.getElementById('status'),
+      activeLabel: document.getElementById('activeLabel'),
+      sourceInfo: document.getElementById('sourceInfo'),
+      updatedAt: document.getElementById('updatedAt'),
+      totalAvailable: document.getElementById('totalAvailable'),
+      totalOccupied: document.getElementById('totalOccupied'),
+      totalReference: document.getElementById('totalReference'),
+      summaryLabel1: document.getElementById('summaryLabel1'),
+      summaryLabel2: document.getElementById('summaryLabel2'),
+      summaryLabel3: document.getElementById('summaryLabel3'),
+      resultTitle: document.getElementById('resultTitle'),
+      resultDesc: document.getElementById('resultDesc'),
+      resultList: document.getElementById('resultList'),
+      modeBadge: document.getElementById('modeBadge')
+    };
+
+    function parseCSV(text) {
+      const rows = [];
+      let row = [];
+      let cell = '';
+      let inQuotes = false;
+
+      for (let i = 0; i < text.length; i++) {
+        const char = text[i];
+        const next = text[i + 1];
+
+        if (char === '"') {
+          if (inQuotes && next === '"') {
+            cell += '"';
+            i++;
+          } else {
+            inQuotes = !inQuotes;
+          }
+        } else if (char === ',' && !inQuotes) {
+          row.push(cell);
+          cell = '';
+        } else if ((char === '\n' || char === '\r') && !inQuotes) {
+          if (char === '\r' && next === '\n') i++;
+          row.push(cell);
+          if (row.some(value => String(value).trim() !== '')) rows.push(row);
+          row = [];
+          cell = '';
+        } else {
+          cell += char;
+        }
+      }
+
+      if (cell.length || row.length) {
+        row.push(cell);
+        if (row.some(value => String(value).trim() !== '')) rows.push(row);
+      }
+
+      return rows;
+    }
+
+    function normalizeText(value) {
+      return String(value || '')
+        .replace(/–/g, '-')
+        .replace(/\s+/g, ' ')
+        .trim();
+    }
+
+    function normalizeDay(value) {
+      const cleaned = normalizeText(value).toLowerCase();
+      const map = {
+        senin: 'Senin',
+        selasa: 'Selasa',
+        rabu: 'Rabu',
+        kamis: 'Kamis',
+        jumat: 'Jumat',
+        sabtu: 'Sabtu'
+      };
+      return map[cleaned] || value;
+    }
+
+    function normalizeTime(value) {
+      return normalizeText(value).replace(/\s*-\s*/g, ' - ');
+    }
+
+    function buildRowsFromNormalizedSheet(rawRows) {
+      const headers = rawRows[0].map(h => normalizeText(h).toLowerCase());
+      const idxHari = headers.findIndex(h => h === 'hari');
+      const idxJam = headers.findIndex(h => h === 'jam');
+      const idxRuang = headers.findIndex(h => h === 'ruang');
+      const idxMatkul = headers.findIndex(h => h.includes('mata kuliah') || h === 'jadwal');
+
+      if (idxHari === -1 || idxJam === -1 || idxRuang === -1) return null;
+
+      return rawRows.slice(1).map(row => ({
+        hari: normalizeDay(row[idxHari]),
+        jam: normalizeTime(row[idxJam]),
+        ruang: normalizeText(row[idxRuang]),
+        mataKuliah: normalizeText(row[idxMatkul])
+      })).filter(item => item.hari && item.jam && item.ruang);
+    }
+
+    function buildRowsFromWideSheet(rawRows, selectedDay = 'Senin') {
+      const headerRow = rawRows.find(row => row.some(cell => normalizeText(cell).toLowerCase() === 'jam'));
+      const headerIndex = rawRows.indexOf(headerRow);
+      if (!headerRow || headerIndex === -1) return [];
+
+      const roomHeaders = headerRow.slice(1).map(value => normalizeText(value));
+      const results = [];
+
+      for (let i = headerIndex + 1; i < rawRows.length; i++) {
+        const jam = normalizeTime(rawRows[i][0]);
+        if (!jam) continue;
+
+        for (let j = 1; j < roomHeaders.length + 1; j++) {
+          const value = normalizeText(rawRows[i][j]);
+          if (value) {
+            results.push({
+              hari: selectedDay,
+              jam,
+              ruang: roomHeaders[j - 1],
+              mataKuliah: value
+            });
+          }
+        }
+      }
+
+      return results;
+    }
+
+    function buildOccupiedMap(rows) {
+      const map = new Map();
+      rows.forEach(item => {
+        const key = `${item.hari}|${item.jam}|${item.ruang}`;
+        map.set(key, item.mataKuliah || 'Terisi');
+      });
+      return map;
+    }
+
+    function setStatus(message, type = 'ready') {
+      els.status.textContent = message;
+      if (type === 'error') {
+        els.status.style.background = 'var(--danger-soft)';
+        els.status.style.color = 'var(--danger)';
+      } else if (type === 'loading') {
+        els.status.style.background = 'var(--warning-soft)';
+        els.status.style.color = 'var(--warning)';
+      } else {
+        els.status.style.background = 'var(--primary-soft)';
+        els.status.style.color = 'var(--primary)';
+      }
+    }
+
+    function fillSelectOptions() {
+      els.hari.innerHTML = DAYS.map(day => `<option value="${day}">${day}</option>`).join('');
+      els.jam.innerHTML = TIME_SLOTS.map(slot => `<option value="${slot}">${slot}</option>`).join('');
+      els.ruang.innerHTML = ROOMS.map(room => `<option value="${room}">${room}</option>`).join('');
+      els.totalReference.textContent = ROOMS.length;
+    }
+
+    function getNowInfo() {
+      const now = new Date();
+      const dayName = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'][now.getDay()];
+      const currentMinutes = now.getHours() * 60 + now.getMinutes();
+
+      const matchedSlot = TIME_SLOTS.find(slot => {
+        const [start, end] = slot.split(' - ');
+        const [sh, sm] = start.split('.').map(Number);
+        const [eh, em] = end.split('.').map(Number);
+        const startMin = sh * 60 + sm;
+        const endMin = eh * 60 + em;
+        return currentMinutes >= startMin && currentMinutes < endMin;
+      });
+
+      return {
+        hari: DAYS.includes(dayName) ? dayName : 'Senin',
+        jam: matchedSlot || TIME_SLOTS[0],
+        hasActiveSlot: Boolean(matchedSlot)
+      };
+    }
+
+    function renderResults(items, type, emptyMessage) {
+      if (!items.length) {
+        els.resultList.innerHTML = `<div class="empty-state">${emptyMessage}</div>`;
+        return;
+      }
+
+      els.resultList.innerHTML = items.map(item => `
+        <div class="result-item ${type}">
+          <div class="result-title">${item.title}</div>
+          <div class="result-detail">${item.detail}</div>
+        </div>
+      `).join('');
+    }
+
+    function updateModeUI() {
+      const mode = els.mode.value;
+      const isHariRuang = mode === 'hari-ruang';
+
+      els.fieldRuang.classList.toggle('hidden', !isHariRuang);
+      els.fieldJam.classList.toggle('hidden', isHariRuang);
+      els.modeBadge.textContent = isHariRuang ? 'Mode: Hari dan Ruang' : 'Mode: Hari dan Jam';
+
+      if (isHariRuang) {
+        els.summaryLabel1.textContent = 'Jumlah Jam Kosong';
+        els.summaryLabel2.textContent = 'Jumlah Jam Terpakai';
+        els.summaryLabel3.textContent = 'Total Slot Jam';
+        els.resultTitle.textContent = 'Daftar Jam Kosong';
+        els.resultDesc.textContent = 'Sistem menampilkan jam yang kosong pada ruang dan hari yang dipilih.';
+        els.totalReference.textContent = TIME_SLOTS.length;
+      } else {
+        els.summaryLabel1.textContent = 'Jumlah Ruang Kosong';
+        els.summaryLabel2.textContent = 'Jumlah Ruang Terpakai';
+        els.summaryLabel3.textContent = 'Total Ruangan';
+        els.resultTitle.textContent = 'Daftar Ruangan Kosong';
+        els.resultDesc.textContent = 'Sistem menampilkan ruangan yang kosong pada hari dan jam yang dipilih.';
+        els.totalReference.textContent = ROOMS.length;
+      }
+    }
+
+    function applyFilter() {
+      const mode = els.mode.value;
+      const hari = els.hari.value;
+
+      if (mode === 'hari-ruang') {
+        const ruang = els.ruang.value;
+        const jamKosong = [];
+        const jamTerpakai = [];
+
+        TIME_SLOTS.forEach(jam => {
+          const key = `${hari}|${jam}|${ruang}`;
+          const detail = state.occupiedMap.get(key);
+          if (detail) {
+            jamTerpakai.push({ title: jam, detail: `Status: Terpakai\nKeterangan: ${detail}` });
+          } else {
+            jamKosong.push({ title: jam, detail: `Ruang ${ruang} tersedia pada jam ini.` });
+          }
+        });
+
+        els.activeLabel.textContent = `Hasil pencarian untuk ${hari} • ${ruang}`;
+        els.totalAvailable.textContent = jamKosong.length;
+        els.totalOccupied.textContent = jamTerpakai.length;
+        els.totalReference.textContent = TIME_SLOTS.length;
+
+        renderResults(
+          jamKosong,
+          'available',
+          `Tidak ada jam kosong untuk ruang ${ruang} pada hari ${hari}.`
+        );
+      } else {
+        const jam = els.jam.value;
+        const ruangKosong = [];
+        const ruangTerpakai = [];
+
+        ROOMS.forEach(ruang => {
+          const key = `${hari}|${jam}|${ruang}`;
+          const detail = state.occupiedMap.get(key);
+          if (detail) {
+            ruangTerpakai.push({ title: ruang, detail: `Status: Terpakai\nKeterangan: ${detail}` });
+          } else {
+            ruangKosong.push({ title: ruang, detail: `Ruang ini kosong pada ${hari}, ${jam}.` });
+          }
+        });
+
+        els.activeLabel.textContent = `Hasil pencarian untuk ${hari} • ${jam}`;
+        els.totalAvailable.textContent = ruangKosong.length;
+        els.totalOccupied.textContent = ruangTerpakai.length;
+        els.totalReference.textContent = ROOMS.length;
+
+        renderResults(
+          ruangKosong,
+          'available',
+          `Tidak ada ruangan kosong pada ${hari}, ${jam}.`
+        );
+      }
+    }
+
+    async function loadData() {
+      try {
+        setStatus('Memuat data...', 'loading');
+        els.resultList.innerHTML = '<div class="empty-state loading">Sedang mengambil data dari spreadsheet...</div>';
+
+        const response = await fetch(CSV_URL, { cache: 'no-store' });
+        if (!response.ok) throw new Error(`Gagal mengambil CSV (${response.status})`);
+
+        const text = await response.text();
+        const rawRows = parseCSV(text);
+        if (!rawRows.length) throw new Error('CSV kosong atau tidak dapat dibaca.');
+
+        let rows = buildRowsFromNormalizedSheet(rawRows);
+        if (!rows) rows = buildRowsFromWideSheet(rawRows);
+
+        state.rows = rows;
+        state.occupiedMap = buildOccupiedMap(rows);
+
+        const nowLabel = new Date().toLocaleString('id-ID', {
+          day: '2-digit',
+          month: 'long',
+          year: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit'
+        });
+
+        els.updatedAt.textContent = `Pemutakhiran aplikasi: ${nowLabel}`;
+        els.sourceInfo.textContent = `Sumber data: ${CSV_URL}`;
+        setStatus('Data berhasil dimuat');
+        applyFilter();
+      } catch (error) {
+        console.error(error);
+        setStatus('Gagal memuat data', 'error');
+        els.resultList.innerHTML = `<div class="empty-state error">${error.message}<br>Periksa kembali URL CSV dan struktur spreadsheet yang digunakan.</div>`;
+      }
+    }
+
+    els.mode.addEventListener('change', () => {
+      updateModeUI();
+      applyFilter();
+    });
+    els.btnCek.addEventListener('click', applyFilter);
+    els.btnRefresh.addEventListener('click', loadData);
+    els.hari.addEventListener('change', applyFilter);
+    els.ruang.addEventListener('change', applyFilter);
+    els.jam.addEventListener('change', applyFilter);
+
+    els.btnNow.addEventListener('click', () => {
+      const nowInfo = getNowInfo();
+      els.hari.value = nowInfo.hari;
+
+      if (els.mode.value === 'hari-jam') {
+        els.jam.value = nowInfo.jam;
+      }
+
+      applyFilter();
+
+      if (!nowInfo.hasActiveSlot) {
+        setStatus('Di luar slot kuliah, menampilkan slot terdekat');
+      } else {
+        setStatus('Menampilkan kondisi saat ini');
+      }
+    });
+
+    fillSelectOptions();
+    updateModeUI();
+    const nowInfo = getNowInfo();
+    els.hari.value = nowInfo.hari;
+    els.jam.value = nowInfo.jam;
+    loadData();
+  </script>
+</body>
+</html>
