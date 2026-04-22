@@ -9,7 +9,6 @@
       --umygreen: #004029;
       --umyyellow: #F6B800;
       --umyred: #932520;
-      --bg: #f7f8f5;
       --surface: #ffffff;
       --surface-soft: #f8faf8;
       --text: #183126;
@@ -19,10 +18,8 @@
       --primary-dark: #002d1d;
       --primary-soft: #e8f1ed;
       --secondary: var(--umyred);
-      --secondary-soft: #f8eceb;
       --accent: var(--umyyellow);
       --accent-soft: #fff6d9;
-      --success: #0f6c43;
       --success-soft: #e8f6ee;
       --danger: var(--umyred);
       --danger-soft: #f9eceb;
@@ -199,7 +196,9 @@
       box-shadow: var(--shadow);
     }
 
-    .controls, .results, .guide { grid-column: span 12; }
+    .controls, .results, .guide {
+      grid-column: span 12;
+    }
 
     .section-head {
       display: flex;
@@ -228,7 +227,7 @@
       border-top: 5px solid var(--accent);
     }
 
-    .status-pill, .meta-pill, .mode-badge {
+    .status-pill, .mode-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
@@ -262,7 +261,7 @@
       color: var(--primary-dark);
     }
 
-    .field select, .field input {
+    .field select {
       width: 100%;
       min-height: 48px;
       border: 1px solid #cdd9d1;
@@ -275,7 +274,7 @@
       transition: 0.2s ease;
     }
 
-    .field select:focus, .field input:focus {
+    .field select:focus {
       border-color: rgba(0,64,41,0.45);
       box-shadow: 0 0 0 4px rgba(0,64,41,0.10);
     }
@@ -310,6 +309,11 @@
       background: var(--accent-soft);
       color: #664d00;
       border: 1px solid #f1de93;
+    }
+
+    .results {
+      padding: 24px;
+      min-height: 320px;
     }
 
     .result-grid {
@@ -353,7 +357,9 @@
       line-height: 1.7;
     }
 
-    .guide { padding: 24px; }
+    .guide {
+      padding: 24px;
+    }
 
     .guide-grid {
       display: grid;
@@ -407,18 +413,27 @@
     .error { color: var(--danger); font-weight: 700; }
 
     @media (max-width: 1080px) {
-      .hero-inner, .guide-grid { grid-template-columns: 1fr; }
-      .field, .results { grid-column: span 12; }
+      .hero-inner, .guide-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field, .results {
+        grid-column: span 12;
+      }
+    }
 
     @media (max-width: 720px) {
       .container { padding: 16px; }
-      .hero-inner, .controls, .results, .guide { padding: 20px; }
+      .hero-inner, .controls, .results, .guide {
+        padding: 20px;
+      }
       .hero h1 { font-size: 28px; }
       .brand-meta strong { font-size: 19px; }
       .topbar { font-size: 13px; }
       .actions button { width: 100%; }
       .brand { align-items: flex-start; }
       .brand-mark { width: 78px; height: 78px; }
+      .guide-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -515,7 +530,7 @@
         <div class="section-head">
           <div>
             <h2>Petunjuk Singkat</h2>
-            <p>Aplikasi ini sekarang mendukung dua pola pencarian agar lebih sesuai untuk kebutuhan peminjaman ruangan.</p>
+            <p>Aplikasi ini mendukung dua pola pencarian agar lebih sesuai untuk kebutuhan peminjaman ruangan.</p>
           </div>
         </div>
         <div class="guide-grid">
@@ -758,14 +773,14 @@
       };
     }
 
-    function renderResults(items, type, emptyMessage) {
+    function renderResults(items, emptyMessage) {
       if (!items.length) {
         els.resultList.innerHTML = `<div class="empty-state">${emptyMessage}</div>`;
         return;
       }
 
       els.resultList.innerHTML = items.map(item => `
-        <div class="result-item ${type}">
+        <div class="result-item available">
           <div class="result-title">${item.title}</div>
           <div class="result-detail">${item.detail}</div>
         </div>
@@ -796,41 +811,33 @@
       if (mode === 'hari-ruang') {
         const ruang = els.ruang.value;
         const jamKosong = [];
-        const jamTerpakai = [];
 
         TIME_SLOTS.forEach(jam => {
           const key = `${hari}|${jam}|${ruang}`;
           const detail = state.occupiedMap.get(key);
-          if (detail) {
-            jamTerpakai.push({ title: jam, detail: `Status: Terpakai\nKeterangan: ${detail}` });
-          } else {
+          if (!detail) {
             jamKosong.push({ title: jam, detail: `Ruang ${ruang} tersedia pada jam ini.` });
           }
         });
 
         renderResults(
           jamKosong,
-          'available',
           `Tidak ada jam kosong untuk ruang ${ruang} pada hari ${hari}.`
         );
       } else {
         const jam = els.jam.value;
         const ruangKosong = [];
-        const ruangTerpakai = [];
 
         ROOMS.forEach(ruang => {
           const key = `${hari}|${jam}|${ruang}`;
           const detail = state.occupiedMap.get(key);
-          if (detail) {
-            ruangTerpakai.push({ title: ruang, detail: `Status: Terpakai\nKeterangan: ${detail}` });
-          } else {
+          if (!detail) {
             ruangKosong.push({ title: ruang, detail: `Ruang ini kosong pada ${hari}, ${jam}.` });
           }
         });
 
         renderResults(
           ruangKosong,
-          'available',
           `Tidak ada ruangan kosong pada ${hari}, ${jam}.`
         );
       }
@@ -853,6 +860,42 @@
 
         state.rows = rows;
         state.occupiedMap = buildOccupiedMap(rows);
+
+        setStatus('Data berhasil dimuat');
+        applyFilter();
+      } catch (error) {
+        console.error(error);
+        setStatus('Gagal memuat data', 'error');
+        els.resultList.innerHTML = `<div class="empty-state error">${error.message}<br>Periksa kembali URL CSV dan struktur spreadsheet yang digunakan.</div>`;
+      }
+    }
+
+    els.mode.addEventListener('change', () => {
+      updateModeUI();
+      applyFilter();
+    });
+    els.btnCek.addEventListener('click', applyFilter);
+    els.btnRefresh.addEventListener('click', loadData);
+    els.hari.addEventListener('change', applyFilter);
+    els.ruang.addEventListener('change', applyFilter);
+    els.jam.addEventListener('change', applyFilter);
+
+    els.btnNow.addEventListener('click', () => {
+      const nowInfo = getNowInfo();
+      els.hari.value = nowInfo.hari;
+
+      if (els.mode.value === 'hari-jam') {
+        els.jam.value = nowInfo.jam;
+      }
+
+      applyFilter();
+
+      if (!nowInfo.hasActiveSlot) {
+        setStatus('Di luar slot kuliah, menampilkan slot terdekat');
+      } else {
+        setStatus('Menampilkan kondisi saat ini');
+      }
+    });
 
     fillSelectOptions();
     updateModeUI();
