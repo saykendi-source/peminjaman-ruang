@@ -199,7 +199,7 @@
       box-shadow: var(--shadow);
     }
 
-    .controls, .meta, .summary, .results, .guide { grid-column: span 12; }
+    .controls, .results, .guide { grid-column: span 12; }
 
     .section-head {
       display: flex;
@@ -312,83 +312,6 @@
       border: 1px solid #f1de93;
     }
 
-    .meta {
-      display: grid;
-      grid-template-columns: 1.3fr 1fr;
-      gap: 16px;
-      padding: 20px 24px;
-      align-items: center;
-    }
-
-    .meta strong {
-      font-size: 18px;
-      color: var(--primary-dark);
-      display: block;
-      margin-bottom: 6px;
-    }
-
-    .meta .desc {
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 14px;
-      word-break: break-word;
-    }
-
-    .meta-right {
-      display: flex;
-      justify-content: flex-end;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .summary {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .summary-card {
-      padding: 22px;
-      background: var(--surface);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .summary-card::before {
-      content: "";
-      position: absolute;
-      left: 0; top: 0;
-      width: 100%; height: 6px;
-      background: var(--accent);
-    }
-
-    .summary-card h3 {
-      margin: 0 0 8px;
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-    }
-
-    .summary-card .value {
-      font-size: 34px;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-    }
-
-    .summary-card.available-card .value { color: var(--success); }
-    .summary-card.occupied-card .value { color: var(--danger); }
-    .summary-card.total-card .value { color: var(--primary-dark); }
-
-    .results {
-      padding: 24px;
-      min-height: 320px;
-    }
-
     .result-grid {
       display: grid;
       gap: 12px;
@@ -484,21 +407,18 @@
     .error { color: var(--danger); font-weight: 700; }
 
     @media (max-width: 1080px) {
-      .hero-inner, .meta, .summary, .guide-grid { grid-template-columns: 1fr; }
+      .hero-inner, .guide-grid { grid-template-columns: 1fr; }
       .field, .results { grid-column: span 12; }
-      .meta-right { justify-content: flex-start; }
-    }
 
     @media (max-width: 720px) {
       .container { padding: 16px; }
-      .hero-inner, .controls, .results, .guide, .meta { padding: 20px; }
+      .hero-inner, .controls, .results, .guide { padding: 20px; }
       .hero h1 { font-size: 28px; }
       .brand-meta strong { font-size: 19px; }
       .topbar { font-size: 13px; }
       .actions button { width: 100%; }
       .brand { align-items: flex-start; }
       .brand-mark { width: 78px; height: 78px; }
-      .summary { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -577,31 +497,6 @@
             <button class="btn-secondary" id="btnNow">Cek Kondisi Saat Ini</button>
             <button class="btn-light" id="btnRefresh">Perbarui Data</button>
           </div>
-        </div>
-      </section>
-
-      <section class="card meta">
-        <div>
-          <strong id="activeLabel">Belum ada pencarian aktif</strong>
-          <div id="sourceInfo" class="desc">Sumber data: Google Spreadsheet CSV</div>
-        </div>
-        <div class="meta-right">
-          <div id="updatedAt" class="meta-pill">Belum dimuat</div>
-        </div>
-      </section>
-
-      <section class="summary">
-        <div class="summary-card available-card">
-          <h3 id="summaryLabel1">Jumlah Hasil Kosong</h3>
-          <div class="value" id="totalAvailable">0</div>
-        </div>
-        <div class="summary-card occupied-card">
-          <h3 id="summaryLabel2">Jumlah Terpakai</h3>
-          <div class="value" id="totalOccupied">0</div>
-        </div>
-        <div class="summary-card total-card">
-          <h3 id="summaryLabel3">Total Referensi</h3>
-          <div class="value" id="totalReference">0</div>
         </div>
       </section>
 
@@ -699,15 +594,6 @@
       btnNow: document.getElementById('btnNow'),
       btnRefresh: document.getElementById('btnRefresh'),
       status: document.getElementById('status'),
-      activeLabel: document.getElementById('activeLabel'),
-      sourceInfo: document.getElementById('sourceInfo'),
-      updatedAt: document.getElementById('updatedAt'),
-      totalAvailable: document.getElementById('totalAvailable'),
-      totalOccupied: document.getElementById('totalOccupied'),
-      totalReference: document.getElementById('totalReference'),
-      summaryLabel1: document.getElementById('summaryLabel1'),
-      summaryLabel2: document.getElementById('summaryLabel2'),
-      summaryLabel3: document.getElementById('summaryLabel3'),
       resultTitle: document.getElementById('resultTitle'),
       resultDesc: document.getElementById('resultDesc'),
       resultList: document.getElementById('resultList'),
@@ -849,7 +735,6 @@
       els.hari.innerHTML = DAYS.map(day => `<option value="${day}">${day}</option>`).join('');
       els.jam.innerHTML = TIME_SLOTS.map(slot => `<option value="${slot}">${slot}</option>`).join('');
       els.ruang.innerHTML = ROOMS.map(room => `<option value="${room}">${room}</option>`).join('');
-      els.totalReference.textContent = ROOMS.length;
     }
 
     function getNowInfo() {
@@ -896,19 +781,11 @@
       els.modeBadge.textContent = isHariRuang ? 'Mode: Hari dan Ruang' : 'Mode: Hari dan Jam';
 
       if (isHariRuang) {
-        els.summaryLabel1.textContent = 'Jumlah Jam Kosong';
-        els.summaryLabel2.textContent = 'Jumlah Jam Terpakai';
-        els.summaryLabel3.textContent = 'Total Slot Jam';
         els.resultTitle.textContent = 'Daftar Jam Kosong';
         els.resultDesc.textContent = 'Sistem menampilkan jam yang kosong pada ruang dan hari yang dipilih.';
-        els.totalReference.textContent = TIME_SLOTS.length;
       } else {
-        els.summaryLabel1.textContent = 'Jumlah Ruang Kosong';
-        els.summaryLabel2.textContent = 'Jumlah Ruang Terpakai';
-        els.summaryLabel3.textContent = 'Total Ruangan';
         els.resultTitle.textContent = 'Daftar Ruangan Kosong';
         els.resultDesc.textContent = 'Sistem menampilkan ruangan yang kosong pada hari dan jam yang dipilih.';
-        els.totalReference.textContent = ROOMS.length;
       }
     }
 
@@ -931,11 +808,6 @@
           }
         });
 
-        els.activeLabel.textContent = `Hasil pencarian untuk ${hari} • ${ruang}`;
-        els.totalAvailable.textContent = jamKosong.length;
-        els.totalOccupied.textContent = jamTerpakai.length;
-        els.totalReference.textContent = TIME_SLOTS.length;
-
         renderResults(
           jamKosong,
           'available',
@@ -955,11 +827,6 @@
             ruangKosong.push({ title: ruang, detail: `Ruang ini kosong pada ${hari}, ${jam}.` });
           }
         });
-
-        els.activeLabel.textContent = `Hasil pencarian untuk ${hari} • ${jam}`;
-        els.totalAvailable.textContent = ruangKosong.length;
-        els.totalOccupied.textContent = ruangTerpakai.length;
-        els.totalReference.textContent = ROOMS.length;
 
         renderResults(
           ruangKosong,
@@ -986,53 +853,6 @@
 
         state.rows = rows;
         state.occupiedMap = buildOccupiedMap(rows);
-
-        const nowLabel = new Date().toLocaleString('id-ID', {
-          day: '2-digit',
-          month: 'long',
-          year: 'numeric',
-          hour: '2-digit',
-          minute: '2-digit',
-          second: '2-digit'
-        });
-
-        els.updatedAt.textContent = `Pemutakhiran aplikasi: ${nowLabel}`;
-        els.sourceInfo.textContent = `Sumber data: ${CSV_URL}`;
-        setStatus('Data berhasil dimuat');
-        applyFilter();
-      } catch (error) {
-        console.error(error);
-        setStatus('Gagal memuat data', 'error');
-        els.resultList.innerHTML = `<div class="empty-state error">${error.message}<br>Periksa kembali URL CSV dan struktur spreadsheet yang digunakan.</div>`;
-      }
-    }
-
-    els.mode.addEventListener('change', () => {
-      updateModeUI();
-      applyFilter();
-    });
-    els.btnCek.addEventListener('click', applyFilter);
-    els.btnRefresh.addEventListener('click', loadData);
-    els.hari.addEventListener('change', applyFilter);
-    els.ruang.addEventListener('change', applyFilter);
-    els.jam.addEventListener('change', applyFilter);
-
-    els.btnNow.addEventListener('click', () => {
-      const nowInfo = getNowInfo();
-      els.hari.value = nowInfo.hari;
-
-      if (els.mode.value === 'hari-jam') {
-        els.jam.value = nowInfo.jam;
-      }
-
-      applyFilter();
-
-      if (!nowInfo.hasActiveSlot) {
-        setStatus('Di luar slot kuliah, menampilkan slot terdekat');
-      } else {
-        setStatus('Menampilkan kondisi saat ini');
-      }
-    });
 
     fillSelectOptions();
     updateModeUI();
