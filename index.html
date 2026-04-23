@@ -5,536 +5,771 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ruang Kosong TI UMY</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
-
     :root {
-      --bg: #e8e6f0;
-      --bg2: #dddaf0;
-      --card-bg: rgba(255,255,255,0.72);
-      --card-border: rgba(255,255,255,0.90);
-      --purple-dark: #2d2a6e;
-      --purple-mid: #5b58c0;
-      --purple-light: #a89ff5;
-      --purple-pale: #c8c4f8;
-      --text-dark: #2d2a6e;
-      --text-mid: #6b68a8;
-      --text-light: #9896c8;
-      --accent-cyan: #7ee8f8;
-      --accent-violet: #a97ff5;
-      --shadow: 0 8px 32px rgba(90,80,180,0.10);
-      --shadow-card: 0 4px 18px rgba(90,80,180,0.10);
-      --radius: 22px;
-      --radius-sm: 16px;
-      --radius-xs: 12px;
+      --umygreen: #004029;
+      --umyyellow: #F6B800;
+      --umyred: #932520;
+      --text: #17342a;
+      --muted: #587066;
+      --line: rgba(255,255,255,0.32);
+      --glass: rgba(255,255,255,0.22);
+      --glass-strong: rgba(255,255,255,0.34);
+      --shadow: 0 18px 55px rgba(0, 0, 0, 0.10);
+      --shadow-soft: 0 10px 24px rgba(0, 0, 0, 0.08);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --radius-sm: 14px;
+      --max: 1260px;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { box-sizing: border-box; }
 
     body {
-      font-family: 'Nunito', "Segoe UI", sans-serif;
-      color: var(--text-dark);
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+      color: var(--text);
       min-height: 100vh;
-      background: linear-gradient(160deg, #dbd8f2 0%, #e4e2f5 40%, #ede8f8 70%, #e0dcf4 100%);
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255,255,255,0.72), transparent 22%),
+        radial-gradient(circle at 84% 18%, rgba(246,184,0,0.32), transparent 14%),
+        radial-gradient(circle at 80% 72%, rgba(147,37,32,0.18), transparent 18%),
+        radial-gradient(circle at 68% 88%, rgba(0,64,41,0.16), transparent 14%),
+        linear-gradient(135deg, #efe6de 0%, #e9e1dc 26%, #e2e6eb 52%, #ece0d7 100%);
       background-attachment: fixed;
+      overflow-x: hidden;
     }
 
-    /* ─── TOPBAR HIDDEN (replaced by header card) ─── */
-    .topbar { display: none; }
-
-    /* ─── CONTAINER ─── */
-    .container {
-      max-width: 480px;
-      margin: 0 auto;
-      padding: 20px 18px 40px;
+    .bg-orb {
+      position: fixed;
+      border-radius: 999px;
+      filter: blur(10px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.9;
     }
 
-    /* ─── HEADER ─── */
-    .app-header {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 24px;
+    .orb-1 {
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle at 35% 30%, rgba(137,111,255,0.95), rgba(137,111,255,0.22) 60%, transparent 72%);
+      top: 110px;
+      left: 7%;
     }
 
-    .app-header-icon {
-      width: 54px;
-      height: 54px;
-      border-radius: 18px;
-      background: linear-gradient(135deg, #b8aff5 0%, #a097f0 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 6px 18px rgba(130,110,240,0.30);
-      flex-shrink: 0;
+    .orb-2 {
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle at 40% 35%, rgba(98,255,235,0.85), rgba(98,255,235,0.18) 60%, transparent 72%);
+      top: 180px;
+      right: 8%;
     }
 
-    .app-header-icon svg {
-      width: 28px;
-      height: 28px;
-      fill: white;
+    .orb-3 {
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle at 45% 40%, rgba(255,174,225,0.55), rgba(107,235,255,0.20) 52%, transparent 72%);
+      bottom: 70px;
+      right: 14%;
     }
 
-    .app-header-text h1 {
-      font-size: 22px;
-      font-weight: 900;
-      color: var(--purple-dark);
-      line-height: 1.2;
-    }
-
-    .app-header-text p {
-      font-size: 13px;
-      color: var(--text-mid);
-      font-weight: 600;
-      margin-top: 2px;
-    }
-
-    /* ─── MAIN CARD ─── */
-    .main-card {
-      background: rgba(255,255,255,0.68);
-      border-radius: 28px;
-      border: 1.5px solid rgba(255,255,255,0.90);
-      box-shadow: 0 12px 48px rgba(100,90,200,0.13);
-      padding: 22px 20px;
-      backdrop-filter: blur(20px);
-      margin-bottom: 20px;
-    }
-
-    /* ─── FIELD LABELS ─── */
-    .field-label {
+    .topbar {
+      position: relative;
+      z-index: 2;
+      padding: 14px 22px;
+      color: rgba(22, 44, 36, 0.88);
       font-size: 14px;
-      font-weight: 800;
-      color: var(--purple-dark);
-      margin-bottom: 8px;
+      letter-spacing: 0.2px;
+      text-align: center;
+      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.18);
+      border-bottom: 1px solid rgba(255,255,255,0.28);
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 26px 20px 36px;
+    }
+
+    .glass-panel {
+      position: relative;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(180deg, rgba(255,255,255,0.28), rgba(255,255,255,0.14));
+      border: 1px solid rgba(255,255,255,0.35);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      overflow: hidden;
+    }
+
+    .glass-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(135deg, rgba(255,255,255,0.24), transparent 42%, rgba(255,255,255,0.12) 65%, transparent 100%);
+    }
+
+    .hero {
+      padding: 26px;
+      margin-bottom: 22px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .hero-main,
+    .hero-side,
+    .search-card,
+    .result-card,
+    .guide-card {
+      position: relative;
+      border-radius: 28px;
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.35);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      overflow: hidden;
+    }
+
+    .hero-main,
+    .hero-side {
+      padding: 24px;
+    }
+
+    .hero-main::after,
+    .hero-side::after,
+    .search-card::after,
+    .result-card::after,
+    .guide-card::after {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      border-radius: inherit;
+      border: 1px solid rgba(255,255,255,0.18);
+      pointer-events: none;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .brand-mark {
+      width: 88px;
+      height: 88px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.38);
+      padding: 8px;
+      display: grid;
+      place-items: center;
+      box-shadow: inset 0 1px 2px rgba(255,255,255,0.65), 0 10px 22px rgba(0,0,0,0.08);
+    }
+
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
       display: block;
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 6px;
+    }
+
+    .brand-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(147,37,32,0.92), rgba(246,184,0,0.92));
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      box-shadow: 0 10px 24px rgba(147,37,32,0.18);
+    }
+
+    .brand-title {
+      font-size: 26px;
+      font-weight: 800;
+      line-height: 1.25;
+      color: #17342a;
+    }
+
+    .hero-main h1 {
+      margin: 0 0 12px;
+      font-size: 36px;
+      line-height: 1.15;
+      color: #12271f;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-main p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 15px;
+      max-width: 760px;
+    }
+
+    .pill-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill {
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      border: 1px solid rgba(255,255,255,0.35);
+      box-shadow: var(--shadow-soft);
+      color: #1d342c;
+      background: linear-gradient(135deg, rgba(255,255,255,0.55), rgba(255,255,255,0.18));
+      backdrop-filter: blur(14px);
+      min-width: 150px;
+      text-align: center;
+    }
+
+    .pill.accent-purple {
+      background: linear-gradient(135deg, rgba(140,105,255,0.80), rgba(127,97,255,0.30));
+      color: white;
+    }
+
+    .pill.accent-cyan {
+      background: linear-gradient(135deg, rgba(95,230,221,0.85), rgba(95,230,221,0.28));
+      color: white;
+      }
+
+    .pill.accent-mint {
+      background: linear-gradient(135deg, rgba(200, 230, 201, 0.90), rgba(200, 230, 201, 0.35));
+      color: white;
+    }
+
+    .hero-side h3 {
+      margin: 0 0 14px;
+      font-size: 20px;
+      color: #17342a;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .feature-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px 14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.24);
+      border: 1px solid rgba(255,255,255,0.32);
+    }
+
+    .feature-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 800;
+      font-size: 14px;
+      flex: 0 0 auto;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.10);
+    }
+
+    .icon-red { background: linear-gradient(135deg, rgba(140,105,255,0.80), rgba(127,97,255,0.30)); }
+    .icon-yellow { background: linear-gradient(135deg, rgba(95,230,221,0.85), rgba(95,230,221,0.28)); }
+    .icon-green { background: linear-gradient(135deg, rgba(200, 230, 201, 0.90), rgba(200, 230, 201, 0.35)); }
+
+    .feature-item strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 15px;
+      color: #17342a;
+    }
+
+    .feature-item span {
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--muted);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 22px;
+    }
+
+    .search-card,
+    .result-card,
+    .guide-card {
+      padding: 24px;
+    }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 18px;
+    }
+
+    .section-title h2 {
+      margin: 0 0 6px;
+      font-size: 22px;
+      color: #17342a;
+    }
+
+    .section-title p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .status-badge, .mode-badge {
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      background: rgba(255,255,255,0.30);
+      border: 1px solid rgba(255,255,255,0.35);
+      box-shadow: var(--shadow-soft);
+      white-space: nowrap;
+    }
+
+    .search-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
     }
 
     .field {
-      margin-bottom: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
     }
 
     .field.hidden { display: none; }
 
-    /* ─── SELECT WRAPPER (with icon) ─── */
-    .select-wrap {
-      position: relative;
-      display: flex;
-      align-items: center;
+    .field label {
+      font-size: 14px;
+      font-weight: 700;
+      color: #17342a;
+      padding-left: 4px;
     }
 
-    .select-icon {
-      position: absolute;
-      left: 16px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 20px;
-      height: 20px;
-      color: var(--purple-light);
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .select-icon svg {
-      width: 20px;
-      height: 20px;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 1.8;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
+    .glass-input,
     .glass-select {
       width: 100%;
-      height: 52px;
-      border: 1.5px solid rgba(200,196,248,0.60);
-      border-radius: 16px;
-      padding: 0 42px 0 46px;
-      background: rgba(255,255,255,0.80);
-      color: var(--text-mid);
-      font-size: 14px;
-      font-family: 'Nunito', sans-serif;
-      font-weight: 600;
+      min-height: 54px;
+      border: 1px solid rgba(255,255,255,0.38);
+      border-radius: 18px;
+      padding: 14px 16px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.56), rgba(255,255,255,0.18));
+      color: #17342a;
+      font-size: 15px;
       outline: none;
-      box-shadow: 0 2px 12px rgba(130,110,240,0.07);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), 0 8px 18px rgba(0,0,0,0.06);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       appearance: none;
       -webkit-appearance: none;
-      cursor: pointer;
-      transition: border-color 0.2s, box-shadow 0.2s;
+      background-image:
+        linear-gradient(45deg, transparent 50%, rgba(23,52,42,0.65) 50%),
+        linear-gradient(135deg, rgba(23,52,42,0.65) 50%, transparent 50%),
+        linear-gradient(135deg, rgba(255,255,255,0.56), rgba(255,255,255,0.18));
+      background-position:
+        calc(100% - 22px) calc(50% - 3px),
+        calc(100% - 16px) calc(50% - 3px),
+        0 0;
+      background-size: 6px 6px, 6px 6px, 100% 100%;
+      background-repeat: no-repeat;
     }
 
-    .glass-select:focus {
-      border-color: var(--purple-light);
-      box-shadow: 0 0 0 4px rgba(168,159,245,0.18);
+    .glass-select:focus,
+    .glass-input:focus {
+      border-color: rgba(95,230,221,0.82);
+      box-shadow: 0 0 0 5px rgba(95,230,221,0.12), inset 0 1px 0 rgba(255,255,255,0.55);
     }
 
-    .chevron-icon {
-      position: absolute;
-      right: 16px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--purple-light);
-      pointer-events: none;
-    }
-
-    .chevron-icon svg {
-      width: 18px;
-      height: 18px;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 2.2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    /* ─── BUTTON ROW ─── */
     .button-row {
       display: flex;
-      gap: 12px;
-      margin-top: 4px;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
     }
 
     .glass-btn {
-      flex: 1;
-      height: 50px;
       border: none;
       cursor: pointer;
+      min-height: 50px;
+      padding: 13px 18px;
       border-radius: 999px;
       font-size: 14px;
       font-weight: 800;
-      font-family: 'Nunito', sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      transition: transform 0.15s, box-shadow 0.15s;
+      color: #163029;
+      background: linear-gradient(135deg, rgba(255,255,255,0.58), rgba(255,255,255,0.20));
+      border: 1px solid rgba(255,255,255,0.35);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(12px);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
     }
 
-    .glass-btn:active { transform: scale(0.97); }
+    .glass-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 26px rgba(0,0,0,0.10);
+    }
 
     .glass-btn.primary {
-      background: linear-gradient(90deg, #8fd7f8 0%, #aec6fd 50%, #c4b5fd 100%);
-      color: #2d2a6e;
-      box-shadow: 0 6px 20px rgba(140,200,255,0.40);
+      color: white;
+      background: linear-gradient(135deg, rgba(140,105,255,0.92), rgba(101,87,247,0.76));
     }
 
     .glass-btn.secondary {
-      background: rgba(255,255,255,0.70);
-      border: 1.5px solid rgba(200,196,248,0.70);
-      color: var(--purple-mid);
-      box-shadow: 0 4px 14px rgba(130,110,240,0.08);
+      color: white;
+      background: linear-gradient(135deg, rgba(95,230,221,0.94), rgba(72,211,202,0.72));
     }
 
     .glass-btn.tertiary {
-      background: linear-gradient(90deg, #c4b5fd 0%, #b8aff5 100%);
-      color: white;
-      box-shadow: 0 6px 18px rgba(160,140,255,0.35);
-    }
-
-    .glass-btn svg {
-      width: 16px;
-      height: 16px;
-      flex-shrink: 0;
-    }
-
-    /* ─── STATUS BADGE ─── */
-    .status-badge, .mode-badge {
-      font-size: 12px;
-      font-weight: 700;
-      padding: 5px 12px;
-      border-radius: 999px;
-      background: rgba(200,196,248,0.35);
-      color: var(--purple-mid);
-      border: 1px solid rgba(200,196,248,0.50);
-    }
-
-    /* ─── CALENDAR CARD ─── */
-    .calendar-card {
-      background: rgba(255,255,255,0.68);
-      border-radius: 28px;
-      border: 1.5px solid rgba(255,255,255,0.90);
-      box-shadow: 0 8px 32px rgba(100,90,200,0.10);
-      padding: 20px;
-      margin-bottom: 20px;
-      backdrop-filter: blur(20px);
-    }
-
-    .cal-header {
-      font-size: 22px;
-      font-weight: 900;
-      color: var(--purple-dark);
-      margin-bottom: 16px;
-    }
-
-    .cal-grid {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 2px;
-    }
-
-    .cal-day-name {
-      text-align: center;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--text-light);
-      padding: 4px 0 8px;
-      text-transform: lowercase;
-    }
-
-    .cal-day {
-      text-align: center;
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--purple-dark);
-      padding: 7px 2px;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: background 0.15s;
-    }
-
-    .cal-day:hover { background: rgba(168,159,245,0.18); }
-
-    .cal-day.today {
-      background: linear-gradient(135deg, var(--purple-mid), var(--purple-light));
-      color: white;
-      box-shadow: 0 4px 12px rgba(130,110,240,0.30);
-    }
-
-    .cal-day.other-month {
-      color: rgba(168,159,245,0.35);
-    }
-
-    /* ─── RESULT SECTION TITLE ─── */
-    .result-section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 14px;
-    }
-
-    .result-section-header h2 {
-      font-size: 16px;
-      font-weight: 800;
-      color: var(--purple-dark);
-    }
-
-    /* ─── RESULT GRID ─── */
-    .result-scroll {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-
-    .result-item {
-      background: rgba(255,255,255,0.75);
-      border-radius: 18px;
-      border: 1.5px solid rgba(255,255,255,0.90);
-      box-shadow: 0 4px 16px rgba(100,90,200,0.09);
-      padding: 14px 12px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .result-title {
-      font-size: 13px;
-      font-weight: 800;
-      color: var(--purple-dark);
-      margin-bottom: 6px;
-      line-height: 1.3;
-    }
-
-    .result-badge {
-      display: inline-block;
-      font-size: 10px;
-      font-weight: 800;
-      padding: 2px 7px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, var(--purple-mid), var(--purple-light));
-      color: white;
-      margin-bottom: 6px;
-    }
-
-    .result-detail {
-      font-size: 11.5px;
-      color: var(--text-mid);
-      line-height: 1.55;
-      font-weight: 600;
-    }
-
-    .empty-state {
-      grid-column: 1 / -1;
-      text-align: center;
-      padding: 28px 20px;
-      border-radius: 18px;
-      color: var(--text-mid);
-      background: rgba(255,255,255,0.50);
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    /* ─── HELPER NOTE ─── */
-    .helper-note { display: none; }
-
-    /* ─── LEGACY SECTIONS HIDDEN ─── */
-    .glass-panel.hero,
-    .guide-card,
-    .footer { display: none; }
-
-    /* ─── LAYOUT override: stack vertically ─── */
-    .layout {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .search-card {
-      background: transparent;
-      border: none;
-      box-shadow: none;
-      padding: 0;
+      color: #604700;
+      background: linear-gradient(135deg, rgba(255,245,213,0.98), rgba(255,242,190,0.76));
     }
 
     .result-card {
-      background: transparent;
-      border: none;
-      box-shadow: none;
-      padding: 0;
-      min-height: unset;
+      min-height: 520px;
+      display: flex;
+      flex-direction: column;
     }
 
-    /* ─── SECTION TITLE inside search ─── */
-    .section-title { display: none; }
+    .result-scroll {
+      display: grid;
+      gap: 14px;
+      overflow: auto;
+      padding-right: 4px;
+    }
 
-    .loading { color: var(--purple-mid); font-weight: 700; }
-    .error { color: #e05555; font-weight: 700; }
+    .result-item {
+      position: relative;
+      border-radius: 22px;
+      padding: 16px 18px;
+      border: 1px solid rgba(255,255,255,0.36);
+      background: linear-gradient(135deg, rgba(255,255,255,0.46), rgba(255,255,255,0.18));
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
 
-    /* ─── BG ORBS (subtle) ─── */
-    .bg-orb { display: none; }
+    .result-item::before {
+      content: "";
+      position: absolute;
+      inset: auto auto 0 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, rgba(95,230,221,0.9), rgba(140,105,255,0.8));
+    }
+
+    .result-title {
+      margin: 0 0 8px;
+      font-size: 18px;
+      font-weight: 800;
+      color: #163029;
+    }
+
+    .result-detail {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+      white-space: pre-line;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 28px 20px;
+      border-radius: 24px;
+      color: var(--muted);
+      border: 1px solid rgba(255,255,255,0.34);
+      background: linear-gradient(135deg, rgba(255,255,255,0.38), rgba(255,255,255,0.16));
+      box-shadow: var(--shadow-soft);
+      line-height: 1.8;
+    }
+
+    .helper-note {
+      margin-top: 12px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--muted);
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.28);
+    }
+
+    .guide-card {
+      margin-top: 22px;
+    }
+
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .guide-item {
+      border-radius: 20px;
+      padding: 18px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.42), rgba(255,255,255,0.16));
+      border: 1px solid rgba(255,255,255,0.32);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .guide-item h4 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      color: #17342a;
+    }
+
+    .guide-item p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    .footer {
+      max-width: var(--max);
+      margin: 18px auto 0;
+      padding: 0 20px 28px;
+      font-size: 12.8px;
+      color: rgba(62,82,74,0.88);
+      line-height: 1.8;
+      text-align: center;
+    }
+
+    .loading { color: #8f6900; font-weight: 700; }
+    .error { color: #932520; font-weight: 700; }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .layout,
+      .guide-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .result-card {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        padding: 16px 14px 28px;
+      }
+
+      .hero,
+      .search-card,
+      .result-card,
+      .guide-card {
+        padding: 18px;
+      }
+
+      .hero-main h1 {
+        font-size: 29px;
+      }
+
+      .brand {
+        align-items: flex-start;
+      }
+
+      .brand-mark {
+        width: 72px;
+        height: 72px;
+      }
+
+      .button-row .glass-btn {
+        width: 100%;
+      }
+
+      .section-title {
+        flex-direction: column;
+      }
+
+      .status-badge,
+      .mode-badge {
+        white-space: normal;
+      }
+    }
   </style>
 </head>
 <body>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-orb orb-3"></div>
+
+  <div class="topbar">Sistem Informasi Ketersediaan Ruang • Program Studi Teknologi Informasi • Universitas Muhammadiyah Yogyakarta</div>
 
   <div class="container">
+    <section class="glass-panel hero">
+      <div class="hero-grid">
+        <div class="hero-main">
+          <div class="brand">
+            <div class="brand-mark">
+              <img src="assets/logo-ti-umy.png?v=3" alt="Logo TI UMY" />
+            </div>
+            <div>
+              
+              <div class="brand-title">Program Studi Teknologi Informasi<br>Universitas Muhammadiyah Yogyakarta</div>
+            </div>
+          </div>
 
-    <!-- ─── HEADER ─── -->
-    <div class="app-header">
-      <div class="app-header-icon">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/>
-          <path d="M9 21V12h6v9" fill="rgba(255,255,255,0.5)"/>
-        </svg>
-      </div>
-      <div class="app-header-text">
-        <h1>Ruang Kuliah</h1>
-        <p>Ketersediaan Ruang Perkuliahan</p>
-      </div>
-    </div>
+          <h1>Ketersediaan Ruang Perkuliahan</h1>
+          <p>
+            Pengguna dapat mencari <strong>jam kosong berdasarkan hari dan ruang</strong> atau
+            <strong>ruangan kosong berdasarkan hari dan jam</strong>.
+          </p>
 
-    <!-- ─── SEARCH CARD ─── -->
-    <div class="main-card">
-      <!-- Mode Pencarian -->
-      <div class="field">
-        <span class="field-label">Mode Pencarian</span>
-        <div class="select-wrap">
-          <span class="select-icon">
-            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          </span>
-          <select id="mode" class="glass-select">
-            <option value="" disabled selected>Pilih mode pencarian...</option>
-            <option value="hari-ruang">Berdasarkan hari dan ruang</option>
-            <option value="hari-jam">Berdasarkan hari dan jam</option>
-          </select>
-          <span class="chevron-icon">
-            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-          </span>
+          <div class="pill-group">
+            <div class="pill accent-purple">Hari + Ruang → Jam Kosong</div>
+            <div class="pill accent-cyan">Hari + Jam → Ruang Kosong</div>
+            <div class="pill accent-mint">Data dari Spreadsheet</div>
+          </div>
         </div>
-      </div>
 
-      <!-- Hari -->
-      <div class="field">
-        <span class="field-label">Hari</span>
-        <div class="select-wrap">
-          <span class="select-icon">
-            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          </span>
-          <select id="hari" class="glass-select">
-            <option value="" disabled selected>Pilih hari...</option>
-          </select>
-          <span class="chevron-icon">
-            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-          </span>
+        <aside class="hero-side">
+          <h3>Fitur Aplikasi</h3>
+          <div class="feature-list">
+            <div class="feature-item">
+              <div class="feature-icon icon-red">1</div>
+              <div>
+                <strong>Pencarian dua mode</strong>
+                <span>Pilih pencarian berdasarkan hari & ruang, atau berdasarkan hari & jam.</span>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon icon-yellow">2</div>
+              <div>
+                <strong>Update data fleksibel</strong>
+                <span>Jadwal tetap diambil dari Google Spreadsheet sehingga mudah diperbarui kapan saja.</span>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon icon-green">3</div>
+              <div>
+                <strong>Mudah digunakan</strong>
+                <span>Masukan pilihan lalu keluar hasil pencarian secara update.</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="layout">
+      <section class="search-card">
+        <div class="section-title">
+          <div>
+            <h2>Panel Pencarian</h2>
+            <p>Tentukan mode pencarian dan parameter yang diperlukan untuk menampilkan ketersediaan ruangan.</p>
+          </div>
+          <div id="status" class="status-badge">Siap digunakan</div>
         </div>
-      </div>
 
-      <!-- Ruang -->
-      <div class="field" id="fieldRuang">
-        <span class="field-label">Ruang</span>
-        <div class="select-wrap">
-          <span class="select-icon">
-            <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
-          </span>
-          <select id="ruang" class="glass-select">
-            <option value="" disabled selected>Pilih ruang...</option>
-          </select>
-          <span class="chevron-icon">
-            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-          </span>
+        <div class="search-grid">
+          <div class="field">
+            <label for="mode">Mode Pencarian</label>
+            <select id="mode" class="glass-select">
+              <option value="hari-ruang">Berdasarkan hari dan ruang</option>
+              <option value="hari-jam">Berdasarkan hari dan jam</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="hari">Hari</label>
+            <select id="hari" class="glass-select"></select>
+          </div>
+
+          <div class="field" id="fieldRuang">
+            <label for="ruang">Ruang</label>
+            <select id="ruang" class="glass-select"></select>
+          </div>
+
+          <div class="field hidden" id="fieldJam">
+            <label for="jam">Jam</label>
+            <select id="jam" class="glass-select"></select>
+          </div>
+
+          <div class="button-row">
+            <button class="glass-btn primary" id="btnCek">Tampilkan Hasil</button>
+            <button class="glass-btn secondary" id="btnNow">Cek Kondisi Saat Ini</button>
+            <button class="glass-btn tertiary" id="btnRefresh">Perbarui Data</button>
+          </div>
+
+          <div class="helper-note">
+            <strong>Petunjuk cepat:</strong> jika memilih mode <em>hari dan ruang</em>, sistem akan menampilkan
+            daftar <strong>jam yang kosong</strong>. Jika memilih mode <em>hari dan jam</em>, sistem akan menampilkan
+            daftar <strong>ruangan yang kosong</strong>.
+          </div>
         </div>
-      </div>
+      </section>
 
-      <!-- Jam (hidden by default) -->
-      <div class="field hidden" id="fieldJam">
-        <span class="field-label">Jam</span>
-        <div class="select-wrap">
-          <span class="select-icon">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </span>
-          <select id="jam" class="glass-select">
-            <option value="" disabled selected>Pilih jam...</option>
-          </select>
-          <span class="chevron-icon">
-            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-          </span>
+      <section class="result-card">
+        <div class="section-title">
+          <div>
+            <h2 id="resultTitle">Daftar Jam Kosong</h2>
+            <p id="resultDesc">Sistem akan menampilkan hasil ketersediaan sesuai mode pencarian yang dipilih.</p>
+          </div>
+          <div id="modeBadge" class="mode-badge">Mode: Hari dan Ruang</div>
         </div>
-      </div>
 
-      <!-- Buttons -->
-      <div class="button-row">
-        <button class="glass-btn primary" id="btnCek">
-          <svg fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          Tampilkan Hasil
-        </button>
-        <button class="glass-btn tertiary" id="btnRefresh">
-          <svg fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg>
-          Perbarui Data
-        </button>
-      </div>
-
-      <!-- hidden status for JS -->
-      <div id="status" style="display:none"></div>
-      <div id="modeBadge" style="display:none"></div>
-    </div>
-
-    <!-- ─── CALENDAR CARD ─── -->
-    <div class="calendar-card" id="calendarCard">
-      <div class="cal-header" id="calMonthTitle"></div>
-      <div class="cal-grid" id="calGrid"></div>
-    </div>
-
-    <!-- ─── RESULTS ─── -->
-    <div class="result-section-header">
-      <h2 id="resultTitle">Ruangan Tersedia</h2>
-      <div id="resultStatusBadge" class="status-badge">—</div>
-    </div>
-    <div id="resultList" class="result-scroll"></div>
-
-    <!-- legacy hidden elements for JS compatibility -->
-    <div class="layout" style="display:none">
-      <section class="search-card" style="display:none"></section>
-      <section class="result-card" style="display:none">
-        <div class="section-title"><div><h2 id="resultTitleHidden"></h2><p id="resultDesc"></p></div></div>
+        <div id="resultList" class="result-scroll"></div>
       </section>
     </div>
-    <button id="btnNow" style="display:none"></button>
+
+    <section class="guide-card">
+      <div class="section-title">
+        <div>
+          <h2>Petunjuk Singkat</h2>
+          <p>Tiga langkah mudah untuk menggunakan aplikasi.</p>
+        </div>
+      </div>
+
+      <div class="guide-grid">
+        <div class="guide-item">
+          <h4>1. Pilih mode</h4>
+          <p>Pilih apakah Anda ingin mencari jam kosong pada ruang tertentu, atau mencari ruangan kosong pada jam tertentu.</p>
+        </div>
+        <div class="guide-item">
+          <h4>2. Tentukan filter</h4>
+          <p>Masukkan hari dan ruang, atau hari dan jam, sesuai mode yang aktif pada panel pencarian.</p>
+        </div>
+        <div class="guide-item">
+          <h4>3. Lihat hasil</h4>
+          <p>Hasil akan langsung muncul dalam daftar yang lebih visual dan mudah dibaca oleh mahasiswa.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="footer">
+    Catatan teknis: aplikasi ini membaca data CSV publik dari Google Spreadsheet.
+    Jika data di spreadsheet diperbarui, gunakan tombol <strong>Perbarui Data</strong>
+    agar aplikasi memuat data terbaru.
   </div>
 
   <script>
@@ -542,18 +777,41 @@
 
     const DAYS = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
     const TIME_SLOTS = [
-      '07.00 - 07.50','07.50 - 08.40','08.50 - 09.40','09.40 - 10.30',
-      '10.40 - 11.30','12.10 - 13.10','13.20 - 14.10','14.10 - 15.00',
-      '15.30 - 16.20','16.20 - 17.10','17.10 - 18.00','18.30 - 19.20',
-      '19.20 - 20.10','20.10 - 21.00'
+      '07.00 - 07.50',
+      '07.50 - 08.40',
+      '08.50 - 09.40',
+      '09.40 - 10.30',
+      '10.40 - 11.30',
+      '12.10 - 13.10',
+      '13.20 - 14.10',
+      '14.10 - 15.00',
+      '15.30 - 16.20',
+      '16.20 - 17.10',
+      '17.10 - 18.00',
+      '18.30 - 19.20',
+      '19.20 - 20.10',
+      '20.10 - 21.00'
     ];
 
     const ROOMS = [
-      'RKBesar/F6.001','F6.002','F6.003','F6.004','F6.101',
-      'F6.102','F6.103','F6.202','F6.203','F4.001','F4.002','F4.003'
+      'RKBesar/F6.001',
+      'F6.002',
+      'F6.003',
+      'F6.004',
+      'F6.101',
+      'F6.102',
+      'F6.103',
+      'F6.202',
+      'F6.203',
+      'F4.001',
+      'F4.002',
+      'F4.003'
     ];
 
-    const state = { rows: [], occupiedMap: new Map() };
+    const state = {
+      rows: [],
+      occupiedMap: new Map()
+    };
 
     const els = {
       mode: document.getElementById('mode'),
@@ -569,97 +827,71 @@
       resultTitle: document.getElementById('resultTitle'),
       resultDesc: document.getElementById('resultDesc'),
       resultList: document.getElementById('resultList'),
-      modeBadge: document.getElementById('modeBadge'),
-      resultStatusBadge: document.getElementById('resultStatusBadge')
+      modeBadge: document.getElementById('modeBadge')
     };
 
-    // ─── CALENDAR ───
-    function renderCalendar() {
-      const now = new Date();
-      const year = now.getFullYear();
-      const month = now.getMonth();
-      const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-      const dayNames = ['mo','tu','we','th','fr','su','sa'];
-
-      document.getElementById('calMonthTitle').textContent = `${monthNames[month]} ${year}`;
-
-      const grid = document.getElementById('calGrid');
-      grid.innerHTML = '';
-
-      // day name headers
-      dayNames.forEach(d => {
-        const el = document.createElement('div');
-        el.className = 'cal-day-name';
-        el.textContent = d;
-        grid.appendChild(el);
-      });
-
-      // first day of month (0=Sun..6=Sat), convert to Mon-first
-      const firstDay = new Date(year, month, 1).getDay(); // 0=Sun
-      const startOffset = firstDay === 0 ? 6 : firstDay - 1; // Mon=0
-
-      const daysInMonth = new Date(year, month + 1, 0).getDate();
-      const daysInPrevMonth = new Date(year, month, 0).getDate();
-      const today = now.getDate();
-
-      // prev month fill
-      for (let i = startOffset - 1; i >= 0; i--) {
-        const el = document.createElement('div');
-        el.className = 'cal-day other-month';
-        el.textContent = daysInPrevMonth - i;
-        grid.appendChild(el);
-      }
-
-      // current month
-      for (let d = 1; d <= daysInMonth; d++) {
-        const el = document.createElement('div');
-        el.className = 'cal-day' + (d === today ? ' today' : '');
-        el.textContent = d;
-        grid.appendChild(el);
-      }
-
-      // next month fill
-      const totalCells = startOffset + daysInMonth;
-      const remaining = totalCells % 7 === 0 ? 0 : 7 - (totalCells % 7);
-      for (let d = 1; d <= remaining; d++) {
-        const el = document.createElement('div');
-        el.className = 'cal-day other-month';
-        el.textContent = d;
-        grid.appendChild(el);
-      }
-    }
-
-    // ─── HELPERS ───
     function parseCSV(text) {
       const rows = [];
-      let row = [], cell = '', inQuotes = false;
+      let row = [];
+      let cell = '';
+      let inQuotes = false;
+
       for (let i = 0; i < text.length; i++) {
-        const char = text[i], next = text[i + 1];
+        const char = text[i];
+        const next = text[i + 1];
+
         if (char === '"') {
-          if (inQuotes && next === '"') { cell += '"'; i++; }
-          else { inQuotes = !inQuotes; }
+          if (inQuotes && next === '"') {
+            cell += '"';
+            i++;
+          } else {
+            inQuotes = !inQuotes;
+          }
         } else if (char === ',' && !inQuotes) {
-          row.push(cell); cell = '';
+          row.push(cell);
+          cell = '';
         } else if ((char === '\n' || char === '\r') && !inQuotes) {
           if (char === '\r' && next === '\n') i++;
           row.push(cell);
-          if (row.some(v => String(v).trim() !== '')) rows.push(row);
-          row = []; cell = '';
-        } else { cell += char; }
+          if (row.some(value => String(value).trim() !== '')) rows.push(row);
+          row = [];
+          cell = '';
+        } else {
+          cell += char;
+        }
       }
+
       if (cell.length || row.length) {
         row.push(cell);
-        if (row.some(v => String(v).trim() !== '')) rows.push(row);
+        if (row.some(value => String(value).trim() !== '')) rows.push(row);
       }
+
       return rows;
     }
 
-    function normalizeText(v) { return String(v||'').replace(/–/g,'-').replace(/\s+/g,' ').trim(); }
-    function normalizeDay(v) {
-      const map = {senin:'Senin',selasa:'Selasa',rabu:'Rabu',kamis:'Kamis',jumat:'Jumat',sabtu:'Sabtu'};
-      return map[normalizeText(v).toLowerCase()] || v;
+    function normalizeText(value) {
+      return String(value || '')
+        .replace(/–/g, '-')
+        .replace(/\s+/g, ' ')
+        .trim();
     }
-    function normalizeTime(v) { return normalizeText(v).replace(/\s*-\s*/g,' - '); }
+
+    function normalizeDay(value) {
+      const cleaned = normalizeText(value).toLowerCase();
+      const map = {
+        senin: 'Senin',
+        selasa: 'Selasa',
+        rabu: 'Rabu',
+        kamis: 'Kamis',
+        jumat: 'Jumat',
+        sabtu: 'Sabtu'
+      };
+      return map[cleaned] || value;
+    }
+
+    function normalizeTime(value) {
+      return normalizeText(value).replace(/\s*-\s*/g, ' - ');
+    }
 
     function buildRowsFromNormalizedSheet(rawRows) {
       const headers = rawRows[0].map(h => normalizeText(h).toLowerCase());
@@ -667,7 +899,9 @@
       const idxJam = headers.findIndex(h => h === 'jam');
       const idxRuang = headers.findIndex(h => h === 'ruang');
       const idxMatkul = headers.findIndex(h => h.includes('mata kuliah') || h === 'jadwal');
+
       if (idxHari === -1 || idxJam === -1 || idxRuang === -1) return null;
+
       return rawRows.slice(1).map(row => ({
         hari: normalizeDay(row[idxHari]),
         jam: normalizeTime(row[idxJam]),
@@ -676,62 +910,82 @@
       })).filter(item => item.hari && item.jam && item.ruang);
     }
 
-    function buildRowsFromWideSheet(rawRows, selectedDay='Senin') {
+    function buildRowsFromWideSheet(rawRows, selectedDay = 'Senin') {
       const headerRow = rawRows.find(row => row.some(cell => normalizeText(cell).toLowerCase() === 'jam'));
       const headerIndex = rawRows.indexOf(headerRow);
       if (!headerRow || headerIndex === -1) return [];
-      const roomHeaders = headerRow.slice(1).map(v => normalizeText(v));
+
+      const roomHeaders = headerRow.slice(1).map(value => normalizeText(value));
       const results = [];
-      for (let i = headerIndex+1; i < rawRows.length; i++) {
+
+      for (let i = headerIndex + 1; i < rawRows.length; i++) {
         const jam = normalizeTime(rawRows[i][0]);
         if (!jam) continue;
-        for (let j = 1; j < roomHeaders.length+1; j++) {
+
+        for (let j = 1; j < roomHeaders.length + 1; j++) {
           const value = normalizeText(rawRows[i][j]);
-          if (value) results.push({ hari: selectedDay, jam, ruang: roomHeaders[j-1], mataKuliah: value });
+          if (value) {
+            results.push({
+              hari: selectedDay,
+              jam,
+              ruang: roomHeaders[j - 1],
+              mataKuliah: value
+            });
+          }
         }
       }
+
       return results;
     }
 
     function buildOccupiedMap(rows) {
       const map = new Map();
-      rows.forEach(item => map.set(`${item.hari}|${item.jam}|${item.ruang}`, item.mataKuliah || 'Terisi'));
+      rows.forEach(item => {
+        const key = `${item.hari}|${item.jam}|${item.ruang}`;
+        map.set(key, item.mataKuliah || 'Terisi');
+      });
       return map;
     }
 
-    function setStatus(message) {
-      if (els.resultStatusBadge) els.resultStatusBadge.textContent = message;
+    function setStatus(message, type = 'ready') {
+      els.status.textContent = message;
+      if (type === 'error') {
+        els.status.style.background = 'linear-gradient(135deg, rgba(255,232,230,0.96), rgba(255,219,217,0.76))';
+        els.status.style.color = '#932520';
+      } else if (type === 'loading') {
+        els.status.style.background = 'linear-gradient(135deg, rgba(255,245,213,0.98), rgba(255,241,185,0.78))';
+        els.status.style.color = '#8f6900';
+      } else {
+        els.status.style.background = 'linear-gradient(135deg, rgba(255,255,255,0.56), rgba(255,255,255,0.22))';
+        els.status.style.color = '#17342a';
+      }
     }
 
     function fillSelectOptions() {
-      els.hari.innerHTML = '<option value="" disabled>Pilih hari...</option>' + DAYS.map(d => `<option value="${d}">${d}</option>`).join('');
-      els.jam.innerHTML = '<option value="" disabled>Pilih jam...</option>' + TIME_SLOTS.map(s => `<option value="${s}">${s}</option>`).join('');
-      els.ruang.innerHTML = '<option value="" disabled>Pilih ruang...</option>' + ROOMS.map(r => `<option value="${r}">${r}</option>`).join('');
+      els.hari.innerHTML = DAYS.map(day => `<option value="${day}">${day}</option>`).join('');
+      els.jam.innerHTML = TIME_SLOTS.map(slot => `<option value="${slot}">${slot}</option>`).join('');
+      els.ruang.innerHTML = ROOMS.map(room => `<option value="${room}">${room}</option>`).join('');
     }
 
     function getNowInfo() {
       const now = new Date();
-      const dayName = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'][now.getDay()];
-      const currentMinutes = now.getHours()*60 + now.getMinutes();
-      const matchedSlot = TIME_SLOTS.find(slot => {
-        const [start,end] = slot.split(' - ');
-        const [sh,sm] = start.split('.').map(Number);
-        const [eh,em] = end.split('.').map(Number);
-        return currentMinutes >= sh*60+sm && currentMinutes < eh*60+em;
-      });
-      return { hari: DAYS.includes(dayName) ? dayName : 'Senin', jam: matchedSlot || TIME_SLOTS[0], hasActiveSlot: Boolean(matchedSlot) };
-    }
+      const dayName = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'][now.getDay()];
+      const currentMinutes = now.getHours() * 60 + now.getMinutes();
 
-    // ─── SLOT BADGE (e.g. "2PM") ───
-    function slotToBadge(jam) {
-      if (!jam) return '';
-      const parts = jam.split(' - ');
-      const start = parts[0] || '';
-      const [h] = start.split('.').map(Number);
-      if (isNaN(h)) return jam;
-      const suffix = h >= 12 ? 'PM' : 'AM';
-      const h12 = h > 12 ? h - 12 : (h === 0 ? 12 : h);
-      return `${h12}${suffix}`;
+      const matchedSlot = TIME_SLOTS.find(slot => {
+        const [start, end] = slot.split(' - ');
+        const [sh, sm] = start.split('.').map(Number);
+        const [eh, em] = end.split('.').map(Number);
+        const startMin = sh * 60 + sm;
+        const endMin = eh * 60 + em;
+        return currentMinutes >= startMin && currentMinutes < endMin;
+      });
+
+      return {
+        hari: DAYS.includes(dayName) ? dayName : 'Senin',
+        jam: matchedSlot || TIME_SLOTS[0],
+        hasActiveSlot: Boolean(matchedSlot)
+      };
     }
 
     function renderResults(items, emptyMessage) {
@@ -739,10 +993,10 @@
         els.resultList.innerHTML = `<div class="empty-state">${emptyMessage}</div>`;
         return;
       }
+
       els.resultList.innerHTML = items.map(item => `
         <div class="result-item">
           <div class="result-title">${item.title}</div>
-          <span class="result-badge">${item.badge || ''}</span>
           <div class="result-detail">${item.detail}</div>
         </div>
       `).join('');
@@ -751,82 +1005,125 @@
     function updateModeUI() {
       const mode = els.mode.value;
       const isHariRuang = mode === 'hari-ruang';
+
       els.fieldRuang.classList.toggle('hidden', !isHariRuang);
       els.fieldJam.classList.toggle('hidden', isHariRuang);
-      if (els.modeBadge) els.modeBadge.textContent = isHariRuang ? 'Mode: Hari dan Ruang' : 'Mode: Hari dan Jam';
-      if (els.resultTitle) els.resultTitle.textContent = isHariRuang ? 'Jam Kosong' : 'Ruangan Tersedia';
+      els.modeBadge.textContent = isHariRuang ? 'Mode: Hari dan Ruang' : 'Mode: Hari dan Jam';
+
+      if (isHariRuang) {
+        els.resultTitle.textContent = 'Daftar Jam Kosong';
+        els.resultDesc.textContent = 'Menampilkan jam yang kosong pada ruang dan hari yang dipilih.';
+      } else {
+        els.resultTitle.textContent = 'Daftar Ruangan Kosong';
+        els.resultDesc.textContent = 'Menampilkan ruangan yang kosong pada hari dan jam yang dipilih.';
+      }
     }
 
     function applyFilter() {
       const mode = els.mode.value;
       const hari = els.hari.value;
-      if (!mode || !hari) return;
 
       if (mode === 'hari-ruang') {
         const ruang = els.ruang.value;
-        if (!ruang) return;
         const jamKosong = [];
+
         TIME_SLOTS.forEach(jam => {
-          if (!state.occupiedMap.get(`${hari}|${jam}|${ruang}`)) {
-            jamKosong.push({ title: ruang, badge: slotToBadge(jam), detail: `Ruang ini kosong pada\n${hari}, ${jam}.` });
+          const key = `${hari}|${jam}|${ruang}`;
+          const detail = state.occupiedMap.get(key);
+          if (!detail) {
+            jamKosong.push({
+              title: jam,
+              detail: `Ruang ${ruang} tersedia pada jam ini.`
+            });
           }
         });
-        renderResults(jamKosong, `Tidak ada jam kosong untuk ruang ${ruang} pada hari ${hari}.`);
+
+        renderResults(
+          jamKosong,
+          `Tidak ada jam kosong untuk ruang ${ruang} pada hari ${hari}.`
+        );
       } else {
         const jam = els.jam.value;
-        if (!jam) return;
         const ruangKosong = [];
+
         ROOMS.forEach(ruang => {
-          if (!state.occupiedMap.get(`${hari}|${jam}|${ruang}`)) {
-            ruangKosong.push({ title: ruang, badge: slotToBadge(jam), detail: `Ruang ini kosong pada\n${hari}, ${jam}.` });
+          const key = `${hari}|${jam}|${ruang}`;
+          const detail = state.occupiedMap.get(key);
+          if (!detail) {
+            ruangKosong.push({
+              title: ruang,
+              detail: `Ruang ini kosong pada ${hari}, ${jam}.`
+            });
           }
         });
-        renderResults(ruangKosong, `Tidak ada ruangan kosong pada ${hari}, ${jam}.`);
+
+        renderResults(
+          ruangKosong,
+          `Tidak ada ruangan kosong pada ${hari}, ${jam}.`
+        );
       }
     }
 
     async function loadData() {
-      setStatus('Memuat...');
-      els.resultList.innerHTML = '<div class="empty-state loading">Mengambil data dari spreadsheet...</div>';
       try {
+        setStatus('Memuat data...', 'loading');
+        els.resultList.innerHTML = '<div class="empty-state loading">Sedang mengambil data dari spreadsheet...</div>';
+
         const response = await fetch(CSV_URL, { cache: 'no-store' });
-        if (!response.ok) throw new Error(`Gagal (${response.status})`);
+        if (!response.ok) throw new Error(`Gagal mengambil CSV (${response.status})`);
+
         const text = await response.text();
         const rawRows = parseCSV(text);
-        if (!rawRows.length) throw new Error('CSV kosong.');
+        if (!rawRows.length) throw new Error('CSV kosong atau tidak dapat dibaca.');
+
         let rows = buildRowsFromNormalizedSheet(rawRows);
         if (!rows) rows = buildRowsFromWideSheet(rawRows);
+
         state.rows = rows;
         state.occupiedMap = buildOccupiedMap(rows);
-        setStatus('Data dimuat ✓');
+
+        setStatus('Data berhasil dimuat');
         applyFilter();
       } catch (error) {
-        setStatus('Gagal memuat');
-        els.resultList.innerHTML = `<div class="empty-state error">${error.message}</div>`;
+        console.error(error);
+        setStatus('Gagal memuat data', 'error');
+        els.resultList.innerHTML = `<div class="empty-state error">${error.message}<br>Periksa kembali URL CSV dan struktur spreadsheet yang digunakan.</div>`;
       }
     }
 
-    els.mode.addEventListener('change', () => { updateModeUI(); applyFilter(); });
+    els.mode.addEventListener('change', () => {
+      updateModeUI();
+      applyFilter();
+    });
+
     els.btnCek.addEventListener('click', applyFilter);
     els.btnRefresh.addEventListener('click', loadData);
     els.hari.addEventListener('change', applyFilter);
     els.ruang.addEventListener('change', applyFilter);
     els.jam.addEventListener('change', applyFilter);
-    if (els.btnNow) {
-      els.btnNow.addEventListener('click', () => {
-        const nowInfo = getNowInfo();
-        els.hari.value = nowInfo.hari;
-        if (els.mode.value === 'hari-jam') els.jam.value = nowInfo.jam;
-        applyFilter();
-      });
-    }
+
+    els.btnNow.addEventListener('click', () => {
+      const nowInfo = getNowInfo();
+      els.hari.value = nowInfo.hari;
+
+      if (els.mode.value === 'hari-jam') {
+        els.jam.value = nowInfo.jam;
+      }
+
+      applyFilter();
+
+      if (!nowInfo.hasActiveSlot) {
+        setStatus('Di luar slot kuliah, menampilkan slot terdekat');
+      } else {
+        setStatus('Menampilkan kondisi saat ini');
+      }
+    });
 
     fillSelectOptions();
     updateModeUI();
     const nowInfo = getNowInfo();
     els.hari.value = nowInfo.hari;
     els.jam.value = nowInfo.jam;
-    renderCalendar();
     loadData();
   </script>
 </body>
