@@ -554,8 +554,8 @@
   </main>
 
   <script>
-    const CSV_URL = "./jadwal_template_khusus_rapi.csv";
-    const GOOGLE_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT_k3mH4h2HsrRVHlhPZKCViPmxguEeE_KgDXB350ydLe0TOdKPkU_On4gOzSCNww/pub?output=csv";
+    const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsRN8TlhXI7CFnqgpgJTsaombzpwOKim3zMYDx00yyDDMefY82cuURulQcDO7QSQ/pub?output=csv";
+    const LOCAL_CSV_URL = "./jadwal_template_khusus_rapi.csv";
 
     let jadwalData = [];
     let selectedDateISO = "";
@@ -666,7 +666,7 @@
       try {
         let response = await fetch(CSV_URL, { cache: "no-store" });
         if (!response.ok) {
-          response = await fetch(GOOGLE_CSV_URL, { cache: "no-store" });
+          response = await fetch(LOCAL_CSV_URL, { cache: "no-store" });
         }
         if (!response.ok) throw new Error("CSV tidak dapat diakses");
         const text = await response.text();
