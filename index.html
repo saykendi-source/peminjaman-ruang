@@ -1,370 +1,871 @@
-import React, { useEffect, useMemo, useState } from "react";
-import {
-  Search,
-  CalendarDays,
-  Building2,
-  Clock,
-  CheckCircle2,
-  XCircle,
-  Filter,
-  RefreshCw,
-  Info,
-  PlusCircle,
-} from "lucide-react";
-
-const CSV_URL =
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vT_k3mH4h2HsrRVHlhPZKCViPmxguEeE_KgDXB350ydLe0TOdKPkU_On4gOzSCNww/pub?output=csv";
-
-const dayMap = {
-  Sunday: "Minggu",
-  Monday: "Senin",
-  Tuesday: "Selasa",
-  Wednesday: "Rabu",
-  Thursday: "Kamis",
-  Friday: "Jumat",
-  Saturday: "Sabtu",
-};
-
-function Card({ children, className = "" }) {
-  return <div className={`card ${className}`}>{children}</div>;
-}
-
-function Button({ children, onClick }) {
-  return (
-    <button className="btn" onClick={onClick} type="button">
-      {children}
-    </button>
-  );
-}
-
-function todayISO() {
-  return new Date().toISOString().slice(0, 10);
-}
-
-function getHariFromTanggal(tanggal) {
-  if (!tanggal) return "";
-  const date = new Date(`${tanggal}T00:00:00`);
-  const englishDay = date.toLocaleDateString("en-US", { weekday: "long" });
-  return dayMap[englishDay] || "";
-}
-
-function normalizeText(value) {
-  return String(value ?? "").trim();
-}
-
-function normalizeTime(value) {
-  const raw = normalizeText(value).replaceAll(".", ":");
-  const match = raw.match(/^(\d{1,2}):(\d{2})$/);
-  if (!match) return raw;
-  return `${match[1].padStart(2, "0")}:${match[2]}`;
-}
-
-function parseCSV(text) {
-  const rows = [];
-  let current = "";
-  let row = [];
-  let insideQuotes = false;
-
-  for (let i = 0; i < text.length; i += 1) {
-    const char = text[i];
-    const next = text[i + 1];
-
-    if (char === '"' && insideQuotes && next === '"') {
-      current += '"';
-      i += 1;
-    } else if (char === '"') {
-      insideQuotes = !insideQuotes;
-    } else if (char === "," && !insideQuotes) {
-      row.push(current);
-      current = "";
-    } else if ((char === "\n" || char === "\r") && !insideQuotes) {
-      if (char === "\r" && next === "\n") i += 1;
-      row.push(current);
-      rows.push(row);
-      row = [];
-      current = "";
-    } else {
-      current += char;
-    }
-  }
-
-  if (current.length || row.length) {
-    row.push(current);
-    rows.push(row);
-  }
-
-  if (!rows.length) return [];
-
-  const headers = rows[0].map((h) => normalizeText(h).toLowerCase());
-
-  return rows
-    .slice(1)
-    .filter((r) => r.some((c) => normalizeText(c)))
-    .map((r) => {
-      const item = {};
-      headers.forEach((h, index) => {
-        item[h] = normalizeText(r[index]);
-      });
-
-      return {
-        tipe: normalizeText(item.tipe).toLowerCase(),
-        tanggal: normalizeText(item.tanggal),
-        hari: normalizeText(item.hari),
-        ruang: normalizeText(item.ruang),
-        jam_mulai: normalizeTime(item.jam_mulai),
-        jam_selesai: normalizeTime(item.jam_selesai),
-        status: normalizeText(item.status || "Kosong"),
-        keterangan: normalizeText(item.keterangan),
-        tipe_perubahan: normalizeText(item.tipe_perubahan || item.perubahan),
-      };
-    });
-}
-
-function sameSlot(a, b) {
-  return (
-    a.ruang === b.ruang &&
-    a.jam_mulai === b.jam_mulai &&
-    a.jam_selesai === b.jam_selesai
-  );
-}
-
-function buildSchedule(data, selectedDate) {
-  const hari = getHariFromTanggal(selectedDate);
-  const template = data.filter(
-    (d) => d.tipe === "template" && d.hari.toLowerCase() === hari.toLowerCase()
-  );
-  const khusus = data.filter((d) => d.tipe === "khusus" && d.tanggal === selectedDate);
-
-  const overrideRows = khusus.filter((d) =>
-    ["override", "ubah", "ganti", ""].includes(d.tipe_perubahan.toLowerCase())
-  );
-  const tambahanRows = khusus.filter((d) =>
-    ["tambahan", "add", "baru"].includes(d.tipe_perubahan.toLowerCase())
-  );
-  const liburRows = khusus.filter((d) =>
-    ["libur", "hapus", "cancel", "batal"].includes(d.tipe_perubahan.toLowerCase())
-  );
-
-  const result = template.map((slot) => {
-    const libur = liburRows.find((k) => sameSlot(k, slot));
-    if (libur) {
-      return {
-        ...slot,
-        tanggal: selectedDate,
-        status: "Tidak Tersedia",
-        keterangan: libur.keterangan || "Libur / dibatalkan",
-        sumber: "khusus",
-      };
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ruang Kuliah - Ketersediaan Ruang Perkuliahan</title>
+  <style>
+    :root {
+      --primary: #7367f0;
+      --primary-2: #9b8cff;
+      --dark: #11194a;
+      --text: #2f3763;
+      --muted: #7b83a7;
+      --line: #e7e8f4;
+      --soft: #f4f2ff;
+      --green: #32c785;
+      --red: #ff5367;
+      --yellow: #ffb339;
+      --white: #ffffff;
+      --shadow: 0 18px 45px rgba(79, 70, 229, 0.14);
+      --small-shadow: 0 10px 25px rgba(39, 42, 80, 0.08);
     }
 
-    const override = overrideRows.find((k) => sameSlot(k, slot));
-    if (override) return { ...slot, ...override, hari, sumber: "khusus" };
+    * { box-sizing: border-box; }
 
-    return { ...slot, tanggal: selectedDate, sumber: "template" };
-  });
-
-  tambahanRows.forEach((row) => {
-    result.push({ ...row, hari, sumber: "khusus" });
-  });
-
-  return result.sort(
-    (a, b) => a.jam_mulai.localeCompare(b.jam_mulai) || a.ruang.localeCompare(b.ruang)
-  );
-}
-
-export default function App() {
-  const [data, setData] = useState([]);
-  const [selectedDate, setSelectedDate] = useState(todayISO());
-  const [room, setRoom] = useState("Semua Ruang");
-  const [status, setStatus] = useState("Semua Status");
-  const [keyword, setKeyword] = useState("");
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
-
-  async function loadData() {
-    try {
-      setLoading(true);
-      setError("");
-      const response = await fetch(CSV_URL, { cache: "no-store" });
-      if (!response.ok) throw new Error("CSV tidak dapat diakses. Pastikan Google Sheet sudah dipublish.");
-      const text = await response.text();
-      setData(parseCSV(text));
-    } catch (err) {
-      setError(err.message || "Gagal membaca data CSV.");
-    } finally {
-      setLoading(false);
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #eeedff 0%, #f8f9ff 45%, #eef8ff 100%);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 24px;
     }
-  }
 
-  useEffect(() => {
-    loadData();
-  }, []);
+    .app {
+      max-width: 980px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(255,255,255,0.7);
+      border-radius: 34px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
 
-  const hari = getHariFromTanggal(selectedDate);
-  const schedule = useMemo(() => buildSchedule(data, selectedDate), [data, selectedDate]);
-  const rooms = useMemo(
-    () => ["Semua Ruang", ...Array.from(new Set(data.map((d) => d.ruang).filter(Boolean))).sort()],
-    [data]
-  );
+    .hero-art {
+      position: absolute;
+      right: 32px;
+      top: 22px;
+      width: 310px;
+      height: 145px;
+      opacity: 0.58;
+      pointer-events: none;
+    }
 
-  const filtered = useMemo(() => {
-    return schedule.filter((item) => {
-      const matchRoom = room === "Semua Ruang" || item.ruang === room;
-      const matchStatus = status === "Semua Status" || item.status.toLowerCase() === status.toLowerCase();
-      const text = `${item.ruang} ${item.status} ${item.keterangan} ${item.jam_mulai} ${item.jam_selesai}`.toLowerCase();
-      const matchKeyword = !keyword || text.includes(keyword.toLowerCase());
-      return matchRoom && matchStatus && matchKeyword;
-    });
-  }, [schedule, room, status, keyword]);
+    .hero-art svg { width: 100%; height: 100%; }
 
-  const summary = useMemo(() => {
-    const kosong = filtered.filter((d) => d.status.toLowerCase() === "kosong").length;
-    const terpakai = filtered.filter((d) => d.status.toLowerCase() === "terpakai").length;
-    const khusus = filtered.filter((d) => d.sumber === "khusus").length;
-    return { kosong, terpakai, khusus, total: filtered.length };
-  }, [filtered]);
+    .header {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 42px;
+    }
 
-  return (
-    <div className="page">
-      <div className="container">
-        <header className="hero">
-          <div className="heroText">
-            <div className="badge">
-              <Building2 size={16} /> Sistem Informasi Ruang TI UMY
-            </div>
-            <h1>Cek Ruang Kosong</h1>
-            <p>Membaca jadwal template mingguan dan jadwal khusus berdasarkan tanggal.</p>
+    .logo {
+      width: 104px;
+      height: 104px;
+      border-radius: 24px;
+      background: linear-gradient(145deg, #f2f0ff, #ffffff);
+      display: grid;
+      place-items: center;
+      color: var(--primary);
+      box-shadow: var(--small-shadow);
+    }
+
+    .header h1 {
+      margin: 0;
+      color: var(--dark);
+      font-size: clamp(34px, 5vw, 48px);
+      line-height: 1;
+      letter-spacing: -1.4px;
+    }
+
+    .header p {
+      margin: 9px 0 0;
+      font-size: clamp(18px, 2.4vw, 25px);
+      color: #515987;
+      font-weight: 500;
+    }
+
+    .form-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 78px 1fr;
+      gap: 22px 26px;
+      align-items: end;
+    }
+
+    .icon-box {
+      height: 78px;
+      border-radius: 20px;
+      background: var(--soft);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+    }
+
+    .field label {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 9px;
+      color: var(--dark);
+      font-weight: 800;
+      font-size: 18px;
+    }
+
+    select, input {
+      width: 100%;
+      border: 2px solid var(--line);
+      border-radius: 12px;
+      padding: 14px 18px;
+      font-size: 17px;
+      color: #65709b;
+      outline: none;
+      background: #fff;
+      transition: 0.2s;
+      min-height: 56px;
+    }
+
+    select:focus, input:focus {
+      border-color: #b9b0ff;
+      box-shadow: 0 0 0 4px rgba(115, 103, 240, 0.11);
+    }
+
+    .optional-note {
+      margin-top: 7px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .calendar-box {
+      margin-top: 26px;
+      border: 2px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      background: #fff;
+    }
+
+    .calendar-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .calendar-title {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--dark);
+      font-weight: 900;
+      font-size: 30px;
+    }
+
+    .calendar-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: white;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 10px 22px rgba(115,103,240,0.28);
+    }
+
+    .month-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .mini-btn {
+      border: 0;
+      border-radius: 13px;
+      background: #f4f1ff;
+      color: var(--primary);
+      font-weight: 800;
+      padding: 13px 17px;
+      cursor: pointer;
+      min-height: 48px;
+      transition: 0.2s;
+    }
+
+    .mini-btn:hover { transform: translateY(-1px); background: #ebe6ff; }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      text-align: center;
+      gap: 8px;
+    }
+
+    .dow {
+      font-weight: 800;
+      color: #555f91;
+      padding: 12px 0;
+      border-bottom: 1px solid #edf0f8;
+    }
+
+    .day {
+      border: 0;
+      background: transparent;
+      color: var(--dark);
+      border-radius: 999px;
+      aspect-ratio: 1.4/1;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .day:hover { background: #f1efff; }
+    .day.other { color: #bdc2d7; }
+    .day.sunday { color: var(--red); }
+    .day.saturday { color: #3e4dff; }
+    .day.selected {
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: white;
+      font-weight: 900;
+      box-shadow: 0 10px 20px rgba(115,103,240,0.32);
+    }
+
+    .actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .primary-btn, .secondary-btn {
+      border-radius: 16px;
+      min-height: 64px;
+      font-size: 18px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .primary-btn {
+      border: 0;
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      box-shadow: 0 12px 25px rgba(115, 103, 240, 0.27);
+    }
+
+    .secondary-btn {
+      color: var(--primary);
+      background: white;
+      border: 2px solid #b8afff;
+    }
+
+    .primary-btn:hover, .secondary-btn:hover { transform: translateY(-2px); }
+
+    .status-info {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 16px;
+      min-height: 20px;
+    }
+
+    .result-head {
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin: 28px 0 16px;
+    }
+
+    .result-head.show { display: flex; }
+
+    .result-head h2 {
+      margin: 0;
+      color: var(--dark);
+      font-size: 25px;
+    }
+
+    .summary-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #f3f1ff;
+      color: var(--primary);
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-weight: 800;
+    }
+
+    .result-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .room-card {
+      background: white;
+      border: 1px solid #eff0f8;
+      border-radius: 15px;
+      padding: 14px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      min-height: 104px;
+      box-shadow: var(--small-shadow);
+      transition: 0.2s;
+    }
+
+    .room-card:hover { transform: translateY(-2px); }
+
+    .room-icon {
+      flex: 0 0 64px;
+      width: 64px;
+      height: 64px;
+      border-radius: 15px;
+      background: var(--soft);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+    }
+
+    .room-info { min-width: 0; flex: 1; }
+    .room-info h3 {
+      margin: 0 0 4px;
+      color: #4b3ff2;
+      font-size: 17px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .status-line {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 14px;
+      color: var(--text);
+      margin-bottom: 3px;
+    }
+
+    .dot { width: 10px; height: 10px; border-radius: 999px; display: inline-block; }
+    .dot.green { background: var(--green); }
+    .dot.red { background: var(--red); }
+    .dot.yellow { background: var(--yellow); }
+
+    .room-time {
+      font-size: 13px;
+      color: #535b85;
+      line-height: 1.35;
+    }
+
+    .source {
+      margin-top: 5px;
+      display: inline-block;
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: #edf0ff;
+      color: #5146d9;
+      font-weight: 800;
+    }
+
+    .empty {
+      display: none;
+      text-align: center;
+      background: #fff;
+      border: 1px dashed #cfd3ee;
+      color: var(--muted);
+      border-radius: 18px;
+      padding: 30px;
+      margin-top: 16px;
+    }
+
+    .empty.show { display: block; }
+
+    .legend {
+      margin-top: 28px;
+      background: #f8f7ff;
+      border-radius: 26px;
+      padding: 22px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      align-items: center;
+    }
+
+    .legend-item {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+      color: var(--dark);
+      font-weight: 900;
+    }
+
+    .legend-item span:last-child {
+      display: block;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 13px;
+      margin-top: 2px;
+    }
+
+    @media (max-width: 800px) {
+      body { padding: 14px; }
+      .app { padding: 22px; border-radius: 25px; }
+      .hero-art { display: none; }
+      .header { align-items: flex-start; }
+      .logo { width: 72px; height: 72px; border-radius: 18px; }
+      .form-grid { grid-template-columns: 1fr; gap: 16px; }
+      .icon-box { display: none; }
+      .calendar-title { font-size: 22px; }
+      .actions { grid-template-columns: 1fr; }
+      .result-grid { grid-template-columns: 1fr; }
+      .legend { grid-template-columns: 1fr; }
+      .result-head { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <main class="app">
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 520 230" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="300" y="36" width="160" height="100" rx="10" fill="#ebe8ff" stroke="#8b7cf7" stroke-width="5"/>
+        <path d="M298 60h-60v120h60V60Z" fill="#f4f2ff"/>
+        <rect x="246" y="8" width="70" height="48" fill="#fff"/>
+        <path d="M182 172c22-52 42-75 64-103 21 37 25 67 13 103h-77Z" fill="#a99cfb" opacity=".55"/>
+        <rect x="201" y="164" width="76" height="14" rx="7" fill="#8b7cf7" opacity=".45"/>
+        <path d="M367 142h50l18 48h-86l18-48Z" fill="#9487f4" opacity=".65"/>
+        <rect x="384" y="135" width="48" height="44" rx="12" fill="#7768ed" opacity=".8"/>
+        <rect x="390" y="185" width="10" height="36" rx="5" fill="#7c70e6"/>
+        <rect x="430" y="185" width="10" height="36" rx="5" fill="#7c70e6"/>
+        <path d="M55 215c88-30 133-24 190-2 62 24 144 20 224-7" stroke="#d9d5ff" stroke-width="18" stroke-linecap="round" opacity=".65"/>
+      </svg>
+    </div>
+
+    <section class="header">
+      <div class="logo">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 30.5 32 12l23 18.5" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M17 29v23h12V39h7v13h12V29" fill="currentColor" opacity=".35"/>
+          <path d="M17 29v23h12V39h7v13h12V29" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+          <path d="m42 46 13 4-13 4-13-4 13-4Z" fill="currentColor"/>
+          <path d="M55 50v8" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div>
+        <h1>Ruang Kuliah</h1>
+        <p>Ketersediaan Ruang Perkuliahan</p>
+      </div>
+    </section>
+
+    <section class="form-grid">
+      <div class="icon-box">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><path d="m21 21-4.3-4.3" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2.5"/></svg>
+      </div>
+      <div class="field">
+        <label>Mode Pencarian</label>
+        <select id="modeSearch">
+          <option value="hari_jam">Berdasarkan Hari dan Jam</option>
+          <option value="hari_ruang">Berdasarkan Hari dan Ruang</option>
+        </select>
+      </div>
+
+      <div class="icon-box">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2.2"/><path d="M16 3v4M8 3v4M3 10h18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+      </div>
+      <div class="field">
+        <label>Hari</label>
+        <select id="hariSelect">
+          <option value="Senin">Senin</option>
+          <option value="Selasa">Selasa</option>
+          <option value="Rabu">Rabu</option>
+          <option value="Kamis">Kamis</option>
+          <option value="Jumat">Jumat</option>
+          <option value="Sabtu">Sabtu</option>
+        </select>
+      </div>
+
+      <div class="icon-box">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><path d="M4 21V5a2 2 0 0 1 2-2h8v18" stroke="currentColor" stroke-width="2.2"/><path d="M14 9h4a2 2 0 0 1 2 2v10" stroke="currentColor" stroke-width="2.2"/><path d="M8 7h2M8 11h2M8 15h2M17 13h1M17 17h1M3 21h19" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+      </div>
+      <div class="field" id="dynamicField">
+        <label id="dynamicLabel">Jam</label>
+        <select id="dynamicSelect"></select>
+      </div>
+    </section>
+
+    <section class="calendar-box">
+      <div class="calendar-head">
+        <div class="calendar-title">
+          <div class="calendar-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2.2"/><path d="M16 3v4M8 3v4M3 10h18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
           </div>
-          <Button onClick={loadData}>
-            <RefreshCw size={16} /> Muat Ulang CSV
-          </Button>
-        </header>
-
-        <Card>
-          <div className="filters">
-            <div className="field">
-              <label>
-                <CalendarDays size={16} /> Tanggal
-              </label>
-              <input type="date" value={selectedDate} onChange={(e) => setSelectedDate(e.target.value)} />
-            </div>
-
-            <div className="field">
-              <label>
-                <Building2 size={16} /> Ruang
-              </label>
-              <select value={room} onChange={(e) => setRoom(e.target.value)}>
-                {rooms.map((r) => (
-                  <option key={r}>{r}</option>
-                ))}
-              </select>
-            </div>
-
-            <div className="field">
-              <label>
-                <Filter size={16} /> Status
-              </label>
-              <select value={status} onChange={(e) => setStatus(e.target.value)}>
-                <option>Semua Status</option>
-                <option>Kosong</option>
-                <option>Terpakai</option>
-                <option>Tidak Tersedia</option>
-              </select>
-            </div>
-
-            <div className="field">
-              <label>
-                <Search size={16} /> Cari
-              </label>
-              <input
-                value={keyword}
-                onChange={(e) => setKeyword(e.target.value)}
-                placeholder="Cari matkul/dosen/ruang..."
-              />
-            </div>
-          </div>
-        </Card>
-
-        <div className="summaryGrid">
-          <Card className="summaryCard">
-            <Clock className="summaryIcon muted" />
-            <div>
-              <p>Hari</p>
-              <strong>{hari}</strong>
-            </div>
-          </Card>
-          <Card className="summaryCard">
-            <CheckCircle2 className="summaryIcon green" />
-            <div>
-              <p>Kosong</p>
-              <strong>{summary.kosong}</strong>
-            </div>
-          </Card>
-          <Card className="summaryCard">
-            <XCircle className="summaryIcon red" />
-            <div>
-              <p>Terpakai</p>
-              <strong>{summary.terpakai}</strong>
-            </div>
-          </Card>
-          <Card className="summaryCard">
-            <PlusCircle className="summaryIcon indigo" />
-            <div>
-              <p>Jadwal Khusus</p>
-              <strong>{summary.khusus}</strong>
-            </div>
-          </Card>
+          <span id="monthTitle">April 2026</span>
         </div>
-
-        {error && <div className="alert error">{error}</div>}
-        {loading && <div className="alert loading">Sedang membaca CSV...</div>}
-
-        {!loading && !error && (
-          <Card className="tableCard">
-            <div className="tableWrap">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Jam</th>
-                    <th>Ruang</th>
-                    <th>Status</th>
-                    <th>Keterangan</th>
-                    <th>Sumber</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {filtered.map((item, index) => (
-                    <tr key={`${item.ruang}-${item.jam_mulai}-${index}`}>
-                      <td className="timeCell">
-                        {item.jam_mulai} - {item.jam_selesai}
-                      </td>
-                      <td>{item.ruang}</td>
-                      <td>
-                        <span className={`status ${item.status.toLowerCase().replaceAll(" ", "-")}`}>
-                          {item.status}
-                        </span>
-                      </td>
-                      <td>{item.keterangan || "-"}</td>
-                      <td>
-                        <span className={`source ${item.sumber}`}>{item.sumber}</span>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            {filtered.length === 0 && <div className="empty">Tidak ada data yang cocok.</div>}
-          </Card>
-        )}
-
-        <div className="note">
-          <Info size={20} />
-          <p>
-            Logika aplikasi: data template dibaca berdasarkan hari dari tanggal yang dipilih, lalu jadwal khusus
-            pada tanggal tersebut akan mengganti, membatalkan, atau menambahkan jadwal.
-          </p>
+        <div class="month-actions">
+          <button class="mini-btn" id="prevMonth" type="button">‹</button>
+          <button class="mini-btn" id="clearDate" type="button">Tanpa Tanggal</button>
+          <button class="mini-btn" id="todayBtn" type="button">Hari ini</button>
+          <button class="mini-btn" id="nextMonth" type="button">›</button>
         </div>
       </div>
-    </div>
-  );
-}
+      <div class="calendar-grid" id="calendarGrid"></div>
+      <div class="optional-note">Tanggal bersifat opsional. Jika tanggal tidak dipilih, aplikasi hanya membaca jadwal template mingguan.</div>
+    </section>
+
+    <section class="actions">
+      <button class="primary-btn" id="showBtn" type="button">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="m21 21-4.3-4.3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2.4"/></svg>
+        Tampilkan Hasil
+      </button>
+      <button class="secondary-btn" id="reloadBtn" type="button">
+        <svg width="27" height="27" viewBox="0 0 24 24" fill="none"><path d="M20 6v5h-5M4 18v-5h5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M6.1 9a7 7 0 0 1 11.6-2.6L20 8.5M3.9 15a7 7 0 0 0 11.6 2.6L13 15.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+        Perbarui Data
+      </button>
+    </section>
+
+    <div class="status-info" id="statusInfo">Memuat data CSV...</div>
+
+    <section class="result-head" id="resultHead">
+      <h2>Hasil Ketersediaan</h2>
+      <div class="summary-pill" id="summaryPill">0 hasil</div>
+    </section>
+
+    <section class="result-grid" id="resultGrid"></section>
+    <section class="empty" id="emptyState">Tidak ada data yang cocok dengan pencarian.</section>
+
+    <section class="legend">
+      <div class="legend-item"><span class="dot green"></span><div>Kosong <span>Ruang tersedia</span></div></div>
+      <div class="legend-item"><span class="dot yellow"></span><div>Khusus <span>Jadwal tanggal tertentu</span></div></div>
+      <div class="legend-item"><span class="dot red"></span><div>Penuh <span>Ruang tidak tersedia</span></div></div>
+    </section>
+  </main>
+
+  <script>
+    const CSV_URL = "./jadwal_template_khusus_rapi.csv";
+    const GOOGLE_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT_k3mH4h2HsrRVHlhPZKCViPmxguEeE_KgDXB350ydLe0TOdKPkU_On4gOzSCNww/pub?output=csv";
+
+    let jadwalData = [];
+    let selectedDateISO = "";
+    let currentMonth = new Date();
+
+    const dayNames = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+    const shortDayNames = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
+    const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+
+    const el = (id) => document.getElementById(id);
+
+    function normalizeText(value) {
+      return String(value ?? "").trim();
+    }
+
+    function normalizeTime(value) {
+      const raw = normalizeText(value).replaceAll(".", ":");
+      const match = raw.match(/^(\d{1,2}):(\d{2})$/);
+      if (!match) return raw;
+      return `${match[1].padStart(2, "0")}:${match[2]}`;
+    }
+
+    function toISODate(value) {
+      const raw = normalizeText(value);
+      if (!raw) return "";
+      if (/^\d{4}-\d{2}-\d{2}$/.test(raw)) return raw;
+      const parts = raw.split(/[\/\-]/).map(Number);
+      if (parts.length === 3) {
+        if (parts[0] > 1900) {
+          return `${parts[0]}-${String(parts[1]).padStart(2, "0")}-${String(parts[2]).padStart(2, "0")}`;
+        }
+        return `${parts[2]}-${String(parts[0]).padStart(2, "0")}-${String(parts[1]).padStart(2, "0")}`;
+      }
+      const date = new Date(raw);
+      if (!Number.isNaN(date.getTime())) return date.toISOString().slice(0, 10);
+      return raw;
+    }
+
+    function getHariFromTanggal(isoDate) {
+      if (!isoDate) return "";
+      const date = new Date(`${isoDate}T00:00:00`);
+      return dayNames[date.getDay()] || "";
+    }
+
+    function parseCSV(text) {
+      const rows = [];
+      let row = [];
+      let cell = "";
+      let quoted = false;
+
+      for (let i = 0; i < text.length; i++) {
+        const char = text[i];
+        const next = text[i + 1];
+
+        if (char === '"' && quoted && next === '"') {
+          cell += '"';
+          i++;
+        } else if (char === '"') {
+          quoted = !quoted;
+        } else if (char === "," && !quoted) {
+          row.push(cell);
+          cell = "";
+        } else if ((char === "\n" || char === "\r") && !quoted) {
+          if (char === "\r" && next === "\n") i++;
+          row.push(cell);
+          rows.push(row);
+          row = [];
+          cell = "";
+        } else {
+          cell += char;
+        }
+      }
+
+      if (cell.length || row.length) {
+        row.push(cell);
+        rows.push(row);
+      }
+
+      if (!rows.length) return [];
+      const headers = rows[0].map((h) => normalizeText(h).toLowerCase());
+
+      return rows.slice(1)
+        .filter((r) => r.some((c) => normalizeText(c)))
+        .map((r) => {
+          const obj = {};
+          headers.forEach((h, i) => obj[h] = normalizeText(r[i]));
+
+          return {
+            tipe: normalizeText(obj.tipe).toLowerCase(),
+            tanggal: toISODate(obj.tanggal),
+            hari: normalizeText(obj.hari),
+            ruang: normalizeText(obj.ruang),
+            jam_mulai: normalizeTime(obj.jam_mulai),
+            jam_selesai: normalizeTime(obj.jam_selesai),
+            status: normalizeText(obj.status || "Kosong"),
+            kode_mk: normalizeText(obj.kode_mk),
+            kelas: normalizeText(obj.kelas),
+            mata_kuliah: normalizeText(obj.mata_kuliah),
+            nama_dosen: normalizeText(obj.nama_dosen),
+            keterangan: normalizeText(obj.keterangan),
+            tipe_perubahan: normalizeText(obj.tipe_perubahan || obj.perubahan || "normal").toLowerCase(),
+          };
+        });
+    }
+
+    async function loadCSV() {
+      el("statusInfo").textContent = "Memuat data CSV...";
+      try {
+        let response = await fetch(CSV_URL, { cache: "no-store" });
+        if (!response.ok) {
+          response = await fetch(GOOGLE_CSV_URL, { cache: "no-store" });
+        }
+        if (!response.ok) throw new Error("CSV tidak dapat diakses");
+        const text = await response.text();
+        jadwalData = parseCSV(text);
+        el("statusInfo").textContent = `Data berhasil dimuat: ${jadwalData.length} baris.`;
+        populateDynamicOptions();
+      } catch (error) {
+        el("statusInfo").textContent = "Gagal memuat CSV. Pastikan file jadwal_template_khusus_rapi.csv berada satu folder dengan index.html atau link Google Sheet sudah dipublish.";
+      }
+    }
+
+    function sameSlot(a, b) {
+      return a.ruang === b.ruang && a.jam_mulai === b.jam_mulai && a.jam_selesai === b.jam_selesai;
+    }
+
+    function getSchedule(hari, dateISO) {
+      const template = jadwalData.filter((d) => d.tipe === "template" && d.hari.toLowerCase() === hari.toLowerCase());
+      if (!dateISO) return template.map((d) => ({ ...d, sumber: "template" }));
+
+      const khusus = jadwalData.filter((d) => d.tipe === "khusus" && d.tanggal === dateISO);
+      const overrideRows = khusus.filter((d) => ["override", "ubah", "ganti", "normal", ""].includes(d.tipe_perubahan));
+      const tambahanRows = khusus.filter((d) => ["tambahan", "add", "baru"].includes(d.tipe_perubahan));
+      const batalRows = khusus.filter((d) => ["libur", "hapus", "cancel", "batal"].includes(d.tipe_perubahan));
+
+      const result = template.map((slot) => {
+        const batal = batalRows.find((k) => sameSlot(k, slot));
+        if (batal) {
+          return { ...slot, status: "Tidak Tersedia", keterangan: batal.keterangan || "Jadwal dibatalkan", sumber: "khusus" };
+        }
+
+        const override = overrideRows.find((k) => sameSlot(k, slot));
+        if (override) return { ...slot, ...override, hari, sumber: "khusus" };
+
+        return { ...slot, sumber: "template" };
+      });
+
+      tambahanRows.forEach((row) => result.push({ ...row, hari, sumber: "khusus" }));
+      return result;
+    }
+
+    function getKeterangan(item) {
+      const detail = [];
+      if (item.kode_mk) detail.push(item.kode_mk + (item.kelas ? ` (${item.kelas})` : ""));
+      if (item.mata_kuliah) detail.push(item.mata_kuliah);
+      if (item.nama_dosen) detail.push(`Dosen: ${item.nama_dosen}`);
+      if (item.keterangan) detail.push(item.keterangan);
+      return detail.join(" • ");
+    }
+
+    function populateDynamicOptions() {
+      const mode = el("modeSearch").value;
+      const select = el("dynamicSelect");
+      select.innerHTML = "";
+
+      if (mode === "hari_jam") {
+        el("dynamicLabel").textContent = "Jam";
+        const times = [...new Set(jadwalData.filter(d => d.tipe === "template").map(d => `${d.jam_mulai} - ${d.jam_selesai}`).filter(Boolean))].sort();
+        times.forEach((time) => {
+          const opt = document.createElement("option");
+          opt.value = time;
+          opt.textContent = time;
+          select.appendChild(opt);
+        });
+      } else {
+        el("dynamicLabel").textContent = "Ruang";
+        const rooms = [...new Set(jadwalData.map(d => d.ruang).filter(Boolean))].sort();
+        rooms.forEach((room) => {
+          const opt = document.createElement("option");
+          opt.value = room;
+          opt.textContent = room;
+          select.appendChild(opt);
+        });
+      }
+    }
+
+    function statusClass(status) {
+      const s = status.toLowerCase();
+      if (s === "kosong") return "green";
+      if (s === "terpakai" || s === "tidak tersedia") return "red";
+      return "yellow";
+    }
+
+    function renderResults() {
+      const mode = el("modeSearch").value;
+      let hari = el("hariSelect").value;
+      const filterValue = el("dynamicSelect").value;
+
+      if (selectedDateISO) {
+        hari = getHariFromTanggal(selectedDateISO);
+        el("hariSelect").value = hari;
+      }
+
+      let rows = getSchedule(hari, selectedDateISO);
+
+      if (mode === "hari_jam") {
+        rows = rows.filter((r) => `${r.jam_mulai} - ${r.jam_selesai}` === filterValue);
+      } else {
+        rows = rows.filter((r) => r.ruang === filterValue);
+      }
+
+      rows = rows.sort((a, b) => a.jam_mulai.localeCompare(b.jam_mulai) || a.ruang.localeCompare(b.ruang));
+
+      const grid = el("resultGrid");
+      grid.innerHTML = "";
+
+      rows.forEach((item) => {
+        const detail = getKeterangan(item);
+        const cls = statusClass(item.status);
+        const card = document.createElement("article");
+        card.className = "room-card";
+        card.innerHTML = `
+          <div class="room-icon">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M4 21V5a2 2 0 0 1 2-2h8v18" stroke="currentColor" stroke-width="2.2"/><path d="M14 9h4a2 2 0 0 1 2 2v10" stroke="currentColor" stroke-width="2.2"/><path d="M8 7h2M8 11h2M8 15h2M17 13h1M17 17h1M3 21h19" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+          </div>
+          <div class="room-info">
+            <h3>${item.ruang || "-"}</h3>
+            <div class="status-line"><span class="dot ${cls}"></span>${item.status || "-"}</div>
+            <div class="room-time">${hari}, ${item.jam_mulai} - ${item.jam_selesai}</div>
+            ${detail ? `<div class="room-time">${detail}</div>` : ""}
+            ${item.sumber === "khusus" ? `<span class="source">Jadwal Khusus</span>` : ""}
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+
+      el("resultHead").classList.add("show");
+      const kosong = rows.filter(r => r.status.toLowerCase() === "kosong").length;
+      const khusus = rows.filter(r => r.sumber === "khusus").length;
+      el("summaryPill").textContent = `${rows.length} hasil • ${kosong} kosong • ${khusus} khusus`;
+      el("emptyState").classList.toggle("show", rows.length === 0);
+    }
+
+    function renderCalendar() {
+      const grid = el("calendarGrid");
+      grid.innerHTML = "";
+      const year = currentMonth.getFullYear();
+      const month = currentMonth.getMonth();
+      el("monthTitle").textContent = `${monthNames[month]} ${year}`;
+
+      shortDayNames.forEach((d, i) => {
+        const div = document.createElement("div");
+        div.className = "dow";
+        div.textContent = d;
+        if (i === 0) div.style.color = "var(--red)";
+        if (i === 6) div.style.color = "#3e4dff";
+        grid.appendChild(div);
+      });
+
+      const first = new Date(year, month, 1);
+      const start = new Date(year, month, 1 - first.getDay());
+
+      for (let i = 0; i < 42; i++) {
+        const date = new Date(start);
+        date.setDate(start.getDate() + i);
+        const iso = date.toISOString().slice(0, 10);
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "day";
+        if (date.getMonth() !== month) btn.classList.add("other");
+        if (date.getDay() === 0) btn.classList.add("sunday");
+        if (date.getDay() === 6) btn.classList.add("saturday");
+        if (selectedDateISO === iso) btn.classList.add("selected");
+        btn.textContent = date.getDate();
+        btn.addEventListener("click", () => {
+          selectedDateISO = iso;
+          el("hariSelect").value = getHariFromTanggal(selectedDateISO);
+          renderCalendar();
+        });
+        grid.appendChild(btn);
+      }
+    }
+
+    function setToday() {
+      const today = new Date();
+      currentMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+      selectedDateISO = today.toISOString().slice(0, 10);
+      el("hariSelect").value = getHariFromTanggal(selectedDateISO);
+      renderCalendar();
+    }
+
+    el("modeSearch").addEventListener("change", populateDynamicOptions);
+    el("showBtn").addEventListener("click", renderResults);
+    el("reloadBtn").addEventListener("click", loadCSV);
+    el("prevMonth").addEventListener("click", () => {
+      currentMonth = new Date(currentMonth.getFullYear(), currentMonth.getMonth() - 1, 1);
+      renderCalendar();
+    });
+    el("nextMonth").addEventListener("click", () => {
+      currentMonth = new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 1);
+      renderCalendar();
+    });
+    el("todayBtn").addEventListener("click", setToday);
+    el("clearDate").addEventListener("click", () => {
+      selectedDateISO = "";
+      renderCalendar();
+    });
+
+    renderCalendar();
+    loadCSV();
+  </script>
+</body>
+</html>
