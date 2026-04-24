@@ -1,1130 +1,370 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ruang Kosong TI UMY</title>
-  <style>
-    :root {
-      --umygreen: #004029;
-      --umyyellow: #F6B800;
-      --umyred: #932520;
-      --text: #17342a;
-      --muted: #587066;
-      --line: rgba(255,255,255,0.32);
-      --glass: rgba(255,255,255,0.22);
-      --glass-strong: rgba(255,255,255,0.34);
-      --shadow: 0 18px 55px rgba(0, 0, 0, 0.10);
-      --shadow-soft: 0 10px 24px rgba(0, 0, 0, 0.08);
-      --radius-xl: 32px;
-      --radius-lg: 24px;
-      --radius-md: 18px;
-      --radius-sm: 14px;
-      --max: 1260px;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Tahoma, Arial, sans-serif;
-      color: var(--text);
-      min-height: 100vh;
-      background:
-        radial-gradient(circle at 15% 20%, rgba(255,255,255,0.72), transparent 22%),
-        radial-gradient(circle at 84% 18%, rgba(246,184,0,0.32), transparent 14%),
-        radial-gradient(circle at 80% 72%, rgba(147,37,32,0.18), transparent 18%),
-        radial-gradient(circle at 68% 88%, rgba(0,64,41,0.16), transparent 14%),
-        linear-gradient(135deg, #efe6de 0%, #e9e1dc 26%, #e2e6eb 52%, #ece0d7 100%);
-      background-attachment: fixed;
-      overflow-x: hidden;
-    }
-
-    .bg-orb {
-      position: fixed;
-      border-radius: 999px;
-      filter: blur(10px);
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.9;
-    }
-
-    .orb-1 {
-      width: 220px;
-      height: 220px;
-      background: radial-gradient(circle at 35% 30%, rgba(137,111,255,0.95), rgba(137,111,255,0.22) 60%, transparent 72%);
-      top: 110px;
-      left: 7%;
-    }
-
-    .orb-2 {
-      width: 260px;
-      height: 260px;
-      background: radial-gradient(circle at 40% 35%, rgba(98,255,235,0.85), rgba(98,255,235,0.18) 60%, transparent 72%);
-      top: 180px;
-      right: 8%;
-    }
-
-    .orb-3 {
-      width: 220px;
-      height: 220px;
-      background: radial-gradient(circle at 45% 40%, rgba(255,174,225,0.55), rgba(107,235,255,0.20) 52%, transparent 72%);
-      bottom: 70px;
-      right: 14%;
-    }
-
-    .topbar {
-      position: relative;
-      z-index: 2;
-      padding: 14px 22px;
-      color: rgba(22, 44, 36, 0.88);
-      font-size: 14px;
-      letter-spacing: 0.2px;
-      text-align: center;
-      backdrop-filter: blur(12px);
-      background: rgba(255,255,255,0.18);
-      border-bottom: 1px solid rgba(255,255,255,0.28);
-    }
-
-    .container {
-      position: relative;
-      z-index: 2;
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 26px 20px 36px;
-    }
-
-    .glass-panel {
-      position: relative;
-      border-radius: var(--radius-xl);
-      background: linear-gradient(180deg, rgba(255,255,255,0.28), rgba(255,255,255,0.14));
-      border: 1px solid rgba(255,255,255,0.35);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      overflow: hidden;
-    }
-
-    .glass-panel::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background: linear-gradient(135deg, rgba(255,255,255,0.24), transparent 42%, rgba(255,255,255,0.12) 65%, transparent 100%);
-    }
-
-    .hero {
-      padding: 26px;
-      margin-bottom: 22px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.3fr 1fr;
-      gap: 22px;
-      align-items: stretch;
-    }
-
-    .hero-main,
-    .hero-side,
-    .search-card,
-    .result-card,
-    .guide-card {
-      position: relative;
-      border-radius: 28px;
-      background: rgba(255,255,255,0.16);
-      border: 1px solid rgba(255,255,255,0.35);
-      box-shadow: var(--shadow-soft);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      overflow: hidden;
-    }
-
-    .hero-main,
-    .hero-side {
-      padding: 24px;
-    }
-
-    .hero-main::after,
-    .hero-side::after,
-    .search-card::after,
-    .result-card::after,
-    .guide-card::after {
-      content: "";
-      position: absolute;
-      inset: 1px;
-      border-radius: inherit;
-      border: 1px solid rgba(255,255,255,0.18);
-      pointer-events: none;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      margin-bottom: 18px;
-    }
-
-    .brand-mark {
-      width: 88px;
-      height: 88px;
-      border-radius: 24px;
-      background: rgba(255,255,255,0.38);
-      padding: 8px;
-      display: grid;
-      place-items: center;
-      box-shadow: inset 0 1px 2px rgba(255,255,255,0.65), 0 10px 22px rgba(0,0,0,0.08);
-    }
-
-    .brand-mark img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: block;
-      background: #ffffff;
-      border-radius: 18px;
-      padding: 6px;
-    }
-
-    .brand-kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 8px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, rgba(147,37,32,0.92), rgba(246,184,0,0.92));
-      color: white;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      box-shadow: 0 10px 24px rgba(147,37,32,0.18);
-    }
-
-    .brand-title {
-      font-size: 26px;
-      font-weight: 800;
-      line-height: 1.25;
-      color: #17342a;
-    }
-
-    .hero-main h1 {
-      margin: 0 0 12px;
-      font-size: 36px;
-      line-height: 1.15;
-      color: #12271f;
-      letter-spacing: -0.5px;
-    }
-
-    .hero-main p {
-      margin: 0 0 18px;
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: 15px;
-      max-width: 760px;
-    }
-
-    .pill-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .pill {
-      padding: 12px 18px;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 700;
-      border: 1px solid rgba(255,255,255,0.35);
-      box-shadow: var(--shadow-soft);
-      color: #1d342c;
-      background: linear-gradient(135deg, rgba(255,255,255,0.55), rgba(255,255,255,0.18));
-      backdrop-filter: blur(14px);
-      min-width: 150px;
-      text-align: center;
-    }
-
-    .pill.accent-purple {
-      background: linear-gradient(135deg, rgba(140,105,255,0.80), rgba(127,97,255,0.30));
-      color: white;
-    }
-
-    .pill.accent-cyan {
-      background: linear-gradient(135deg, rgba(95,230,221,0.85), rgba(95,230,221,0.28));
-      color: white;
-      }
-
-    .pill.accent-mint {
-      background: linear-gradient(135deg, rgba(200, 230, 201, 0.90), rgba(200, 230, 201, 0.35));
-      color: white;
-    }
-
-    .hero-side h3 {
-      margin: 0 0 14px;
-      font-size: 20px;
-      color: #17342a;
-    }
-
-    .feature-list {
-      display: grid;
-      gap: 12px;
-    }
-
-    .feature-item {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      padding: 14px 14px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.24);
-      border: 1px solid rgba(255,255,255,0.32);
-    }
-
-    .feature-icon {
-      width: 32px;
-      height: 32px;
-      border-radius: 999px;
-      display: grid;
-      place-items: center;
-      color: white;
-      font-weight: 800;
-      font-size: 14px;
-      flex: 0 0 auto;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.10);
-    }
-
-    .icon-red { background: linear-gradient(135deg, rgba(140,105,255,0.80), rgba(127,97,255,0.30)); }
-    .icon-yellow { background: linear-gradient(135deg, rgba(95,230,221,0.85), rgba(95,230,221,0.28)); }
-    .icon-green { background: linear-gradient(135deg, rgba(200, 230, 201, 0.90), rgba(200, 230, 201, 0.35)); }
-
-    .feature-item strong {
-      display: block;
-      margin-bottom: 4px;
-      font-size: 15px;
-      color: #17342a;
-    }
-
-    .feature-item span {
-      font-size: 13px;
-      line-height: 1.65;
-      color: var(--muted);
-    }
-
-    .layout {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 22px;
-    }
-
-    .search-card,
-    .result-card,
-    .guide-card {
-      padding: 24px;
-    }
-
-    .section-title {
-      display: flex;
-      justify-content: space-between;
-      gap: 14px;
-      align-items: flex-start;
-      margin-bottom: 18px;
-    }
-
-    .section-title h2 {
-      margin: 0 0 6px;
-      font-size: 22px;
-      color: #17342a;
-    }
-
-    .section-title p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.7;
-    }
-
-    .status-badge, .mode-badge {
-      padding: 10px 14px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 700;
-      background: rgba(255,255,255,0.30);
-      border: 1px solid rgba(255,255,255,0.35);
-      box-shadow: var(--shadow-soft);
-      white-space: nowrap;
-    }
-
-    .search-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-    }
-
-    .field {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .field.hidden { display: none; }
-
-    .field label {
-      font-size: 14px;
-      font-weight: 700;
-      color: #17342a;
-      padding-left: 4px;
-    }
-
-    .glass-input,
-    .glass-select {
-      width: 100%;
-      min-height: 54px;
-      border: 1px solid rgba(255,255,255,0.38);
-      border-radius: 18px;
-      padding: 14px 16px;
-      background: linear-gradient(135deg, rgba(255,255,255,0.56), rgba(255,255,255,0.18));
-      color: #17342a;
-      font-size: 15px;
-      outline: none;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), 0 8px 18px rgba(0,0,0,0.06);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      appearance: none;
-      -webkit-appearance: none;
-      background-image:
-        linear-gradient(45deg, transparent 50%, rgba(23,52,42,0.65) 50%),
-        linear-gradient(135deg, rgba(23,52,42,0.65) 50%, transparent 50%),
-        linear-gradient(135deg, rgba(255,255,255,0.56), rgba(255,255,255,0.18));
-      background-position:
-        calc(100% - 22px) calc(50% - 3px),
-        calc(100% - 16px) calc(50% - 3px),
-        0 0;
-      background-size: 6px 6px, 6px 6px, 100% 100%;
-      background-repeat: no-repeat;
-    }
-
-    .glass-select:focus,
-    .glass-input:focus {
-      border-color: rgba(95,230,221,0.82);
-      box-shadow: 0 0 0 5px rgba(95,230,221,0.12), inset 0 1px 0 rgba(255,255,255,0.55);
-    }
-
-    .button-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 8px;
-    }
-
-    .glass-btn {
-      border: none;
-      cursor: pointer;
-      min-height: 50px;
-      padding: 13px 18px;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 800;
-      color: #163029;
-      background: linear-gradient(135deg, rgba(255,255,255,0.58), rgba(255,255,255,0.20));
-      border: 1px solid rgba(255,255,255,0.35);
-      box-shadow: var(--shadow-soft);
-      backdrop-filter: blur(12px);
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
-    }
-
-    .glass-btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 12px 26px rgba(0,0,0,0.10);
-    }
-
-    .glass-btn.primary {
-      color: white;
-      background: linear-gradient(135deg, rgba(140,105,255,0.92), rgba(101,87,247,0.76));
-    }
-
-    .glass-btn.secondary {
-      color: white;
-      background: linear-gradient(135deg, rgba(95,230,221,0.94), rgba(72,211,202,0.72));
-    }
-
-    .glass-btn.tertiary {
-      color: #604700;
-      background: linear-gradient(135deg, rgba(255,245,213,0.98), rgba(255,242,190,0.76));
-    }
-
-    .result-card {
-      min-height: 520px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .result-scroll {
-      display: grid;
-      gap: 14px;
-      overflow: auto;
-      padding-right: 4px;
-    }
-
-    .result-item {
-      position: relative;
-      border-radius: 22px;
-      padding: 16px 18px;
-      border: 1px solid rgba(255,255,255,0.36);
-      background: linear-gradient(135deg, rgba(255,255,255,0.46), rgba(255,255,255,0.18));
-      box-shadow: var(--shadow-soft);
-      overflow: hidden;
-    }
-
-    .result-item::before {
-      content: "";
-      position: absolute;
-      inset: auto auto 0 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, rgba(95,230,221,0.9), rgba(140,105,255,0.8));
-    }
-
-    .result-title {
-      margin: 0 0 8px;
-      font-size: 18px;
-      font-weight: 800;
-      color: #163029;
-    }
-
-    .result-detail {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.7;
-      white-space: pre-line;
-    }
-
-    .empty-state {
-      text-align: center;
-      padding: 28px 20px;
-      border-radius: 24px;
-      color: var(--muted);
-      border: 1px solid rgba(255,255,255,0.34);
-      background: linear-gradient(135deg, rgba(255,255,255,0.38), rgba(255,255,255,0.16));
-      box-shadow: var(--shadow-soft);
-      line-height: 1.8;
-    }
-
-    .helper-note {
-      margin-top: 12px;
-      padding: 14px 16px;
-      border-radius: 18px;
-      font-size: 13px;
-      line-height: 1.7;
-      color: var(--muted);
-      background: rgba(255,255,255,0.18);
-      border: 1px solid rgba(255,255,255,0.28);
-    }
-
-    .guide-card {
-      margin-top: 22px;
-    }
-
-    .guide-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-
-    .guide-item {
-      border-radius: 20px;
-      padding: 18px;
-      background: linear-gradient(135deg, rgba(255,255,255,0.42), rgba(255,255,255,0.16));
-      border: 1px solid rgba(255,255,255,0.32);
-      box-shadow: var(--shadow-soft);
-    }
-
-    .guide-item h4 {
-      margin: 0 0 8px;
-      font-size: 16px;
-      color: #17342a;
-    }
-
-    .guide-item p {
-      margin: 0;
-      font-size: 14px;
-      line-height: 1.75;
-      color: var(--muted);
-    }
-
-    .footer {
-      max-width: var(--max);
-      margin: 18px auto 0;
-      padding: 0 20px 28px;
-      font-size: 12.8px;
-      color: rgba(62,82,74,0.88);
-      line-height: 1.8;
-      text-align: center;
-    }
-
-    .loading { color: #8f6900; font-weight: 700; }
-    .error { color: #932520; font-weight: 700; }
-
-    @media (max-width: 1080px) {
-      .hero-grid,
-      .layout,
-      .guide-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .result-card {
-        min-height: auto;
-      }
-    }
-
-    @media (max-width: 720px) {
-      .container {
-        padding: 16px 14px 28px;
-      }
-
-      .hero,
-      .search-card,
-      .result-card,
-      .guide-card {
-        padding: 18px;
-      }
-
-      .hero-main h1 {
-        font-size: 29px;
-      }
-
-      .brand {
-        align-items: flex-start;
-      }
-
-      .brand-mark {
-        width: 72px;
-        height: 72px;
-      }
-
-      .button-row .glass-btn {
-        width: 100%;
-      }
-
-      .section-title {
-        flex-direction: column;
-      }
-
-      .status-badge,
-      .mode-badge {
-        white-space: normal;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="bg-orb orb-1"></div>
-  <div class="bg-orb orb-2"></div>
-  <div class="bg-orb orb-3"></div>
-
-  <div class="topbar">Sistem Informasi Ketersediaan Ruang • Program Studi Teknologi Informasi • Universitas Muhammadiyah Yogyakarta</div>
-
-  <div class="container">
-    <section class="glass-panel hero">
-      <div class="hero-grid">
-        <div class="hero-main">
-          <div class="brand">
-            <div class="brand-mark">
-              <img src="assets/logo-ti-umy.png?v=3" alt="Logo TI UMY" />
-            </div>
-            <div>
-              
-              <div class="brand-title">Program Studi Teknologi Informasi<br>Universitas Muhammadiyah Yogyakarta</div>
-            </div>
-          </div>
-
-          <h1>Ketersediaan Ruang Perkuliahan</h1>
-          <p>
-            Pengguna dapat mencari <strong>jam kosong berdasarkan hari dan ruang</strong> atau
-            <strong>ruangan kosong berdasarkan hari dan jam</strong>.
-          </p>
-
-          <div class="pill-group">
-            <div class="pill accent-purple">Hari + Ruang → Jam Kosong</div>
-            <div class="pill accent-cyan">Hari + Jam → Ruang Kosong</div>
-            <div class="pill accent-mint">Data dari Spreadsheet</div>
-          </div>
-        </div>
-
-        <aside class="hero-side">
-          <h3>Fitur Aplikasi</h3>
-          <div class="feature-list">
-            <div class="feature-item">
-              <div class="feature-icon icon-red">1</div>
-              <div>
-                <strong>Pencarian dua mode</strong>
-                <span>Pilih pencarian berdasarkan hari & ruang, atau berdasarkan hari & jam.</span>
-              </div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon icon-yellow">2</div>
-              <div>
-                <strong>Update data fleksibel</strong>
-                <span>Jadwal tetap diambil dari Google Spreadsheet sehingga mudah diperbarui kapan saja.</span>
-              </div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon icon-green">3</div>
-              <div>
-                <strong>Mudah digunakan</strong>
-                <span>Masukan pilihan lalu keluar hasil pencarian secara update.</span>
-              </div>
-            </div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <div class="layout">
-      <section class="search-card">
-        <div class="section-title">
-          <div>
-            <h2>Panel Pencarian</h2>
-            <p>Tentukan mode pencarian dan parameter yang diperlukan untuk menampilkan ketersediaan ruangan.</p>
-          </div>
-          <div id="status" class="status-badge">Siap digunakan</div>
-        </div>
-
-        <div class="search-grid">
-          <div class="field">
-            <label for="mode">Mode Pencarian</label>
-            <select id="mode" class="glass-select">
-              <option value="hari-ruang">Berdasarkan hari dan ruang</option>
-              <option value="hari-jam">Berdasarkan hari dan jam</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="hari">Hari</label>
-            <select id="hari" class="glass-select"></select>
-          </div>
-
-          <div class="field" id="fieldRuang">
-            <label for="ruang">Ruang</label>
-            <select id="ruang" class="glass-select"></select>
-          </div>
-
-          <div class="field hidden" id="fieldJam">
-            <label for="jam">Jam</label>
-            <select id="jam" class="glass-select"></select>
-          </div>
-
-          <div class="button-row">
-            <button class="glass-btn primary" id="btnCek">Tampilkan Hasil</button>
-            <button class="glass-btn secondary" id="btnNow">Cek Kondisi Saat Ini</button>
-            <button class="glass-btn tertiary" id="btnRefresh">Perbarui Data</button>
-          </div>
-
-          <div class="helper-note">
-            <strong>Petunjuk cepat:</strong> jika memilih mode <em>hari dan ruang</em>, sistem akan menampilkan
-            daftar <strong>jam yang kosong</strong>. Jika memilih mode <em>hari dan jam</em>, sistem akan menampilkan
-            daftar <strong>ruangan yang kosong</strong>.
-          </div>
-        </div>
-      </section>
-
-      <section class="result-card">
-        <div class="section-title">
-          <div>
-            <h2 id="resultTitle">Daftar Jam Kosong</h2>
-            <p id="resultDesc">Sistem akan menampilkan hasil ketersediaan sesuai mode pencarian yang dipilih.</p>
-          </div>
-          <div id="modeBadge" class="mode-badge">Mode: Hari dan Ruang</div>
-        </div>
-
-        <div id="resultList" class="result-scroll"></div>
-      </section>
-    </div>
-
-    <section class="guide-card">
-      <div class="section-title">
-        <div>
-          <h2>Petunjuk Singkat</h2>
-          <p>Tiga langkah mudah untuk menggunakan aplikasi.</p>
-        </div>
-      </div>
-
-      <div class="guide-grid">
-        <div class="guide-item">
-          <h4>1. Pilih mode</h4>
-          <p>Pilih apakah Anda ingin mencari jam kosong pada ruang tertentu, atau mencari ruangan kosong pada jam tertentu.</p>
-        </div>
-        <div class="guide-item">
-          <h4>2. Tentukan filter</h4>
-          <p>Masukkan hari dan ruang, atau hari dan jam, sesuai mode yang aktif pada panel pencarian.</p>
-        </div>
-        <div class="guide-item">
-          <h4>3. Lihat hasil</h4>
-          <p>Hasil akan langsung muncul dalam daftar yang lebih visual dan mudah dibaca oleh mahasiswa.</p>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <div class="footer">
-    Catatan teknis: aplikasi ini membaca data CSV publik dari Google Spreadsheet.
-    Jika data di spreadsheet diperbarui, gunakan tombol <strong>Perbarui Data</strong>
-    agar aplikasi memuat data terbaru.
-  </div>
-
-  <script>
-    const CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRypj3EmC8FLDdKZh4uTrqltL8tqlW01tmnnUVlBaErlNJxFPXVvxwC5zcwa1eCZw/pub?output=csv';
-
-    const DAYS = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
-    const TIME_SLOTS = [
-      '07.00 - 07.50',
-      '07.50 - 08.40',
-      '08.50 - 09.40',
-      '09.40 - 10.30',
-      '10.40 - 11.30',
-      '12.10 - 13.10',
-      '13.20 - 14.10',
-      '14.10 - 15.00',
-      '15.30 - 16.20',
-      '16.20 - 17.10',
-      '17.10 - 18.00',
-      '18.30 - 19.20',
-      '19.20 - 20.10',
-      '20.10 - 21.00'
-    ];
-
-    const ROOMS = [
-      'RKBesar/F6.001',
-      'F6.002',
-      'F6.003',
-      'F6.004',
-      'F6.101',
-      'F6.102',
-      'F6.103',
-      'F6.202',
-      'F6.203',
-      'F4.001',
-      'F4.002',
-      'F4.003'
-    ];
-
-    const state = {
-      rows: [],
-      occupiedMap: new Map()
-    };
-
-    const els = {
-      mode: document.getElementById('mode'),
-      hari: document.getElementById('hari'),
-      ruang: document.getElementById('ruang'),
-      jam: document.getElementById('jam'),
-      fieldRuang: document.getElementById('fieldRuang'),
-      fieldJam: document.getElementById('fieldJam'),
-      btnCek: document.getElementById('btnCek'),
-      btnNow: document.getElementById('btnNow'),
-      btnRefresh: document.getElementById('btnRefresh'),
-      status: document.getElementById('status'),
-      resultTitle: document.getElementById('resultTitle'),
-      resultDesc: document.getElementById('resultDesc'),
-      resultList: document.getElementById('resultList'),
-      modeBadge: document.getElementById('modeBadge')
-    };
-
-    function parseCSV(text) {
-      const rows = [];
-      let row = [];
-      let cell = '';
-      let inQuotes = false;
-
-      for (let i = 0; i < text.length; i++) {
-        const char = text[i];
-        const next = text[i + 1];
-
-        if (char === '"') {
-          if (inQuotes && next === '"') {
-            cell += '"';
-            i++;
-          } else {
-            inQuotes = !inQuotes;
-          }
-        } else if (char === ',' && !inQuotes) {
-          row.push(cell);
-          cell = '';
-        } else if ((char === '\n' || char === '\r') && !inQuotes) {
-          if (char === '\r' && next === '\n') i++;
-          row.push(cell);
-          if (row.some(value => String(value).trim() !== '')) rows.push(row);
-          row = [];
-          cell = '';
-        } else {
-          cell += char;
-        }
-      }
-
-      if (cell.length || row.length) {
-        row.push(cell);
-        if (row.some(value => String(value).trim() !== '')) rows.push(row);
-      }
-
-      return rows;
-    }
-
-    function normalizeText(value) {
-      return String(value || '')
-        .replace(/–/g, '-')
-        .replace(/\s+/g, ' ')
-        .trim();
-    }
-
-    function normalizeDay(value) {
-      const cleaned = normalizeText(value).toLowerCase();
-      const map = {
-        senin: 'Senin',
-        selasa: 'Selasa',
-        rabu: 'Rabu',
-        kamis: 'Kamis',
-        jumat: 'Jumat',
-        sabtu: 'Sabtu'
-      };
-      return map[cleaned] || value;
-    }
-
-    function normalizeTime(value) {
-      return normalizeText(value).replace(/\s*-\s*/g, ' - ');
-    }
-
-    function buildRowsFromNormalizedSheet(rawRows) {
-      const headers = rawRows[0].map(h => normalizeText(h).toLowerCase());
-      const idxHari = headers.findIndex(h => h === 'hari');
-      const idxJam = headers.findIndex(h => h === 'jam');
-      const idxRuang = headers.findIndex(h => h === 'ruang');
-      const idxMatkul = headers.findIndex(h => h.includes('mata kuliah') || h === 'jadwal');
-
-      if (idxHari === -1 || idxJam === -1 || idxRuang === -1) return null;
-
-      return rawRows.slice(1).map(row => ({
-        hari: normalizeDay(row[idxHari]),
-        jam: normalizeTime(row[idxJam]),
-        ruang: normalizeText(row[idxRuang]),
-        mataKuliah: normalizeText(row[idxMatkul])
-      })).filter(item => item.hari && item.jam && item.ruang);
-    }
-
-    function buildRowsFromWideSheet(rawRows, selectedDay = 'Senin') {
-      const headerRow = rawRows.find(row => row.some(cell => normalizeText(cell).toLowerCase() === 'jam'));
-      const headerIndex = rawRows.indexOf(headerRow);
-      if (!headerRow || headerIndex === -1) return [];
-
-      const roomHeaders = headerRow.slice(1).map(value => normalizeText(value));
-      const results = [];
-
-      for (let i = headerIndex + 1; i < rawRows.length; i++) {
-        const jam = normalizeTime(rawRows[i][0]);
-        if (!jam) continue;
-
-        for (let j = 1; j < roomHeaders.length + 1; j++) {
-          const value = normalizeText(rawRows[i][j]);
-          if (value) {
-            results.push({
-              hari: selectedDay,
-              jam,
-              ruang: roomHeaders[j - 1],
-              mataKuliah: value
-            });
-          }
-        }
-      }
-
-      return results;
-    }
-
-    function buildOccupiedMap(rows) {
-      const map = new Map();
-      rows.forEach(item => {
-        const key = `${item.hari}|${item.jam}|${item.ruang}`;
-        map.set(key, item.mataKuliah || 'Terisi');
-      });
-      return map;
-    }
-
-    function setStatus(message, type = 'ready') {
-      els.status.textContent = message;
-      if (type === 'error') {
-        els.status.style.background = 'linear-gradient(135deg, rgba(255,232,230,0.96), rgba(255,219,217,0.76))';
-        els.status.style.color = '#932520';
-      } else if (type === 'loading') {
-        els.status.style.background = 'linear-gradient(135deg, rgba(255,245,213,0.98), rgba(255,241,185,0.78))';
-        els.status.style.color = '#8f6900';
-      } else {
-        els.status.style.background = 'linear-gradient(135deg, rgba(255,255,255,0.56), rgba(255,255,255,0.22))';
-        els.status.style.color = '#17342a';
-      }
-    }
-
-    function fillSelectOptions() {
-      els.hari.innerHTML = DAYS.map(day => `<option value="${day}">${day}</option>`).join('');
-      els.jam.innerHTML = TIME_SLOTS.map(slot => `<option value="${slot}">${slot}</option>`).join('');
-      els.ruang.innerHTML = ROOMS.map(room => `<option value="${room}">${room}</option>`).join('');
-    }
-
-    function getNowInfo() {
-      const now = new Date();
-      const dayName = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'][now.getDay()];
-      const currentMinutes = now.getHours() * 60 + now.getMinutes();
-
-      const matchedSlot = TIME_SLOTS.find(slot => {
-        const [start, end] = slot.split(' - ');
-        const [sh, sm] = start.split('.').map(Number);
-        const [eh, em] = end.split('.').map(Number);
-        const startMin = sh * 60 + sm;
-        const endMin = eh * 60 + em;
-        return currentMinutes >= startMin && currentMinutes < endMin;
+import React, { useEffect, useMemo, useState } from "react";
+import {
+  Search,
+  CalendarDays,
+  Building2,
+  Clock,
+  CheckCircle2,
+  XCircle,
+  Filter,
+  RefreshCw,
+  Info,
+  PlusCircle,
+} from "lucide-react";
+
+const CSV_URL =
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vT_k3mH4h2HsrRVHlhPZKCViPmxguEeE_KgDXB350ydLe0TOdKPkU_On4gOzSCNww/pub?output=csv";
+
+const dayMap = {
+  Sunday: "Minggu",
+  Monday: "Senin",
+  Tuesday: "Selasa",
+  Wednesday: "Rabu",
+  Thursday: "Kamis",
+  Friday: "Jumat",
+  Saturday: "Sabtu",
+};
+
+function Card({ children, className = "" }) {
+  return <div className={`card ${className}`}>{children}</div>;
+}
+
+function Button({ children, onClick }) {
+  return (
+    <button className="btn" onClick={onClick} type="button">
+      {children}
+    </button>
+  );
+}
+
+function todayISO() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+function getHariFromTanggal(tanggal) {
+  if (!tanggal) return "";
+  const date = new Date(`${tanggal}T00:00:00`);
+  const englishDay = date.toLocaleDateString("en-US", { weekday: "long" });
+  return dayMap[englishDay] || "";
+}
+
+function normalizeText(value) {
+  return String(value ?? "").trim();
+}
+
+function normalizeTime(value) {
+  const raw = normalizeText(value).replaceAll(".", ":");
+  const match = raw.match(/^(\d{1,2}):(\d{2})$/);
+  if (!match) return raw;
+  return `${match[1].padStart(2, "0")}:${match[2]}`;
+}
+
+function parseCSV(text) {
+  const rows = [];
+  let current = "";
+  let row = [];
+  let insideQuotes = false;
+
+  for (let i = 0; i < text.length; i += 1) {
+    const char = text[i];
+    const next = text[i + 1];
+
+    if (char === '"' && insideQuotes && next === '"') {
+      current += '"';
+      i += 1;
+    } else if (char === '"') {
+      insideQuotes = !insideQuotes;
+    } else if (char === "," && !insideQuotes) {
+      row.push(current);
+      current = "";
+    } else if ((char === "\n" || char === "\r") && !insideQuotes) {
+      if (char === "\r" && next === "\n") i += 1;
+      row.push(current);
+      rows.push(row);
+      row = [];
+      current = "";
+    } else {
+      current += char;
+    }
+  }
+
+  if (current.length || row.length) {
+    row.push(current);
+    rows.push(row);
+  }
+
+  if (!rows.length) return [];
+
+  const headers = rows[0].map((h) => normalizeText(h).toLowerCase());
+
+  return rows
+    .slice(1)
+    .filter((r) => r.some((c) => normalizeText(c)))
+    .map((r) => {
+      const item = {};
+      headers.forEach((h, index) => {
+        item[h] = normalizeText(r[index]);
       });
 
       return {
-        hari: DAYS.includes(dayName) ? dayName : 'Senin',
-        jam: matchedSlot || TIME_SLOTS[0],
-        hasActiveSlot: Boolean(matchedSlot)
+        tipe: normalizeText(item.tipe).toLowerCase(),
+        tanggal: normalizeText(item.tanggal),
+        hari: normalizeText(item.hari),
+        ruang: normalizeText(item.ruang),
+        jam_mulai: normalizeTime(item.jam_mulai),
+        jam_selesai: normalizeTime(item.jam_selesai),
+        status: normalizeText(item.status || "Kosong"),
+        keterangan: normalizeText(item.keterangan),
+        tipe_perubahan: normalizeText(item.tipe_perubahan || item.perubahan),
+      };
+    });
+}
+
+function sameSlot(a, b) {
+  return (
+    a.ruang === b.ruang &&
+    a.jam_mulai === b.jam_mulai &&
+    a.jam_selesai === b.jam_selesai
+  );
+}
+
+function buildSchedule(data, selectedDate) {
+  const hari = getHariFromTanggal(selectedDate);
+  const template = data.filter(
+    (d) => d.tipe === "template" && d.hari.toLowerCase() === hari.toLowerCase()
+  );
+  const khusus = data.filter((d) => d.tipe === "khusus" && d.tanggal === selectedDate);
+
+  const overrideRows = khusus.filter((d) =>
+    ["override", "ubah", "ganti", ""].includes(d.tipe_perubahan.toLowerCase())
+  );
+  const tambahanRows = khusus.filter((d) =>
+    ["tambahan", "add", "baru"].includes(d.tipe_perubahan.toLowerCase())
+  );
+  const liburRows = khusus.filter((d) =>
+    ["libur", "hapus", "cancel", "batal"].includes(d.tipe_perubahan.toLowerCase())
+  );
+
+  const result = template.map((slot) => {
+    const libur = liburRows.find((k) => sameSlot(k, slot));
+    if (libur) {
+      return {
+        ...slot,
+        tanggal: selectedDate,
+        status: "Tidak Tersedia",
+        keterangan: libur.keterangan || "Libur / dibatalkan",
+        sumber: "khusus",
       };
     }
 
-    function renderResults(items, emptyMessage) {
-      if (!items.length) {
-        els.resultList.innerHTML = `<div class="empty-state">${emptyMessage}</div>`;
-        return;
-      }
+    const override = overrideRows.find((k) => sameSlot(k, slot));
+    if (override) return { ...slot, ...override, hari, sumber: "khusus" };
 
-      els.resultList.innerHTML = items.map(item => `
-        <div class="result-item">
-          <div class="result-title">${item.title}</div>
-          <div class="result-detail">${item.detail}</div>
-        </div>
-      `).join('');
+    return { ...slot, tanggal: selectedDate, sumber: "template" };
+  });
+
+  tambahanRows.forEach((row) => {
+    result.push({ ...row, hari, sumber: "khusus" });
+  });
+
+  return result.sort(
+    (a, b) => a.jam_mulai.localeCompare(b.jam_mulai) || a.ruang.localeCompare(b.ruang)
+  );
+}
+
+export default function App() {
+  const [data, setData] = useState([]);
+  const [selectedDate, setSelectedDate] = useState(todayISO());
+  const [room, setRoom] = useState("Semua Ruang");
+  const [status, setStatus] = useState("Semua Status");
+  const [keyword, setKeyword] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  async function loadData() {
+    try {
+      setLoading(true);
+      setError("");
+      const response = await fetch(CSV_URL, { cache: "no-store" });
+      if (!response.ok) throw new Error("CSV tidak dapat diakses. Pastikan Google Sheet sudah dipublish.");
+      const text = await response.text();
+      setData(parseCSV(text));
+    } catch (err) {
+      setError(err.message || "Gagal membaca data CSV.");
+    } finally {
+      setLoading(false);
     }
+  }
 
-    function updateModeUI() {
-      const mode = els.mode.value;
-      const isHariRuang = mode === 'hari-ruang';
-
-      els.fieldRuang.classList.toggle('hidden', !isHariRuang);
-      els.fieldJam.classList.toggle('hidden', isHariRuang);
-      els.modeBadge.textContent = isHariRuang ? 'Mode: Hari dan Ruang' : 'Mode: Hari dan Jam';
-
-      if (isHariRuang) {
-        els.resultTitle.textContent = 'Daftar Jam Kosong';
-        els.resultDesc.textContent = 'Menampilkan jam yang kosong pada ruang dan hari yang dipilih.';
-      } else {
-        els.resultTitle.textContent = 'Daftar Ruangan Kosong';
-        els.resultDesc.textContent = 'Menampilkan ruangan yang kosong pada hari dan jam yang dipilih.';
-      }
-    }
-
-    function applyFilter() {
-      const mode = els.mode.value;
-      const hari = els.hari.value;
-
-      if (mode === 'hari-ruang') {
-        const ruang = els.ruang.value;
-        const jamKosong = [];
-
-        TIME_SLOTS.forEach(jam => {
-          const key = `${hari}|${jam}|${ruang}`;
-          const detail = state.occupiedMap.get(key);
-          if (!detail) {
-            jamKosong.push({
-              title: jam,
-              detail: `Ruang ${ruang} tersedia pada jam ini.`
-            });
-          }
-        });
-
-        renderResults(
-          jamKosong,
-          `Tidak ada jam kosong untuk ruang ${ruang} pada hari ${hari}.`
-        );
-      } else {
-        const jam = els.jam.value;
-        const ruangKosong = [];
-
-        ROOMS.forEach(ruang => {
-          const key = `${hari}|${jam}|${ruang}`;
-          const detail = state.occupiedMap.get(key);
-          if (!detail) {
-            ruangKosong.push({
-              title: ruang,
-              detail: `Ruang ini kosong pada ${hari}, ${jam}.`
-            });
-          }
-        });
-
-        renderResults(
-          ruangKosong,
-          `Tidak ada ruangan kosong pada ${hari}, ${jam}.`
-        );
-      }
-    }
-
-    async function loadData() {
-      try {
-        setStatus('Memuat data...', 'loading');
-        els.resultList.innerHTML = '<div class="empty-state loading">Sedang mengambil data dari spreadsheet...</div>';
-
-        const response = await fetch(CSV_URL, { cache: 'no-store' });
-        if (!response.ok) throw new Error(`Gagal mengambil CSV (${response.status})`);
-
-        const text = await response.text();
-        const rawRows = parseCSV(text);
-        if (!rawRows.length) throw new Error('CSV kosong atau tidak dapat dibaca.');
-
-        let rows = buildRowsFromNormalizedSheet(rawRows);
-        if (!rows) rows = buildRowsFromWideSheet(rawRows);
-
-        state.rows = rows;
-        state.occupiedMap = buildOccupiedMap(rows);
-
-        setStatus('Data berhasil dimuat');
-        applyFilter();
-      } catch (error) {
-        console.error(error);
-        setStatus('Gagal memuat data', 'error');
-        els.resultList.innerHTML = `<div class="empty-state error">${error.message}<br>Periksa kembali URL CSV dan struktur spreadsheet yang digunakan.</div>`;
-      }
-    }
-
-    els.mode.addEventListener('change', () => {
-      updateModeUI();
-      applyFilter();
-    });
-
-    els.btnCek.addEventListener('click', applyFilter);
-    els.btnRefresh.addEventListener('click', loadData);
-    els.hari.addEventListener('change', applyFilter);
-    els.ruang.addEventListener('change', applyFilter);
-    els.jam.addEventListener('change', applyFilter);
-
-    els.btnNow.addEventListener('click', () => {
-      const nowInfo = getNowInfo();
-      els.hari.value = nowInfo.hari;
-
-      if (els.mode.value === 'hari-jam') {
-        els.jam.value = nowInfo.jam;
-      }
-
-      applyFilter();
-
-      if (!nowInfo.hasActiveSlot) {
-        setStatus('Di luar slot kuliah, menampilkan slot terdekat');
-      } else {
-        setStatus('Menampilkan kondisi saat ini');
-      }
-    });
-
-    fillSelectOptions();
-    updateModeUI();
-    const nowInfo = getNowInfo();
-    els.hari.value = nowInfo.hari;
-    els.jam.value = nowInfo.jam;
+  useEffect(() => {
     loadData();
-  </script>
-</body>
-</html>
+  }, []);
+
+  const hari = getHariFromTanggal(selectedDate);
+  const schedule = useMemo(() => buildSchedule(data, selectedDate), [data, selectedDate]);
+  const rooms = useMemo(
+    () => ["Semua Ruang", ...Array.from(new Set(data.map((d) => d.ruang).filter(Boolean))).sort()],
+    [data]
+  );
+
+  const filtered = useMemo(() => {
+    return schedule.filter((item) => {
+      const matchRoom = room === "Semua Ruang" || item.ruang === room;
+      const matchStatus = status === "Semua Status" || item.status.toLowerCase() === status.toLowerCase();
+      const text = `${item.ruang} ${item.status} ${item.keterangan} ${item.jam_mulai} ${item.jam_selesai}`.toLowerCase();
+      const matchKeyword = !keyword || text.includes(keyword.toLowerCase());
+      return matchRoom && matchStatus && matchKeyword;
+    });
+  }, [schedule, room, status, keyword]);
+
+  const summary = useMemo(() => {
+    const kosong = filtered.filter((d) => d.status.toLowerCase() === "kosong").length;
+    const terpakai = filtered.filter((d) => d.status.toLowerCase() === "terpakai").length;
+    const khusus = filtered.filter((d) => d.sumber === "khusus").length;
+    return { kosong, terpakai, khusus, total: filtered.length };
+  }, [filtered]);
+
+  return (
+    <div className="page">
+      <div className="container">
+        <header className="hero">
+          <div className="heroText">
+            <div className="badge">
+              <Building2 size={16} /> Sistem Informasi Ruang TI UMY
+            </div>
+            <h1>Cek Ruang Kosong</h1>
+            <p>Membaca jadwal template mingguan dan jadwal khusus berdasarkan tanggal.</p>
+          </div>
+          <Button onClick={loadData}>
+            <RefreshCw size={16} /> Muat Ulang CSV
+          </Button>
+        </header>
+
+        <Card>
+          <div className="filters">
+            <div className="field">
+              <label>
+                <CalendarDays size={16} /> Tanggal
+              </label>
+              <input type="date" value={selectedDate} onChange={(e) => setSelectedDate(e.target.value)} />
+            </div>
+
+            <div className="field">
+              <label>
+                <Building2 size={16} /> Ruang
+              </label>
+              <select value={room} onChange={(e) => setRoom(e.target.value)}>
+                {rooms.map((r) => (
+                  <option key={r}>{r}</option>
+                ))}
+              </select>
+            </div>
+
+            <div className="field">
+              <label>
+                <Filter size={16} /> Status
+              </label>
+              <select value={status} onChange={(e) => setStatus(e.target.value)}>
+                <option>Semua Status</option>
+                <option>Kosong</option>
+                <option>Terpakai</option>
+                <option>Tidak Tersedia</option>
+              </select>
+            </div>
+
+            <div className="field">
+              <label>
+                <Search size={16} /> Cari
+              </label>
+              <input
+                value={keyword}
+                onChange={(e) => setKeyword(e.target.value)}
+                placeholder="Cari matkul/dosen/ruang..."
+              />
+            </div>
+          </div>
+        </Card>
+
+        <div className="summaryGrid">
+          <Card className="summaryCard">
+            <Clock className="summaryIcon muted" />
+            <div>
+              <p>Hari</p>
+              <strong>{hari}</strong>
+            </div>
+          </Card>
+          <Card className="summaryCard">
+            <CheckCircle2 className="summaryIcon green" />
+            <div>
+              <p>Kosong</p>
+              <strong>{summary.kosong}</strong>
+            </div>
+          </Card>
+          <Card className="summaryCard">
+            <XCircle className="summaryIcon red" />
+            <div>
+              <p>Terpakai</p>
+              <strong>{summary.terpakai}</strong>
+            </div>
+          </Card>
+          <Card className="summaryCard">
+            <PlusCircle className="summaryIcon indigo" />
+            <div>
+              <p>Jadwal Khusus</p>
+              <strong>{summary.khusus}</strong>
+            </div>
+          </Card>
+        </div>
+
+        {error && <div className="alert error">{error}</div>}
+        {loading && <div className="alert loading">Sedang membaca CSV...</div>}
+
+        {!loading && !error && (
+          <Card className="tableCard">
+            <div className="tableWrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Jam</th>
+                    <th>Ruang</th>
+                    <th>Status</th>
+                    <th>Keterangan</th>
+                    <th>Sumber</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {filtered.map((item, index) => (
+                    <tr key={`${item.ruang}-${item.jam_mulai}-${index}`}>
+                      <td className="timeCell">
+                        {item.jam_mulai} - {item.jam_selesai}
+                      </td>
+                      <td>{item.ruang}</td>
+                      <td>
+                        <span className={`status ${item.status.toLowerCase().replaceAll(" ", "-")}`}>
+                          {item.status}
+                        </span>
+                      </td>
+                      <td>{item.keterangan || "-"}</td>
+                      <td>
+                        <span className={`source ${item.sumber}`}>{item.sumber}</span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            {filtered.length === 0 && <div className="empty">Tidak ada data yang cocok.</div>}
+          </Card>
+        )}
+
+        <div className="note">
+          <Info size={20} />
+          <p>
+            Logika aplikasi: data template dibaca berdasarkan hari dari tanggal yang dipilih, lalu jadwal khusus
+            pada tanggal tersebut akan mengganti, membatalkan, atau menambahkan jadwal.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
