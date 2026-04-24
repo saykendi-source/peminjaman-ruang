@@ -1,0 +1,1561 @@
+﻿tipe,tanggal,hari,ruang,jam_mulai,jam_selesai,status,kode_mk,kelas,mata_kuliah,nama_dosen,keterangan,tipe_perubahan
+template,,Senin,F4.001,7:00,7:50,Kosong,,,,,,normal
+template,,Senin,F4.001,7:50,8:40,Kosong,,,,,,normal
+template,,Senin,F4.001,8:50,9:40,Terpakai,TIDA04,A,Basis Data Awan,"Tri Andi, S.T., M.Kom.","TIDA04 ( A )
+Basis Data Awan
+Dosen: TA",normal
+template,,Senin,F4.001,9:40,10:30,Terpakai,TIDA04,A,Basis Data Awan,"Tri Andi, S.T., M.Kom.","TIDA04 ( A )
+Basis Data Awan
+Dosen: TA",normal
+template,,Senin,F4.001,10:40,11:30,Terpakai,TIDA04,A,Basis Data Awan,"Tri Andi, S.T., M.Kom.","TIDA04 ( A )
+Basis Data Awan
+Dosen: TA",normal
+template,,Senin,F4.001,12:10,13:10,Kosong,,,,,,normal
+template,,Senin,F4.001,13:20,14:10,Terpakai,TI406,F,Pengujian dan Penjaminan Mutu Perangkat Lunak,"Tri Andi, S.T., M.Kom.","TI406 ( F )
+Pengujian dan Penjaminan Mutu Perangkat Lunak
+Dosen: TA",normal
+template,,Senin,F4.001,14:10,15:00,Terpakai,TI406,F,Pengujian dan Penjaminan Mutu Perangkat Lunak,"Tri Andi, S.T., M.Kom.","TI406 ( F )
+Pengujian dan Penjaminan Mutu Perangkat Lunak
+Dosen: TA",normal
+template,,Senin,F4.001,15:30,16:20,Terpakai,TI406,F,Pengujian dan Penjaminan Mutu Perangkat Lunak,"Tri Andi, S.T., M.Kom.","TI406 ( F )
+Pengujian dan Penjaminan Mutu Perangkat Lunak
+Dosen: TA",normal
+template,,Senin,F4.001,16:20,17:10,Kosong,,,,,,normal
+template,,Senin,F4.001,17:10,18:00,Kosong,,,,,,normal
+template,,Senin,F4.001,18:30,19:20,Kosong,,,,,,normal
+template,,Senin,F4.001,19:20,20:10,Kosong,,,,,,normal
+template,,Senin,F4.001,20:10,21:00,Kosong,,,,,,normal
+template,,Senin,F4.002,7:00,7:50,Kosong,,,,,,normal
+template,,Senin,F4.002,7:50,8:40,Kosong,,,,,,normal
+template,,Senin,F4.002,8:50,9:40,Terpakai,TI406,A,Pengujian dan Penjaminan Mutu Perangkat Lunak,"Chayadi Oktomy N S, S.T., M.Eng. Ph.D","TI406 ( A )
+Pengujian dan Penjaminan Mutu Perangkat Lunak
+Dosen: CO",normal
+template,,Senin,F4.002,9:40,10:30,Terpakai,TI406,A,Pengujian dan Penjaminan Mutu Perangkat Lunak,"Chayadi Oktomy N S, S.T., M.Eng. Ph.D","TI406 ( A )
+Pengujian dan Penjaminan Mutu Perangkat Lunak
+Dosen: CO",normal
+template,,Senin,F4.002,10:40,11:30,Terpakai,TI406,A,Pengujian dan Penjaminan Mutu Perangkat Lunak,"Chayadi Oktomy N S, S.T., M.Eng. Ph.D","TI406 ( A )
+Pengujian dan Penjaminan Mutu Perangkat Lunak
+Dosen: CO",normal
+template,,Senin,F4.002,12:10,13:10,Kosong,,,,,,normal
+template,,Senin,F4.002,13:20,14:10,Terpakai,TI205,E,Dasar Jaringan,"Nurwahyu Alamsyah, S.Kom., M.Kom., M.I.M., Ph.D","TI205 ( E )
+Dasar Jaringan
+Dosen: NA",normal
+template,,Senin,F4.002,14:10,15:00,Terpakai,TI205,E,Dasar Jaringan,"Nurwahyu Alamsyah, S.Kom., M.Kom., M.I.M., Ph.D","TI205 ( E )
+Dasar Jaringan
+Dosen: NA",normal
+template,,Senin,F4.002,15:30,16:20,Terpakai,TI205,E,Dasar Jaringan,"Nurwahyu Alamsyah, S.Kom., M.Kom., M.I.M., Ph.D","TI205 ( E )
+Dasar Jaringan
+Dosen: NA",normal
+template,,Senin,F4.002,16:20,17:10,Terpakai,TI205,C,Dasar Jaringan,"Nurwahyu Alamsyah, S.Kom., M.Kom., M.I.M., Ph.D","TI205 ( C )
+Dasar Jaringan
+Dosen: NA",normal
+template,,Senin,F4.002,17:10,18:00,Terpakai,TI205,C,Dasar Jaringan,"Nurwahyu Alamsyah, S.Kom., M.Kom., M.I.M., Ph.D","TI205 ( C )
+Dasar Jaringan
+Dosen: NA",normal
+template,,Senin,F4.002,18:30,19:20,Terpakai,TI205,C,Dasar Jaringan,"Nurwahyu Alamsyah, S.Kom., M.Kom., M.I.M., Ph.D","TI205 ( C )
+Dasar Jaringan
+Dosen: NA",normal
+template,,Senin,F4.002,19:20,20:10,Kosong,,,,,,normal
+template,,Senin,F4.002,20:10,21:00,Kosong,,,,,,normal
+template,,Senin,F4.003,7:00,7:50,Kosong,,,,,,normal
+template,,Senin,F4.003,7:50,8:40,Kosong,,,,,,normal
+template,,Senin,F4.003,8:50,9:40,Terpakai,TI603,B,Deployment Perangkat Lunak,"Dr. Ir. Dwijoko Purbohadi, M.T.","TI603 ( B )
+Deployment Perangkat Lunak
+Dosen: DP",normal
+template,,Senin,F4.003,9:40,10:30,Terpakai,TI603,B,Deployment Perangkat Lunak,"Dr. Ir. Dwijoko Purbohadi, M.T.","TI603 ( B )
+Deployment Perangkat Lunak
+Dosen: DP",normal
+template,,Senin,F4.003,10:40,11:30,Terpakai,TI603,B,Deployment Perangkat Lunak,"Dr. Ir. Dwijoko Purbohadi, M.T.","TI603 ( B )
+Deployment Perangkat Lunak
+Dosen: DP",normal
+template,,Senin,F4.003,12:10,13:10,Kosong,,,,,,normal
+template,,Senin,F4.003,13:20,14:10,Terpakai,TI603,C,Deployment Perangkat Lunak,"Dr. Ir. Dwijoko Purbohadi, M.T.","TI603 ( C )
+Deployment Perangkat Lunak
+Dosen: DP",normal
+template,,Senin,F4.003,14:10,15:00,Terpakai,TI603,C,Deployment Perangkat Lunak,"Dr. Ir. Dwijoko Purbohadi, M.T.","TI603 ( C )
+Deployment Perangkat Lunak
+Dosen: DP",normal
+template,,Senin,F4.003,15:30,16:20,Terpakai,TI603,C,Deployment Perangkat Lunak,"Dr. Ir. Dwijoko Purbohadi, M.T.","TI603 ( C )
+Deployment Perangkat Lunak
+Dosen: DP",normal
+template,,Senin,F4.003,16:20,17:10,Kosong,,,,,,normal
+template,,Senin,F4.003,17:10,18:00,Kosong,,,,,,normal
+template,,Senin,F4.003,18:30,19:20,Kosong,,,,,,normal
+template,,Senin,F4.003,19:20,20:10,Kosong,,,,,,normal
+template,,Senin,F4.003,20:10,21:00,Kosong,,,,,,normal
+template,,Senin,F6.002,7:00,7:50,Kosong,,,,,,normal
+template,,Senin,F6.002,7:50,8:40,Kosong,,,,,,normal
+template,,Senin,F6.002,8:50,9:40,Terpakai,TI203,A,Pemrograman Dasar,"Haris Setyawan, S.T., M.Eng.","TI203 ( A )
+Pemrograman Dasar
+Dosen: HS",normal
+template,,Senin,F6.002,9:40,10:30,Terpakai,TI203,A,Pemrograman Dasar,"Haris Setyawan, S.T., M.Eng.","TI203 ( A )
+Pemrograman Dasar
+Dosen: HS",normal
+template,,Senin,F6.002,10:40,11:30,Terpakai,TI203,A,Pemrograman Dasar,"Haris Setyawan, S.T., M.Eng.","TI203 ( A )
+Pemrograman Dasar
+Dosen: HS",normal
+template,,Senin,F6.002,12:10,13:10,Kosong,,,,,,normal
+template,,Senin,F6.002,13:20,14:10,Terpakai,TI203,D,Pemrograman Dasar,"Haris Setyawan, S.T., M.Eng.","TI203 ( D )
+Pemrograman Dasar
+Dosen: HS",normal
+template,,Senin,F6.002,14:10,15:00,Terpakai,TI203,D,Pemrograman Dasar,"Haris Setyawan, S.T., M.Eng.","TI203 ( D )
+Pemrograman Dasar
+Dosen: HS",normal
+template,,Senin,F6.002,15:30,16:20,Terpakai,TI203,D,Pemrograman Dasar,"Haris Setyawan, S.T., M.Eng.","TI203 ( D )
+Pemrograman Dasar
+Dosen: HS",normal
+template,,Senin,F6.002,16:20,17:10,Terpakai,TI203,E,Pemrograman Dasar,"Haris Setyawan, S.T., M.Eng.","TI203 ( E )
+Pemrograman Dasar
+Dosen: HS",normal
+template,,Senin,F6.002,17:10,18:00,Terpakai,TI203,E,Pemrograman Dasar,"Haris Setyawan, S.T., M.Eng.","TI203 ( E )
+Pemrograman Dasar
+Dosen: HS",normal
+template,,Senin,F6.002,18:30,19:20,Terpakai,TI203,E,Pemrograman Dasar,"Haris Setyawan, S.T., M.Eng.","TI203 ( E )
+Pemrograman Dasar
+Dosen: HS",normal
+template,,Senin,F6.002,19:20,20:10,Kosong,,,,,,normal
+template,,Senin,F6.002,20:10,21:00,Kosong,,,,,,normal
+template,,Senin,F6.003,7:00,7:50,Kosong,,,,,,normal
+template,,Senin,F6.003,7:50,8:40,Kosong,,,,,,normal
+template,,Senin,F6.003,8:50,9:40,Terpakai,,,AS,,AS,normal
+template,,Senin,F6.003,9:40,10:30,Terpakai,,,AS,,AS,normal
+template,,Senin,F6.003,10:40,11:30,Terpakai,,,AS,,AS,normal
+template,,Senin,F6.003,12:10,13:10,Kosong,,,,,,normal
+template,,Senin,F6.003,13:20,14:10,Kosong,,,,,,normal
+template,,Senin,F6.003,14:10,15:00,Kosong,,,,,,normal
+template,,Senin,F6.003,15:30,16:20,Kosong,,,,,,normal
+template,,Senin,F6.003,16:20,17:10,Kosong,,,,,,normal
+template,,Senin,F6.003,17:10,18:00,Kosong,,,,,,normal
+template,,Senin,F6.003,18:30,19:20,Kosong,,,,,,normal
+template,,Senin,F6.003,19:20,20:10,Kosong,,,,,,normal
+template,,Senin,F6.003,20:10,21:00,Kosong,,,,,,normal
+template,,Senin,F6.004,7:00,7:50,Terpakai,TI401,F,Pengembangan Desain Web,"Ir. Asroni, S.T.,  M.Eng.","TI401 ( F )
+Pengembangan Desain Web
+Dosen: AS",normal
+template,,Senin,F6.004,7:50,8:40,Terpakai,TI401,F,Pengembangan Desain Web,"Ir. Asroni, S.T.,  M.Eng.","TI401 ( F )
+Pengembangan Desain Web
+Dosen: AS",normal
+template,,Senin,F6.004,8:50,9:40,Terpakai,TI401,F,Pengembangan Desain Web,"Ir. Asroni, S.T.,  M.Eng.","TI401 ( F )
+Pengembangan Desain Web
+Dosen: AS",normal
+template,,Senin,F6.004,9:40,10:30,Terpakai,TI401,E,Pengembangan Desain Web,"Ir. Asroni, S.T.,  M.Eng.","TI401 ( E )
+Pengembangan Desain Web
+Dosen: AS",normal
+template,,Senin,F6.004,10:40,11:30,Terpakai,TI401,E,Pengembangan Desain Web,"Ir. Asroni, S.T.,  M.Eng.","TI401 ( E )
+Pengembangan Desain Web
+Dosen: AS",normal
+template,,Senin,F6.004,12:10,13:10,Terpakai,TI401,E,Pengembangan Desain Web,"Ir. Asroni, S.T.,  M.Eng.","TI401 ( E )
+Pengembangan Desain Web
+Dosen: AS",normal
+template,,Senin,F6.004,13:20,14:10,Kosong,,,,,,normal
+template,,Senin,F6.004,14:10,15:00,Kosong,,,,,,normal
+template,,Senin,F6.004,15:30,16:20,Kosong,,,,,,normal
+template,,Senin,F6.004,16:20,17:10,Kosong,,,,,,normal
+template,,Senin,F6.004,17:10,18:00,Kosong,,,,,,normal
+template,,Senin,F6.004,18:30,19:20,Kosong,,,,,,normal
+template,,Senin,F6.004,19:20,20:10,Kosong,,,,,,normal
+template,,Senin,F6.004,20:10,21:00,Kosong,,,,,,normal
+template,,Senin,F6.101,7:00,7:50,Kosong,,,,,,normal
+template,,Senin,F6.101,7:50,8:40,Kosong,,,,,,normal
+template,,Senin,F6.101,8:50,9:40,Terpakai,TI404,C,Keamanan Siber,"Muhammad Abdul Haq, S.Tr.T., M.Eng.","TI404 ( C )
+Keamanan Siber
+Dosen: HQ",normal
+template,,Senin,F6.101,9:40,10:30,Terpakai,TI404,C,Keamanan Siber,"Muhammad Abdul Haq, S.Tr.T., M.Eng.","TI404 ( C )
+Keamanan Siber
+Dosen: HQ",normal
+template,,Senin,F6.101,10:40,11:30,Terpakai,TI404,C,Keamanan Siber,"Muhammad Abdul Haq, S.Tr.T., M.Eng.","TI404 ( C )
+Keamanan Siber
+Dosen: HQ",normal
+template,,Senin,F6.101,12:10,13:10,Kosong,,,,,,normal
+template,,Senin,F6.101,13:20,14:10,Terpakai,TI404,D,Keamanan Siber,"Muhammad Abdul Haq, S.Tr.T., M.Eng.","TI404 ( D )
+Keamanan Siber
+Dosen: HQ",normal
+template,,Senin,F6.101,14:10,15:00,Terpakai,TI404,D,Keamanan Siber,"Muhammad Abdul Haq, S.Tr.T., M.Eng.","TI404 ( D )
+Keamanan Siber
+Dosen: HQ",normal
+template,,Senin,F6.101,15:30,16:20,Terpakai,TI404,D,Keamanan Siber,"Muhammad Abdul Haq, S.Tr.T., M.Eng.","TI404 ( D )
+Keamanan Siber
+Dosen: HQ",normal
+template,,Senin,F6.101,16:20,17:10,Kosong,,,,,,normal
+template,,Senin,F6.101,17:10,18:00,Kosong,,,,,,normal
+template,,Senin,F6.101,18:30,19:20,Kosong,,,,,,normal
+template,,Senin,F6.101,19:20,20:10,Kosong,,,,,,normal
+template,,Senin,F6.101,20:10,21:00,Kosong,,,,,,normal
+template,,Senin,F6.102,7:00,7:50,Kosong,,,,,,normal
+template,,Senin,F6.102,7:50,8:40,Kosong,,,,,,normal
+template,,Senin,F6.102,8:50,9:40,Kosong,,,,,,normal
+template,,Senin,F6.102,9:40,10:30,Kosong,,,,,,normal
+template,,Senin,F6.102,10:40,11:30,Kosong,,,,,,normal
+template,,Senin,F6.102,12:10,13:10,Kosong,,,,,,normal
+template,,Senin,F6.102,13:20,14:10,Kosong,,,,,,normal
+template,,Senin,F6.102,14:10,15:00,Kosong,,,,,,normal
+template,,Senin,F6.102,15:30,16:20,Kosong,,,,,,normal
+template,,Senin,F6.102,16:20,17:10,Kosong,,,,,,normal
+template,,Senin,F6.102,17:10,18:00,Kosong,,,,,,normal
+template,,Senin,F6.102,18:30,19:20,Kosong,,,,,,normal
+template,,Senin,F6.102,19:20,20:10,Kosong,,,,,,normal
+template,,Senin,F6.102,20:10,21:00,Kosong,,,,,,normal
+template,,Senin,F6.103,7:00,7:50,Kosong,,,,,,normal
+template,,Senin,F6.103,7:50,8:40,Kosong,,,,,,normal
+template,,Senin,F6.103,8:50,9:40,Kosong,,,,,,normal
+template,,Senin,F6.103,9:40,10:30,Kosong,,,,,,normal
+template,,Senin,F6.103,10:40,11:30,Kosong,,,,,,normal
+template,,Senin,F6.103,12:10,13:10,Kosong,,,,,,normal
+template,,Senin,F6.103,13:20,14:10,Kosong,,,,,,normal
+template,,Senin,F6.103,14:10,15:00,Kosong,,,,,,normal
+template,,Senin,F6.103,15:30,16:20,Kosong,,,,,,normal
+template,,Senin,F6.103,16:20,17:10,Kosong,,,,,,normal
+template,,Senin,F6.103,17:10,18:00,Kosong,,,,,,normal
+template,,Senin,F6.103,18:30,19:20,Kosong,,,,,,normal
+template,,Senin,F6.103,19:20,20:10,Kosong,,,,,,normal
+template,,Senin,F6.103,20:10,21:00,Kosong,,,,,,normal
+template,,Senin,F6.202,7:00,7:50,Kosong,,,,,,normal
+template,,Senin,F6.202,7:50,8:40,Kosong,,,,,,normal
+template,,Senin,F6.202,8:50,9:40,Kosong,,,,,,normal
+template,,Senin,F6.202,9:40,10:30,Kosong,,,,,,normal
+template,,Senin,F6.202,10:40,11:30,Kosong,,,,,,normal
+template,,Senin,F6.202,12:10,13:10,Kosong,,,,,,normal
+template,,Senin,F6.202,13:20,14:10,Kosong,,,,,,normal
+template,,Senin,F6.202,14:10,15:00,Kosong,,,,,,normal
+template,,Senin,F6.202,15:30,16:20,Kosong,,,,,,normal
+template,,Senin,F6.202,16:20,17:10,Kosong,,,,,,normal
+template,,Senin,F6.202,17:10,18:00,Kosong,,,,,,normal
+template,,Senin,F6.202,18:30,19:20,Kosong,,,,,,normal
+template,,Senin,F6.202,19:20,20:10,Kosong,,,,,,normal
+template,,Senin,F6.202,20:10,21:00,Kosong,,,,,,normal
+template,,Senin,F6.203,7:00,7:50,Kosong,,,,,,normal
+template,,Senin,F6.203,7:50,8:40,Kosong,,,,,,normal
+template,,Senin,F6.203,8:50,9:40,Kosong,,,,,,normal
+template,,Senin,F6.203,9:40,10:30,Kosong,,,,,,normal
+template,,Senin,F6.203,10:40,11:30,Kosong,,,,,,normal
+template,,Senin,F6.203,12:10,13:10,Kosong,,,,,,normal
+template,,Senin,F6.203,13:20,14:10,Kosong,,,,,,normal
+template,,Senin,F6.203,14:10,15:00,Kosong,,,,,,normal
+template,,Senin,F6.203,15:30,16:20,Kosong,,,,,,normal
+template,,Senin,F6.203,16:20,17:10,Kosong,,,,,,normal
+template,,Senin,F6.203,17:10,18:00,Kosong,,,,,,normal
+template,,Senin,F6.203,18:30,19:20,Kosong,,,,,,normal
+template,,Senin,F6.203,19:20,20:10,Kosong,,,,,,normal
+template,,Senin,F6.203,20:10,21:00,Kosong,,,,,,normal
+template,,Senin,RKBesar/F6.001,7:00,7:50,Kosong,,,,,,normal
+template,,Senin,RKBesar/F6.001,7:50,8:40,Kosong,,,,,,normal
+template,,Senin,RKBesar/F6.001,8:50,9:40,Terpakai,TI201,"D,E",Matematika Teknologi Informasi 2,"Dr. Nasy'an Taufiq Al Ghifari, S.T., M.T.","TI201 ( D,E )
+Matematika Teknologi Informasi 2
+Dosen: AG",normal
+template,,Senin,RKBesar/F6.001,9:40,10:30,Terpakai,TI201,"D,E",Matematika Teknologi Informasi 2,"Dr. Nasy'an Taufiq Al Ghifari, S.T., M.T.","TI201 ( D,E )
+Matematika Teknologi Informasi 2
+Dosen: AG",normal
+template,,Senin,RKBesar/F6.001,10:40,11:30,Terpakai,TI201,"D,E",Matematika Teknologi Informasi 2,"Dr. Nasy'an Taufiq Al Ghifari, S.T., M.T.","TI201 ( D,E )
+Matematika Teknologi Informasi 2
+Dosen: AG",normal
+template,,Senin,RKBesar/F6.001,12:10,13:10,Kosong,,,,,,normal
+template,,Senin,RKBesar/F6.001,13:20,14:10,Terpakai,TI405,"A,B,C",Interaksi Manusia Komputer,TIM Teaching,"TI405 ( A,B,C )
+Interaksi Manusia Komputer
+Dosen: RG/AG/WS",normal
+template,,Senin,RKBesar/F6.001,14:10,15:00,Terpakai,TI405,"A,B,C",Interaksi Manusia Komputer,TIM Teaching,"TI405 ( A,B,C )
+Interaksi Manusia Komputer
+Dosen: RG/AG/WS",normal
+template,,Senin,RKBesar/F6.001,15:30,16:20,Terpakai,TI604,"A, B",Metode Penelitian,"Prof. Ir. Slamet Riyadi, S.T., M.Sc., Ph.D.","TI604 ( A, B )
+Metode Penelitian
+Dosen: SR",normal
+template,,Senin,RKBesar/F6.001,16:20,17:10,Terpakai,TI604,"A, B",Metode Penelitian,"Prof. Ir. Slamet Riyadi, S.T., M.Sc., Ph.D.","TI604 ( A, B )
+Metode Penelitian
+Dosen: SR",normal
+template,,Senin,RKBesar/F6.001,17:10,18:00,Kosong,,,,,,normal
+template,,Senin,RKBesar/F6.001,18:30,19:20,Kosong,,,,,,normal
+template,,Senin,RKBesar/F6.001,19:20,20:10,Kosong,,,,,,normal
+template,,Senin,RKBesar/F6.001,20:10,21:00,Kosong,,,,,,normal
+template,,Selasa,F4.001,7:00,7:50,Kosong,,,,,,normal
+template,,Selasa,F4.001,7:50,8:40,Kosong,,,,,,normal
+template,,Selasa,F4.001,8:50,9:40,Terpakai,TI203,F,Pemrograman Dasar,"Muhammad Abdul Haq, S.Tr.T., M.Eng.","TI203 ( F )
+Pemrograman Dasar
+Dosen: HQ",normal
+template,,Selasa,F4.001,9:40,10:30,Terpakai,TI203,F,Pemrograman Dasar,"Muhammad Abdul Haq, S.Tr.T., M.Eng.","TI203 ( F )
+Pemrograman Dasar
+Dosen: HQ",normal
+template,,Selasa,F4.001,10:40,11:30,Terpakai,TI203,F,Pemrograman Dasar,"Muhammad Abdul Haq, S.Tr.T., M.Eng.","TI203 ( F )
+Pemrograman Dasar
+Dosen: HQ",normal
+template,,Selasa,F4.001,12:10,13:10,Kosong,,,,,,normal
+template,,Selasa,F4.001,13:20,14:10,Terpakai,TI202,F,Algoritma dan Struktur Data,"Muhammad Abdul Haq, S.Tr.T., M.Eng.","TI202 ( F )
+Algoritma dan Struktur Data
+Dosen: HQ",normal
+template,,Selasa,F4.001,14:10,15:00,Terpakai,TI202,F,Algoritma dan Struktur Data,"Muhammad Abdul Haq, S.Tr.T., M.Eng.","TI202 ( F )
+Algoritma dan Struktur Data
+Dosen: HQ",normal
+template,,Selasa,F4.001,15:30,16:20,Terpakai,TI202,F,Algoritma dan Struktur Data,"Muhammad Abdul Haq, S.Tr.T., M.Eng.","TI202 ( F )
+Algoritma dan Struktur Data
+Dosen: HQ",normal
+template,,Selasa,F4.001,16:20,17:10,Kosong,,,,,,normal
+template,,Selasa,F4.001,17:10,18:00,Kosong,,,,,,normal
+template,,Selasa,F4.001,18:30,19:20,Kosong,,,,,,normal
+template,,Selasa,F4.001,19:20,20:10,Kosong,,,,,,normal
+template,,Selasa,F4.001,20:10,21:00,Kosong,,,,,,normal
+template,,Selasa,F4.002,7:00,7:50,Kosong,,,,,,normal
+template,,Selasa,F4.002,7:50,8:40,Kosong,,,,,,normal
+template,,Selasa,F4.002,8:50,9:40,Terpakai,TI406,E,Pengujian dan Penjaminan Mutu Perangkat Lunak,"Chayadi Oktomy N S, S.T., M.Eng. Ph.D","TI406 ( E )
+Pengujian dan Penjaminan Mutu Perangkat Lunak
+Dosen: CO",normal
+template,,Selasa,F4.002,9:40,10:30,Terpakai,TI406,E,Pengujian dan Penjaminan Mutu Perangkat Lunak,"Chayadi Oktomy N S, S.T., M.Eng. Ph.D","TI406 ( E )
+Pengujian dan Penjaminan Mutu Perangkat Lunak
+Dosen: CO",normal
+template,,Selasa,F4.002,10:40,11:30,Terpakai,TI406,E,Pengujian dan Penjaminan Mutu Perangkat Lunak,"Chayadi Oktomy N S, S.T., M.Eng. Ph.D","TI406 ( E )
+Pengujian dan Penjaminan Mutu Perangkat Lunak
+Dosen: CO",normal
+template,,Selasa,F4.002,12:10,13:10,Kosong,,,,,,normal
+template,,Selasa,F4.002,13:20,14:10,Kosong,,,,,,normal
+template,,Selasa,F4.002,14:10,15:00,Kosong,,,,,,normal
+template,,Selasa,F4.002,15:30,16:20,Kosong,,,,,,normal
+template,,Selasa,F4.002,16:20,17:10,Terpakai,TI403,F,Routing dan Keamanan Jaringan,"Ir. Eko Prasetyo, M.Eng., Ph.D.","TI403 ( F )
+Routing dan Keamanan Jaringan
+Dosen: EP",normal
+template,,Selasa,F4.002,17:10,18:00,Terpakai,TI403,F,Routing dan Keamanan Jaringan,"Ir. Eko Prasetyo, M.Eng., Ph.D.","TI403 ( F )
+Routing dan Keamanan Jaringan
+Dosen: EP",normal
+template,,Selasa,F4.002,18:30,19:20,Terpakai,TI403,F,Routing dan Keamanan Jaringan,"Ir. Eko Prasetyo, M.Eng., Ph.D.","TI403 ( F )
+Routing dan Keamanan Jaringan
+Dosen: EP",normal
+template,,Selasa,F4.002,19:20,20:10,Kosong,,,,,,normal
+template,,Selasa,F4.002,20:10,21:00,Kosong,,,,,,normal
+template,,Selasa,F4.003,7:00,7:50,Kosong,,,,,,normal
+template,,Selasa,F4.003,7:50,8:40,Kosong,,,,,,normal
+template,,Selasa,F4.003,8:50,9:40,Terpakai,TI603,D,Deployment Perangkat Lunak,"Dr. Ir. Dwijoko Purbohadi, M.T.","TI603 ( D )
+Deployment Perangkat Lunak
+Dosen: DP",normal
+template,,Selasa,F4.003,9:40,10:30,Terpakai,TI603,D,Deployment Perangkat Lunak,"Dr. Ir. Dwijoko Purbohadi, M.T.","TI603 ( D )
+Deployment Perangkat Lunak
+Dosen: DP",normal
+template,,Selasa,F4.003,10:40,11:30,Terpakai,TI603,D,Deployment Perangkat Lunak,"Dr. Ir. Dwijoko Purbohadi, M.T.","TI603 ( D )
+Deployment Perangkat Lunak
+Dosen: DP",normal
+template,,Selasa,F4.003,12:10,13:10,Kosong,,,,,,normal
+template,,Selasa,F4.003,13:20,14:10,Terpakai,TI603,A,Deployment Perangkat Lunak,"Dr. Ir. Dwijoko Purbohadi, M.T.","TI603 ( A )
+Deployment Perangkat Lunak
+Dosen: DP",normal
+template,,Selasa,F4.003,14:10,15:00,Terpakai,TI603,A,Deployment Perangkat Lunak,"Dr. Ir. Dwijoko Purbohadi, M.T.","TI603 ( A )
+Deployment Perangkat Lunak
+Dosen: DP",normal
+template,,Selasa,F4.003,15:30,16:20,Terpakai,TI603,A,Deployment Perangkat Lunak,"Dr. Ir. Dwijoko Purbohadi, M.T.","TI603 ( A )
+Deployment Perangkat Lunak
+Dosen: DP",normal
+template,,Selasa,F4.003,16:20,17:10,Kosong,,,,,,normal
+template,,Selasa,F4.003,17:10,18:00,Kosong,,,,,,normal
+template,,Selasa,F4.003,18:30,19:20,Kosong,,,,,,normal
+template,,Selasa,F4.003,19:20,20:10,Kosong,,,,,,normal
+template,,Selasa,F4.003,20:10,21:00,Kosong,,,,,,normal
+template,,Selasa,F6.002,7:00,7:50,Kosong,,,,,,normal
+template,,Selasa,F6.002,7:50,8:40,Kosong,,,,,,normal
+template,,Selasa,F6.002,8:50,9:40,Terpakai,TI202,E,Algoritma dan Struktur Data,"Haris Setyawan, S.T., M.Eng.","TI202 ( E )
+Algoritma dan Struktur Data
+Dosen: HS",normal
+template,,Selasa,F6.002,9:40,10:30,Terpakai,TI202,E,Algoritma dan Struktur Data,"Haris Setyawan, S.T., M.Eng.","TI202 ( E )
+Algoritma dan Struktur Data
+Dosen: HS",normal
+template,,Selasa,F6.002,10:40,11:30,Terpakai,TI202,E,Algoritma dan Struktur Data,"Haris Setyawan, S.T., M.Eng.","TI202 ( E )
+Algoritma dan Struktur Data
+Dosen: HS",normal
+template,,Selasa,F6.002,12:10,13:10,Kosong,,,,,,normal
+template,,Selasa,F6.002,13:20,14:10,Terpakai,TI203,B,Pemrograman Dasar,"Haris Setyawan, S.T., M.Eng.","TI203 ( B )
+Pemrograman Dasar
+Dosen: HS",normal
+template,,Selasa,F6.002,14:10,15:00,Terpakai,TI203,B,Pemrograman Dasar,"Haris Setyawan, S.T., M.Eng.","TI203 ( B )
+Pemrograman Dasar
+Dosen: HS",normal
+template,,Selasa,F6.002,15:30,16:20,Terpakai,TI203,B,Pemrograman Dasar,"Haris Setyawan, S.T., M.Eng.","TI203 ( B )
+Pemrograman Dasar
+Dosen: HS",normal
+template,,Selasa,F6.002,16:20,17:10,Terpakai,TI203,C,Pemrograman Dasar,"Haris Setyawan, S.T., M.Eng.","TI203 ( C )
+Pemrograman Dasar
+Dosen: HS",normal
+template,,Selasa,F6.002,17:10,18:00,Terpakai,TI203,C,Pemrograman Dasar,"Haris Setyawan, S.T., M.Eng.","TI203 ( C )
+Pemrograman Dasar
+Dosen: HS",normal
+template,,Selasa,F6.002,18:30,19:20,Terpakai,TI203,C,Pemrograman Dasar,"Haris Setyawan, S.T., M.Eng.","TI203 ( C )
+Pemrograman Dasar
+Dosen: HS",normal
+template,,Selasa,F6.002,19:20,20:10,Kosong,,,,,,normal
+template,,Selasa,F6.002,20:10,21:00,Kosong,,,,,,normal
+template,,Selasa,F6.003,7:00,7:50,Kosong,,,,,,normal
+template,,Selasa,F6.003,7:50,8:40,Kosong,,,,,,normal
+template,,Selasa,F6.003,8:50,9:40,Terpakai,TI402,F,Pengembangan Aplikasi Basis Data,"Aprilia Kurnianti, ST. M. Eng.","TI402 ( F )
+Pengembangan Aplikasi Basis Data
+Dosen: AK",normal
+template,,Selasa,F6.003,9:40,10:30,Terpakai,TI402,F,Pengembangan Aplikasi Basis Data,"Aprilia Kurnianti, ST. M. Eng.","TI402 ( F )
+Pengembangan Aplikasi Basis Data
+Dosen: AK",normal
+template,,Selasa,F6.003,10:40,11:30,Terpakai,TI402,F,Pengembangan Aplikasi Basis Data,"Aprilia Kurnianti, ST. M. Eng.","TI402 ( F )
+Pengembangan Aplikasi Basis Data
+Dosen: AK",normal
+template,,Selasa,F6.003,12:10,13:10,Kosong,,,,,,normal
+template,,Selasa,F6.003,13:20,14:10,Terpakai,TI204,C,Administrasi Basis Data,"Aprilia Kurnianti, ST. M. Eng.","TI204 ( C )
+Administrasi Basis Data
+Dosen: AK",normal
+template,,Selasa,F6.003,14:10,15:00,Terpakai,TI204,C,Administrasi Basis Data,"Aprilia Kurnianti, ST. M. Eng.","TI204 ( C )
+Administrasi Basis Data
+Dosen: AK",normal
+template,,Selasa,F6.003,15:30,16:20,Terpakai,TI204,C,Administrasi Basis Data,"Aprilia Kurnianti, ST. M. Eng.","TI204 ( C )
+Administrasi Basis Data
+Dosen: AK",normal
+template,,Selasa,F6.003,16:20,17:10,Terpakai,TI204,A,Administrasi Basis Data,"Aprilia Kurnianti, ST. M. Eng.","TI204 ( A )
+Administrasi Basis Data
+Dosen: AK",normal
+template,,Selasa,F6.003,17:10,18:00,Terpakai,TI204,A,Administrasi Basis Data,"Aprilia Kurnianti, ST. M. Eng.","TI204 ( A )
+Administrasi Basis Data
+Dosen: AK",normal
+template,,Selasa,F6.003,18:30,19:20,Terpakai,TI204,A,Administrasi Basis Data,"Aprilia Kurnianti, ST. M. Eng.","TI204 ( A )
+Administrasi Basis Data
+Dosen: AK",normal
+template,,Selasa,F6.003,19:20,20:10,Kosong,,,,,,normal
+template,,Selasa,F6.003,20:10,21:00,Kosong,,,,,,normal
+template,,Selasa,F6.004,7:00,7:50,Kosong,,,,,,normal
+template,,Selasa,F6.004,7:50,8:40,Kosong,,,,,,normal
+template,,Selasa,F6.004,8:50,9:40,Terpakai,TI403,C,Routing dan Keamanan Jaringan,"Ir. Eko Prasetyo, M.Eng., Ph.D.","TI403 ( C )
+Routing dan Keamanan Jaringan
+Dosen: EP",normal
+template,,Selasa,F6.004,9:40,10:30,Terpakai,TI403,C,Routing dan Keamanan Jaringan,"Ir. Eko Prasetyo, M.Eng., Ph.D.","TI403 ( C )
+Routing dan Keamanan Jaringan
+Dosen: EP",normal
+template,,Selasa,F6.004,10:40,11:30,Terpakai,TI403,C,Routing dan Keamanan Jaringan,"Ir. Eko Prasetyo, M.Eng., Ph.D.","TI403 ( C )
+Routing dan Keamanan Jaringan
+Dosen: EP",normal
+template,,Selasa,F6.004,12:10,13:10,Kosong,,,,,,normal
+template,,Selasa,F6.004,13:20,14:10,Terpakai,TI403,B,Routing dan Keamanan Jaringan,"Ir. Eko Prasetyo, M.Eng., Ph.D.","TI403 ( B )
+Routing dan Keamanan Jaringan
+Dosen: EP",normal
+template,,Selasa,F6.004,14:10,15:00,Terpakai,TI403,B,Routing dan Keamanan Jaringan,"Ir. Eko Prasetyo, M.Eng., Ph.D.","TI403 ( B )
+Routing dan Keamanan Jaringan
+Dosen: EP",normal
+template,,Selasa,F6.004,15:30,16:20,Terpakai,TI403,B,Routing dan Keamanan Jaringan,"Ir. Eko Prasetyo, M.Eng., Ph.D.","TI403 ( B )
+Routing dan Keamanan Jaringan
+Dosen: EP",normal
+template,,Selasa,F6.004,16:20,17:10,Kosong,,,,,,normal
+template,,Selasa,F6.004,17:10,18:00,Kosong,,,,,,normal
+template,,Selasa,F6.004,18:30,19:20,Kosong,,,,,,normal
+template,,Selasa,F6.004,19:20,20:10,Kosong,,,,,,normal
+template,,Selasa,F6.004,20:10,21:00,Kosong,,,,,,normal
+template,,Selasa,F6.101,7:00,7:50,Kosong,,,,,,normal
+template,,Selasa,F6.101,7:50,8:40,Kosong,,,,,,normal
+template,,Selasa,F6.101,8:50,9:40,Terpakai,TIUX05,A,Evaluasi Pengguna,TIM Teaching,"TIUX05 ( A )
+Evaluasi Pengguna
+Dosen: RG/WS",normal
+template,,Selasa,F6.101,9:40,10:30,Terpakai,TIUX05,A,Evaluasi Pengguna,TIM Teaching,"TIUX05 ( A )
+Evaluasi Pengguna
+Dosen: RG/WS",normal
+template,,Selasa,F6.101,10:40,11:30,Terpakai,TIUX05,A,Evaluasi Pengguna,TIM Teaching,"TIUX05 ( A )
+Evaluasi Pengguna
+Dosen: RG/WS",normal
+template,,Selasa,F6.101,12:10,13:10,Kosong,,,,,,normal
+template,,Selasa,F6.101,13:20,14:10,Kosong,,,,,,normal
+template,,Selasa,F6.101,14:10,15:00,Kosong,,,,,,normal
+template,,Selasa,F6.101,15:30,16:20,Kosong,,,,,,normal
+template,,Selasa,F6.101,16:20,17:10,Kosong,,,,,,normal
+template,,Selasa,F6.101,17:10,18:00,Kosong,,,,,,normal
+template,,Selasa,F6.101,18:30,19:20,Kosong,,,,,,normal
+template,,Selasa,F6.101,19:20,20:10,Kosong,,,,,,normal
+template,,Selasa,F6.101,20:10,21:00,Kosong,,,,,,normal
+template,,Selasa,F6.102,7:00,7:50,Kosong,,,,,,normal
+template,,Selasa,F6.102,7:50,8:40,Kosong,,,,,,normal
+template,,Selasa,F6.102,8:50,9:40,Terpakai,TIDA04,B,Basis Data Awan,"Tri Andi, S.T., M.Kom.","TIDA04 ( B )
+Basis Data Awan
+Dosen: TA",normal
+template,,Selasa,F6.102,9:40,10:30,Terpakai,TIDA04,B,Basis Data Awan,"Tri Andi, S.T., M.Kom.","TIDA04 ( B )
+Basis Data Awan
+Dosen: TA",normal
+template,,Selasa,F6.102,10:40,11:30,Terpakai,TIDA04,B,Basis Data Awan,"Tri Andi, S.T., M.Kom.","TIDA04 ( B )
+Basis Data Awan
+Dosen: TA",normal
+template,,Selasa,F6.102,12:10,13:10,Kosong,,,,,,normal
+template,,Selasa,F6.102,13:20,14:10,Terpakai,TI401,C,Pengembangan Desain Web,"Ir. Asroni, S.T.,  M.Eng.","TI401 ( C )
+Pengembangan Desain Web
+Dosen: AS",normal
+template,,Selasa,F6.102,14:10,15:00,Terpakai,TI401,C,Pengembangan Desain Web,"Ir. Asroni, S.T.,  M.Eng.","TI401 ( C )
+Pengembangan Desain Web
+Dosen: AS",normal
+template,,Selasa,F6.102,15:30,16:20,Terpakai,TI401,C,Pengembangan Desain Web,"Ir. Asroni, S.T.,  M.Eng.","TI401 ( C )
+Pengembangan Desain Web
+Dosen: AS",normal
+template,,Selasa,F6.102,16:20,17:10,Kosong,,,,,,normal
+template,,Selasa,F6.102,17:10,18:00,Kosong,,,,,,normal
+template,,Selasa,F6.102,18:30,19:20,Kosong,,,,,,normal
+template,,Selasa,F6.102,19:20,20:10,Kosong,,,,,,normal
+template,,Selasa,F6.102,20:10,21:00,Kosong,,,,,,normal
+template,,Selasa,F6.103,7:00,7:50,Kosong,,,,,,normal
+template,,Selasa,F6.103,7:50,8:40,Kosong,,,,,,normal
+template,,Selasa,F6.103,8:50,9:40,Terpakai,TI404,A,Keamanan Siber,"Cahya Damarjati, S.T. M. Eng., Ph.D.","TI404 ( A )
+Keamanan Siber
+Dosen: CD",normal
+template,,Selasa,F6.103,9:40,10:30,Terpakai,TI404,A,Keamanan Siber,"Cahya Damarjati, S.T. M. Eng., Ph.D.","TI404 ( A )
+Keamanan Siber
+Dosen: CD",normal
+template,,Selasa,F6.103,10:40,11:30,Terpakai,TI404,A,Keamanan Siber,"Cahya Damarjati, S.T. M. Eng., Ph.D.","TI404 ( A )
+Keamanan Siber
+Dosen: CD",normal
+template,,Selasa,F6.103,12:10,13:10,Kosong,,,,,,normal
+template,,Selasa,F6.103,13:20,14:10,Terpakai,TIPR05,A,Pemrograman Internet of Things,TIM Teaching,"TIPR05 ( A )
+Pemrograman Internet of Things
+Dosen: CD/WS",normal
+template,,Selasa,F6.103,14:10,15:00,Terpakai,TIPR05,A,Pemrograman Internet of Things,,"TIPR05 ( A )
+Pemrograman Internet of Things
+Dosen: CD/WS",normal
+template,,Selasa,F6.103,15:30,16:20,Terpakai,TIPR05,A,Pemrograman Internet of Things,TIM Teaching,"TIPR05 ( A )
+Pemrograman Internet of Things
+Dosen: CD/WS",normal
+template,,Selasa,F6.103,16:20,17:10,Kosong,,,,,,normal
+template,,Selasa,F6.103,17:10,18:00,Kosong,,,,,,normal
+template,,Selasa,F6.103,18:30,19:20,Kosong,,,,,,normal
+template,,Selasa,F6.103,19:20,20:10,Kosong,,,,,,normal
+template,,Selasa,F6.103,20:10,21:00,Kosong,,,,,,normal
+template,,Selasa,F6.202,7:00,7:50,Terpakai,,,AS,,AS,normal
+template,,Selasa,F6.202,7:50,8:40,Terpakai,,,AS,,AS,normal
+template,,Selasa,F6.202,8:50,9:40,Terpakai,,,AS,,AS,normal
+template,,Selasa,F6.202,9:40,10:30,Terpakai,,,AS,,AS,normal
+template,,Selasa,F6.202,10:40,11:30,Terpakai,,,AS,,AS,normal
+template,,Selasa,F6.202,12:10,13:10,Kosong,,,,,,normal
+template,,Selasa,F6.202,13:20,14:10,Terpakai,,,TW,,TW,normal
+template,,Selasa,F6.202,14:10,15:00,Terpakai,,,TW,,TW,normal
+template,,Selasa,F6.202,15:30,16:20,Kosong,,,,,,normal
+template,,Selasa,F6.202,16:20,17:10,Kosong,,,,,,normal
+template,,Selasa,F6.202,17:10,18:00,Kosong,,,,,,normal
+template,,Selasa,F6.202,18:30,19:20,Kosong,,,,,,normal
+template,,Selasa,F6.202,19:20,20:10,Kosong,,,,,,normal
+template,,Selasa,F6.202,20:10,21:00,Kosong,,,,,,normal
+template,,Selasa,F6.203,7:00,7:50,Kosong,,,,,,normal
+template,,Selasa,F6.203,7:50,8:40,Kosong,,,,,,normal
+template,,Selasa,F6.203,8:50,9:40,Kosong,,,,,,normal
+template,,Selasa,F6.203,9:40,10:30,Kosong,,,,,,normal
+template,,Selasa,F6.203,10:40,11:30,Kosong,,,,,,normal
+template,,Selasa,F6.203,12:10,13:10,Kosong,,,,,,normal
+template,,Selasa,F6.203,13:20,14:10,Kosong,,,,,,normal
+template,,Selasa,F6.203,14:10,15:00,Kosong,,,,,,normal
+template,,Selasa,F6.203,15:30,16:20,Terpakai,TI208,D,Bahasa Inggris Menengah,,"TI208 ( D )
+Bahasa Inggris Menengah
+Dosen: TIM",normal
+template,,Selasa,F6.203,16:20,17:10,Terpakai,TI208,D,Bahasa Inggris Menengah,,"TI208 ( D )
+Bahasa Inggris Menengah
+Dosen: TIM",normal
+template,,Selasa,F6.203,17:10,18:00,Kosong,,,,,,normal
+template,,Selasa,F6.203,18:30,19:20,Kosong,,,,,,normal
+template,,Selasa,F6.203,19:20,20:10,Kosong,,,,,,normal
+template,,Selasa,F6.203,20:10,21:00,Kosong,,,,,,normal
+template,,Selasa,RKBesar/F6.001,7:00,7:50,Kosong,,,,,,normal
+template,,Selasa,RKBesar/F6.001,7:50,8:40,Kosong,,,,,,normal
+template,,Selasa,RKBesar/F6.001,8:50,9:40,Terpakai,TI201,"A,B,C",Matematika Teknologi Informasi 2,"Dr. Nasy'an Taufiq Al Ghifari, S.T., M.T.","TI201 ( A,B,C )
+Matematika Teknologi Informasi 2
+Dosen: AG",normal
+template,,Selasa,RKBesar/F6.001,9:40,10:30,Terpakai,TI201,"A,B,C",Matematika Teknologi Informasi 2,"Dr. Nasy'an Taufiq Al Ghifari, S.T., M.T.","TI201 ( A,B,C )
+Matematika Teknologi Informasi 2
+Dosen: AG",normal
+template,,Selasa,RKBesar/F6.001,10:40,11:30,Terpakai,TI201,"A,B,C",Matematika Teknologi Informasi 2,"Dr. Nasy'an Taufiq Al Ghifari, S.T., M.T.","TI201 ( A,B,C )
+Matematika Teknologi Informasi 2
+Dosen: AG",normal
+template,,Selasa,RKBesar/F6.001,12:10,13:10,Kosong,,,,,,normal
+template,,Selasa,RKBesar/F6.001,13:20,14:10,Terpakai,TI405,"D,E,F",Interaksi Manusia Komputer,TIM Teaching,"TI405 ( D,E,F)
+Interaksi Manusia Komputer
+Dosen: RG/AG/WS",normal
+template,,Selasa,RKBesar/F6.001,14:10,15:00,Terpakai,TI405,"D,E,F",Interaksi Manusia Komputer,TIM Teaching,"TI405 ( D,E,F)
+Interaksi Manusia Komputer
+Dosen: RG/AG/WS",normal
+template,,Selasa,RKBesar/F6.001,15:30,16:20,Kosong,,,,,,normal
+template,,Selasa,RKBesar/F6.001,16:20,17:10,Terpakai,TI604,"C, D, E",Metode Penelitian,"Prof. Ir. Slamet Riyadi, S.T., M.Sc., Ph.D.","TI604 ( C, D, E )
+Metode Penelitian
+Dosen: SR",normal
+template,,Selasa,RKBesar/F6.001,17:10,18:00,Terpakai,TI604,"C, D, E",Metode Penelitian,"Prof. Ir. Slamet Riyadi, S.T., M.Sc., Ph.D.","TI604 ( C, D, E )
+Metode Penelitian
+Dosen: SR",normal
+template,,Selasa,RKBesar/F6.001,18:30,19:20,Kosong,,,,,,normal
+template,,Selasa,RKBesar/F6.001,19:20,20:10,Kosong,,,,,,normal
+template,,Selasa,RKBesar/F6.001,20:10,21:00,Kosong,,,,,,normal
+template,,Rabu,F4.001,7:00,7:50,Kosong,,,,,,normal
+template,,Rabu,F4.001,7:50,8:40,Kosong,,,,,,normal
+template,,Rabu,F4.001,8:50,9:40,Terpakai,TI603,E,Deployment Perangkat Lunak,"Dr. Ir. Dwijoko Purbohadi, M.T.","TI603 ( E )
+Deployment Perangkat Lunak
+Dosen: DP",normal
+template,,Rabu,F4.001,9:40,10:30,Terpakai,TI603,E,Deployment Perangkat Lunak,"Dr. Ir. Dwijoko Purbohadi, M.T.","TI603 ( E )
+Deployment Perangkat Lunak
+Dosen: DP",normal
+template,,Rabu,F4.001,10:40,11:30,Terpakai,TI603,E,Deployment Perangkat Lunak,"Dr. Ir. Dwijoko Purbohadi, M.T.","TI603 ( E )
+Deployment Perangkat Lunak
+Dosen: DP",normal
+template,,Rabu,F4.001,12:10,13:10,Kosong,,,,,,normal
+template,,Rabu,F4.001,13:20,14:10,Terpakai,TIDA05,A,P. Pusat Data,"Dr. Ir. Dwijoko Purbohadi, M.T.","TIDA05 ( A )
+P. Pusat Data
+Dosen: DP",normal
+template,,Rabu,F4.001,14:10,15:00,Terpakai,TIDA05,A,P. Pusat Data,"Dr. Ir. Dwijoko Purbohadi, M.T.","TIDA05 ( A )
+P. Pusat Data
+Dosen: DP",normal
+template,,Rabu,F4.001,15:30,16:20,Terpakai,TIDA05,A,P. Pusat Data,"Dr. Ir. Dwijoko Purbohadi, M.T.","TIDA05 ( A )
+P. Pusat Data
+Dosen: DP",normal
+template,,Rabu,F4.001,16:20,17:10,Kosong,,,,,,normal
+template,,Rabu,F4.001,17:10,18:00,Kosong,,,,,,normal
+template,,Rabu,F4.001,18:30,19:20,Kosong,,,,,,normal
+template,,Rabu,F4.001,19:20,20:10,Kosong,,,,,,normal
+template,,Rabu,F4.001,20:10,21:00,Kosong,,,,,,normal
+template,,Rabu,F4.002,7:00,7:50,Kosong,,,,,,normal
+template,,Rabu,F4.002,7:50,8:40,Kosong,,,,,,normal
+template,,Rabu,F4.002,8:50,9:40,Terpakai,TI403,A,Routing dan Keamanan Jaringan,"Ir. Eko Prasetyo, M.Eng., Ph.D.","TI403 ( A )
+Routing dan Keamanan Jaringan
+Dosen: EP",normal
+template,,Rabu,F4.002,9:40,10:30,Terpakai,TI403,A,Routing dan Keamanan Jaringan,"Ir. Eko Prasetyo, M.Eng., Ph.D.","TI403 ( A )
+Routing dan Keamanan Jaringan
+Dosen: EP",normal
+template,,Rabu,F4.002,10:40,11:30,Terpakai,TI403,A,Routing dan Keamanan Jaringan,"Ir. Eko Prasetyo, M.Eng., Ph.D.","TI403 ( A )
+Routing dan Keamanan Jaringan
+Dosen: EP",normal
+template,,Rabu,F4.002,12:10,13:10,Kosong,,,,,,normal
+template,,Rabu,F4.002,13:20,14:10,Terpakai,TI403,D,Routing dan Keamanan Jaringan,"Ir. Eko Prasetyo, M.Eng., Ph.D.","TI403 ( D )
+Routing dan Keamanan Jaringan
+Dosen: EP",normal
+template,,Rabu,F4.002,14:10,15:00,Terpakai,TI403,D,Routing dan Keamanan Jaringan,"Ir. Eko Prasetyo, M.Eng., Ph.D.","TI403 ( D )
+Routing dan Keamanan Jaringan
+Dosen: EP",normal
+template,,Rabu,F4.002,15:30,16:20,Terpakai,TI403,D,Routing dan Keamanan Jaringan,"Ir. Eko Prasetyo, M.Eng., Ph.D.","TI403 ( D )
+Routing dan Keamanan Jaringan
+Dosen: EP",normal
+template,,Rabu,F4.002,16:20,17:10,Terpakai,TINE02,A,CyberOps,"Ir. Eko Prasetyo, M.Eng., Ph.D.","TINE02 ( A )
+CyberOps
+Dosen: EP",normal
+template,,Rabu,F4.002,17:10,18:00,Terpakai,TINE02,A,CyberOps,"Ir. Eko Prasetyo, M.Eng., Ph.D.","TINE02 ( A )
+CyberOps
+Dosen: EP",normal
+template,,Rabu,F4.002,18:30,19:20,Terpakai,TINE02,A,CyberOps,"Ir. Eko Prasetyo, M.Eng., Ph.D.","TINE02 ( A )
+CyberOps
+Dosen: EP",normal
+template,,Rabu,F4.002,19:20,20:10,Kosong,,,,,,normal
+template,,Rabu,F4.002,20:10,21:00,Kosong,,,,,,normal
+template,,Rabu,F4.003,7:00,7:50,Kosong,,,,,,normal
+template,,Rabu,F4.003,7:50,8:40,Kosong,,,,,,normal
+template,,Rabu,F4.003,8:50,9:40,Terpakai,TIDA02,B,Kecerdasan Buatan Terapan,"Dr. Nasy'an Taufiq Al Ghifari, S.T., M.T.","TIDA02 ( B )
+Kecerdasan Buatan Terapan
+Dosen: AG",normal
+template,,Rabu,F4.003,9:40,10:30,Terpakai,TIDA02,B,Kecerdasan Buatan Terapan,"Dr. Nasy'an Taufiq Al Ghifari, S.T., M.T.","TIDA02 ( B )
+Kecerdasan Buatan Terapan
+Dosen: AG",normal
+template,,Rabu,F4.003,10:40,11:30,Terpakai,TIDA02,B,Kecerdasan Buatan Terapan,"Dr. Nasy'an Taufiq Al Ghifari, S.T., M.T.","TIDA02 ( B )
+Kecerdasan Buatan Terapan
+Dosen: AG",normal
+template,,Rabu,F4.003,12:10,13:10,Kosong,,,,,,normal
+template,,Rabu,F4.003,13:20,14:10,Terpakai,TI204,E,Administrasi Basis Data,"Aprilia Kurnianti, ST. M. Eng.","TI204 ( E )
+Administrasi Basis Data
+Dosen: AK",normal
+template,,Rabu,F4.003,14:10,15:00,Terpakai,TI204,E,Administrasi Basis Data,"Aprilia Kurnianti, ST. M. Eng.","TI204 ( E )
+Administrasi Basis Data
+Dosen: AK",normal
+template,,Rabu,F4.003,15:30,16:20,Terpakai,TI204,E,Administrasi Basis Data,"Aprilia Kurnianti, ST. M. Eng.","TI204 ( E )
+Administrasi Basis Data
+Dosen: AK",normal
+template,,Rabu,F4.003,16:20,17:10,Terpakai,TI204,D,Administrasi Basis Data,"Aprilia Kurnianti, ST. M. Eng.","TI204 ( D )
+Administrasi Basis Data
+Dosen: AK",normal
+template,,Rabu,F4.003,17:10,18:00,Terpakai,TI204,D,Administrasi Basis Data,"Aprilia Kurnianti, ST. M. Eng.","TI204 ( D )
+Administrasi Basis Data
+Dosen: AK",normal
+template,,Rabu,F4.003,18:30,19:20,Terpakai,TI204,D,Administrasi Basis Data,"Aprilia Kurnianti, ST. M. Eng.","TI204 ( D )
+Administrasi Basis Data
+Dosen: AK",normal
+template,,Rabu,F4.003,19:20,20:10,Kosong,,,,,,normal
+template,,Rabu,F4.003,20:10,21:00,Kosong,,,,,,normal
+template,,Rabu,F6.002,7:00,7:50,Terpakai,TI209,"A, B",Praktik Profesional,"Chayadi Oktomy N S, S.T., M.Eng. Ph.D","TI209 ( A, B )
+Praktik Profesional
+Dosen: CO",normal
+template,,Rabu,F6.002,7:50,8:40,Terpakai,TI209,"A, B",Praktik Profesional,"Chayadi Oktomy N S, S.T., M.Eng. Ph.D","TI209 ( A, B )
+Praktik Profesional
+Dosen: CO",normal
+template,,Rabu,F6.002,8:50,9:40,Kosong,,,,,,normal
+template,,Rabu,F6.002,9:40,10:30,Kosong,,,,,,normal
+template,,Rabu,F6.002,10:40,11:30,Kosong,,,,,,normal
+template,,Rabu,F6.002,12:10,13:10,Kosong,,,,,,normal
+template,,Rabu,F6.002,13:20,14:10,Terpakai,TI205,B,Dasar Jaringan,"Nurwahyu Alamsyah, S.Kom., M.Kom., M.I.M., Ph.D","TI205 ( B )
+Dasar Jaringan
+Dosen: NA",normal
+template,,Rabu,F6.002,14:10,15:00,Terpakai,TI205,B,Dasar Jaringan,"Nurwahyu Alamsyah, S.Kom., M.Kom., M.I.M., Ph.D","TI205 ( B )
+Dasar Jaringan
+Dosen: NA",normal
+template,,Rabu,F6.002,15:30,16:20,Terpakai,TI205,B,Dasar Jaringan,"Nurwahyu Alamsyah, S.Kom., M.Kom., M.I.M., Ph.D","TI205 ( B )
+Dasar Jaringan
+Dosen: NA",normal
+template,,Rabu,F6.002,16:20,17:10,Kosong,,,,,,normal
+template,,Rabu,F6.002,17:10,18:00,Kosong,,,,,,normal
+template,,Rabu,F6.002,18:30,19:20,Kosong,,,,,,normal
+template,,Rabu,F6.002,19:20,20:10,Kosong,,,,,,normal
+template,,Rabu,F6.002,20:10,21:00,Kosong,,,,,,normal
+template,,Rabu,F6.003,7:00,7:50,Kosong,,,,,,normal
+template,,Rabu,F6.003,7:50,8:40,Kosong,,,,,,normal
+template,,Rabu,F6.003,8:50,9:40,Terpakai,TIUX03,B,Aplikasi Multimedia,"Dr. Reza Giga Isnanda, S.T., M.Sc.","TIUX03 ( B )
+Aplikasi Multimedia
+Dosen: RG",normal
+template,,Rabu,F6.003,9:40,10:30,Terpakai,TIUX03,B,Aplikasi Multimedia,"Dr. Reza Giga Isnanda, S.T., M.Sc.","TIUX03 ( B )
+Aplikasi Multimedia
+Dosen: RG",normal
+template,,Rabu,F6.003,10:40,11:30,Terpakai,TIUX03,B,Aplikasi Multimedia,"Dr. Reza Giga Isnanda, S.T., M.Sc.","TIUX03 ( B )
+Aplikasi Multimedia
+Dosen: RG",normal
+template,,Rabu,F6.003,12:10,13:10,Kosong,,,,,,normal
+template,,Rabu,F6.003,13:20,14:10,Terpakai,TIUX03,A,Aplikasi Multimedia,"Dr. Reza Giga Isnanda, S.T., M.Sc.","TIUX03 ( A )
+Aplikasi Multimedia
+Dosen: RG",normal
+template,,Rabu,F6.003,14:10,15:00,Terpakai,TIUX03,A,Aplikasi Multimedia,"Dr. Reza Giga Isnanda, S.T., M.Sc.","TIUX03 ( A )
+Aplikasi Multimedia
+Dosen: RG",normal
+template,,Rabu,F6.003,15:30,16:20,Terpakai,TIUX03,A,Aplikasi Multimedia,"Dr. Reza Giga Isnanda, S.T., M.Sc.","TIUX03 ( A )
+Aplikasi Multimedia
+Dosen: RG",normal
+template,,Rabu,F6.003,16:20,17:10,Kosong,,,,,,normal
+template,,Rabu,F6.003,17:10,18:00,Kosong,,,,,,normal
+template,,Rabu,F6.003,18:30,19:20,Kosong,,,,,,normal
+template,,Rabu,F6.003,19:20,20:10,Kosong,,,,,,normal
+template,,Rabu,F6.003,20:10,21:00,Kosong,,,,,,normal
+template,,Rabu,F6.004,7:00,7:50,Kosong,,,,,,normal
+template,,Rabu,F6.004,7:50,8:40,Kosong,,,,,,normal
+template,,Rabu,F6.004,8:50,9:40,Terpakai,TI204,B,Administrasi Basis Data,"Aprilia Kurnianti, ST. M. Eng.","TI204 ( B )
+Administrasi Basis Data
+Dosen: AK",normal
+template,,Rabu,F6.004,9:40,10:30,Terpakai,TI204,B,Administrasi Basis Data,"Aprilia Kurnianti, ST. M. Eng.","TI204 ( B )
+Administrasi Basis Data
+Dosen: AK",normal
+template,,Rabu,F6.004,10:40,11:30,Terpakai,TI204,B,Administrasi Basis Data,"Aprilia Kurnianti, ST. M. Eng.","TI204 ( B )
+Administrasi Basis Data
+Dosen: AK",normal
+template,,Rabu,F6.004,12:10,13:10,Kosong,,,,,,normal
+template,,Rabu,F6.004,13:20,14:10,Kosong,,,,,,normal
+template,,Rabu,F6.004,14:10,15:00,Kosong,,,,,,normal
+template,,Rabu,F6.004,15:30,16:20,Kosong,,,,,,normal
+template,,Rabu,F6.004,16:20,17:10,Kosong,,,,,,normal
+template,,Rabu,F6.004,17:10,18:00,Kosong,,,,,,normal
+template,,Rabu,F6.004,18:30,19:20,Kosong,,,,,,normal
+template,,Rabu,F6.004,19:20,20:10,Kosong,,,,,,normal
+template,,Rabu,F6.004,20:10,21:00,Kosong,,,,,,normal
+template,,Rabu,F6.101,7:00,7:50,Kosong,,,,,,normal
+template,,Rabu,F6.101,7:50,8:40,Kosong,,,,,,normal
+template,,Rabu,F6.101,8:50,9:40,Kosong,,,,,,normal
+template,,Rabu,F6.101,9:40,10:30,Kosong,,,,,,normal
+template,,Rabu,F6.101,10:40,11:30,Kosong,,,,,,normal
+template,,Rabu,F6.101,12:10,13:10,Kosong,,,,,,normal
+template,,Rabu,F6.101,13:20,14:10,Kosong,,,,,,normal
+template,,Rabu,F6.101,14:10,15:00,Kosong,,,,,,normal
+template,,Rabu,F6.101,15:30,16:20,Kosong,,,,,,normal
+template,,Rabu,F6.101,16:20,17:10,Kosong,,,,,,normal
+template,,Rabu,F6.101,17:10,18:00,Kosong,,,,,,normal
+template,,Rabu,F6.101,18:30,19:20,Kosong,,,,,,normal
+template,,Rabu,F6.101,19:20,20:10,Kosong,,,,,,normal
+template,,Rabu,F6.101,20:10,21:00,Kosong,,,,,,normal
+template,,Rabu,F6.102,7:00,7:50,Kosong,,,,,,normal
+template,,Rabu,F6.102,7:50,8:40,Kosong,,,,,,normal
+template,,Rabu,F6.102,8:50,9:40,Kosong,,,,,,normal
+template,,Rabu,F6.102,9:40,10:30,Kosong,,,,,,normal
+template,,Rabu,F6.102,10:40,11:30,Kosong,,,,,,normal
+template,,Rabu,F6.102,12:10,13:10,Kosong,,,,,,normal
+template,,Rabu,F6.102,13:20,14:10,Terpakai,TI401,A,Pengembangan Desain Web,"Ir. Asroni, S.T.,  M.Eng.","TI401 ( A )
+Pengembangan Desain Web
+Dosen: AS",normal
+template,,Rabu,F6.102,14:10,15:00,Terpakai,TI401,A,Pengembangan Desain Web,"Ir. Asroni, S.T.,  M.Eng.","TI401 ( A )
+Pengembangan Desain Web
+Dosen: AS",normal
+template,,Rabu,F6.102,15:30,16:20,Terpakai,TI401,A,Pengembangan Desain Web,"Ir. Asroni, S.T.,  M.Eng.","TI401 ( A )
+Pengembangan Desain Web
+Dosen: AS",normal
+template,,Rabu,F6.102,16:20,17:10,Kosong,,,,,,normal
+template,,Rabu,F6.102,17:10,18:00,Kosong,,,,,,normal
+template,,Rabu,F6.102,18:30,19:20,Kosong,,,,,,normal
+template,,Rabu,F6.102,19:20,20:10,Kosong,,,,,,normal
+template,,Rabu,F6.102,20:10,21:00,Kosong,,,,,,normal
+template,,Rabu,F6.103,7:00,7:50,Kosong,,,,,,normal
+template,,Rabu,F6.103,7:50,8:40,Kosong,,,,,,normal
+template,,Rabu,F6.103,8:50,9:40,Terpakai,TI404,B,Keamanan Siber,"Cahya Damarjati, S.T. M. Eng., Ph.D.","TI404 ( B )
+Keamanan Siber
+Dosen: CD",normal
+template,,Rabu,F6.103,9:40,10:30,Terpakai,TI404,B,Keamanan Siber,"Cahya Damarjati, S.T. M. Eng., Ph.D.","TI404 ( B )
+Keamanan Siber
+Dosen: CD",normal
+template,,Rabu,F6.103,10:40,11:30,Terpakai,TI404,B,Keamanan Siber,"Cahya Damarjati, S.T. M. Eng., Ph.D.","TI404 ( B )
+Keamanan Siber
+Dosen: CD",normal
+template,,Rabu,F6.103,12:10,13:10,Kosong,,,,,,normal
+template,,Rabu,F6.103,13:20,14:10,Terpakai,TI404,F,Keamanan Siber,"Cahya Damarjati, S.T. M. Eng., Ph.D.","TI404 ( F )
+Keamanan Siber
+Dosen: CD",normal
+template,,Rabu,F6.103,14:10,15:00,Terpakai,TI404,F,Keamanan Siber,"Cahya Damarjati, S.T. M. Eng., Ph.D.","TI404 ( F )
+Keamanan Siber
+Dosen: CD",normal
+template,,Rabu,F6.103,15:30,16:20,Terpakai,TI404,F,Keamanan Siber,"Cahya Damarjati, S.T. M. Eng., Ph.D.","TI404 ( F )
+Keamanan Siber
+Dosen: CD",normal
+template,,Rabu,F6.103,16:20,17:10,Kosong,,,,,,normal
+template,,Rabu,F6.103,17:10,18:00,Kosong,,,,,,normal
+template,,Rabu,F6.103,18:30,19:20,Kosong,,,,,,normal
+template,,Rabu,F6.103,19:20,20:10,Kosong,,,,,,normal
+template,,Rabu,F6.103,20:10,21:00,Kosong,,,,,,normal
+template,,Rabu,F6.202,7:00,7:50,Kosong,,,,,,normal
+template,,Rabu,F6.202,7:50,8:40,Kosong,,,,,,normal
+template,,Rabu,F6.202,8:50,9:40,Kosong,,,,,,normal
+template,,Rabu,F6.202,9:40,10:30,Terpakai,TI208,C,Bahasa Inggris Menengah,,"TI208 ( C )
+Bahasa Inggris Menengah
+Dosen: TIM",normal
+template,,Rabu,F6.202,10:40,11:30,Terpakai,TI208,C,Bahasa Inggris Menengah,,"TI208 ( C )
+Bahasa Inggris Menengah
+Dosen: TIM",normal
+template,,Rabu,F6.202,12:10,13:10,Kosong,,,,,,normal
+template,,Rabu,F6.202,13:20,14:10,Terpakai,,,TW,,TW,normal
+template,,Rabu,F6.202,14:10,15:00,Terpakai,,,TW,,TW,normal
+template,,Rabu,F6.202,15:30,16:20,Kosong,,,,,,normal
+template,,Rabu,F6.202,16:20,17:10,Kosong,,,,,,normal
+template,,Rabu,F6.202,17:10,18:00,Kosong,,,,,,normal
+template,,Rabu,F6.202,18:30,19:20,Kosong,,,,,,normal
+template,,Rabu,F6.202,19:20,20:10,Kosong,,,,,,normal
+template,,Rabu,F6.202,20:10,21:00,Kosong,,,,,,normal
+template,,Rabu,F6.203,7:00,7:50,Kosong,,,,,,normal
+template,,Rabu,F6.203,7:50,8:40,Kosong,,,,,,normal
+template,,Rabu,F6.203,8:50,9:40,Kosong,,,,,,normal
+template,,Rabu,F6.203,9:40,10:30,Kosong,,,,,,normal
+template,,Rabu,F6.203,10:40,11:30,Kosong,,,,,,normal
+template,,Rabu,F6.203,12:10,13:10,Kosong,,,,,,normal
+template,,Rabu,F6.203,13:20,14:10,Kosong,,,,,,normal
+template,,Rabu,F6.203,14:10,15:00,Kosong,,,,,,normal
+template,,Rabu,F6.203,15:30,16:20,Kosong,,,,,,normal
+template,,Rabu,F6.203,16:20,17:10,Kosong,,,,,,normal
+template,,Rabu,F6.203,17:10,18:00,Kosong,,,,,,normal
+template,,Rabu,F6.203,18:30,19:20,Kosong,,,,,,normal
+template,,Rabu,F6.203,19:20,20:10,Kosong,,,,,,normal
+template,,Rabu,F6.203,20:10,21:00,Kosong,,,,,,normal
+template,,Rabu,RKBesar/F6.001,7:00,7:50,Terpakai,TI209,"C, D",Praktik Profesional,"Chayadi Oktomy N S, S.T., M.Eng. Ph.D","TI209 ( C, D )
+Praktik Profesional
+Dosen: CO",normal
+template,,Rabu,RKBesar/F6.001,7:50,8:40,Terpakai,TI209,"C, D",Praktik Profesional,"Chayadi Oktomy N S, S.T., M.Eng. Ph.D","TI209 ( C, D )
+Praktik Profesional
+Dosen: CO",normal
+template,,Rabu,RKBesar/F6.001,8:50,9:40,Terpakai,TI406,D,Pengujian dan Penjaminan Mutu Perangkat Lunak,"Chayadi Oktomy N S, S.T., M.Eng. Ph.D","TI406 ( D )
+Pengujian dan Penjaminan Mutu Perangkat Lunak
+Dosen: CO",normal
+template,,Rabu,RKBesar/F6.001,9:40,10:30,Terpakai,TI406,D,Pengujian dan Penjaminan Mutu Perangkat Lunak,"Chayadi Oktomy N S, S.T., M.Eng. Ph.D","TI406 ( D )
+Pengujian dan Penjaminan Mutu Perangkat Lunak
+Dosen: CO",normal
+template,,Rabu,RKBesar/F6.001,10:40,11:30,Terpakai,TI406,D,Pengujian dan Penjaminan Mutu Perangkat Lunak,"Chayadi Oktomy N S, S.T., M.Eng. Ph.D","TI406 ( D )
+Pengujian dan Penjaminan Mutu Perangkat Lunak
+Dosen: CO",normal
+template,,Rabu,RKBesar/F6.001,12:10,13:10,Kosong,,,,,,normal
+template,,Rabu,RKBesar/F6.001,13:20,14:10,Kosong,,,,,,normal
+template,,Rabu,RKBesar/F6.001,14:10,15:00,Kosong,,,,,,normal
+template,,Rabu,RKBesar/F6.001,15:30,16:20,Kosong,,,,,,normal
+template,,Rabu,RKBesar/F6.001,16:20,17:10,Kosong,,,,,,normal
+template,,Rabu,RKBesar/F6.001,17:10,18:00,Kosong,,,,,,normal
+template,,Rabu,RKBesar/F6.001,18:30,19:20,Kosong,,,,,,normal
+template,,Rabu,RKBesar/F6.001,19:20,20:10,Kosong,,,,,,normal
+template,,Rabu,RKBesar/F6.001,20:10,21:00,Kosong,,,,,,normal
+template,,Kamis,F4.001,7:00,7:50,Kosong,,,,,,normal
+template,,Kamis,F4.001,7:50,8:40,Kosong,,,,,,normal
+template,,Kamis,F4.001,8:50,9:40,Terpakai,TIUX05,B,Evaluasi Pengguna,TIM Teaching,"TIUX05 ( B )
+Evaluasi Pengguna
+Dosen: RG/WS",normal
+template,,Kamis,F4.001,9:40,10:30,Terpakai,TIUX05,B,Evaluasi Pengguna,TIM Teaching,"TIUX05 ( B )
+Evaluasi Pengguna
+Dosen: RG/WS",normal
+template,,Kamis,F4.001,10:40,11:30,Terpakai,TIUX05,B,Evaluasi Pengguna,TIM Teaching,"TIUX05 ( B )
+Evaluasi Pengguna
+Dosen: RG/WS",normal
+template,,Kamis,F4.001,12:10,13:10,Kosong,,,,,,normal
+template,,Kamis,F4.001,13:20,14:10,Terpakai,TINE04,A,Programmable Infrastructure,"Ir. Eko Prasetyo, M.Eng., Ph.D.","TINE04 ( A )
+Programmable Infrastructure
+Dosen: EP",normal
+template,,Kamis,F4.001,14:10,15:00,Terpakai,TINE04,A,Programmable Infrastructure,"Ir. Eko Prasetyo, M.Eng., Ph.D.","TINE04 ( A )
+Programmable Infrastructure
+Dosen: EP",normal
+template,,Kamis,F4.001,15:30,16:20,Terpakai,TINE04,A,Programmable Infrastructure,"Ir. Eko Prasetyo, M.Eng., Ph.D.","TINE04 ( A )
+Programmable Infrastructure
+Dosen: EP",normal
+template,,Kamis,F4.001,16:20,17:10,Terpakai,TINE03,A,Core Network,"Ir. Eko Prasetyo, M.Eng., Ph.D.","TINE03 ( A )
+Core Network
+Dosen: EP",normal
+template,,Kamis,F4.001,17:10,18:00,Terpakai,TINE03,A,Core Network,"Ir. Eko Prasetyo, M.Eng., Ph.D.","TINE03 ( A )
+Core Network
+Dosen: EP",normal
+template,,Kamis,F4.001,18:30,19:20,Terpakai,TINE03,A,Core Network,"Ir. Eko Prasetyo, M.Eng., Ph.D.","TINE03 ( A )
+Core Network
+Dosen: EP",normal
+template,,Kamis,F4.001,19:20,20:10,Kosong,,,,,,normal
+template,,Kamis,F4.001,20:10,21:00,Kosong,,,,,,normal
+template,,Kamis,F4.002,7:00,7:50,Kosong,,,,,,normal
+template,,Kamis,F4.002,7:50,8:40,Kosong,,,,,,normal
+template,,Kamis,F4.002,8:50,9:40,Terpakai,TI403,E,Routing dan Keamanan Jaringan,"Ir. Eko Prasetyo, M.Eng., Ph.D.","TI403 ( E)
+Routing dan Keamanan Jaringan
+Dosen: EP",normal
+template,,Kamis,F4.002,9:40,10:30,Terpakai,TI403,E,Routing dan Keamanan Jaringan,"Ir. Eko Prasetyo, M.Eng., Ph.D.","TI403 ( E)
+Routing dan Keamanan Jaringan
+Dosen: EP",normal
+template,,Kamis,F4.002,10:40,11:30,Terpakai,TI403,E,Routing dan Keamanan Jaringan,"Ir. Eko Prasetyo, M.Eng., Ph.D.","TI403 ( E)
+Routing dan Keamanan Jaringan
+Dosen: EP",normal
+template,,Kamis,F4.002,12:10,13:10,Kosong,,,,,,normal
+template,,Kamis,F4.002,13:20,14:10,Terpakai,TI202,A,Algoritma dan Struktur Data,"Haris Setyawan, S.T., M.Eng.","TI202 ( A )
+Algoritma dan Struktur Data
+Dosen: HS",normal
+template,,Kamis,F4.002,14:10,15:00,Terpakai,TI202,A,Algoritma dan Struktur Data,"Haris Setyawan, S.T., M.Eng.","TI202 ( A )
+Algoritma dan Struktur Data
+Dosen: HS",normal
+template,,Kamis,F4.002,15:30,16:20,Terpakai,TI202,A,Algoritma dan Struktur Data,"Haris Setyawan, S.T., M.Eng.","TI202 ( A )
+Algoritma dan Struktur Data
+Dosen: HS",normal
+template,,Kamis,F4.002,16:20,17:10,Terpakai,TI202,B,Algoritma dan Struktur Data,"Haris Setyawan, S.T., M.Eng.","TI202 ( B )
+Algoritma dan Struktur Data
+Dosen: HS",normal
+template,,Kamis,F4.002,17:10,18:00,Terpakai,TI202,B,Algoritma dan Struktur Data,"Haris Setyawan, S.T., M.Eng.","TI202 ( B )
+Algoritma dan Struktur Data
+Dosen: HS",normal
+template,,Kamis,F4.002,18:30,19:20,Terpakai,TI202,B,Algoritma dan Struktur Data,"Haris Setyawan, S.T., M.Eng.","TI202 ( B )
+Algoritma dan Struktur Data
+Dosen: HS",normal
+template,,Kamis,F4.002,19:20,20:10,Kosong,,,,,,normal
+template,,Kamis,F4.002,20:10,21:00,Kosong,,,,,,normal
+template,,Kamis,F4.003,7:00,7:50,Kosong,,,,,,normal
+template,,Kamis,F4.003,7:50,8:40,Kosong,,,,,,normal
+template,,Kamis,F4.003,8:50,9:40,Terpakai,TIDA02,A,Kecerdasan Buatan Terapan,TIM Teaching,"TIDA02 ( A )
+Kecerdasan Buatan Terapan
+Dosen: SR/CO",normal
+template,,Kamis,F4.003,9:40,10:30,Terpakai,TIDA02,A,Kecerdasan Buatan Terapan,TIM Teaching,"TIDA02 ( A )
+Kecerdasan Buatan Terapan
+Dosen: SR/CO",normal
+template,,Kamis,F4.003,10:40,11:30,Terpakai,TIDA02,A,Kecerdasan Buatan Terapan,TIM Teaching,"TIDA02 ( A )
+Kecerdasan Buatan Terapan
+Dosen: SR/CO",normal
+template,,Kamis,F4.003,12:10,13:10,Kosong,,,,,,normal
+template,,Kamis,F4.003,13:20,14:10,Terpakai,TI205,D,Dasar Jaringan,"Nurwahyu Alamsyah, S.Kom., M.Kom., M.I.M., Ph.D","TI205 ( D )
+Dasar Jaringan
+Dosen: NA",normal
+template,,Kamis,F4.003,14:10,15:00,Terpakai,TI205,D,Dasar Jaringan,"Nurwahyu Alamsyah, S.Kom., M.Kom., M.I.M., Ph.D","TI205 ( D )
+Dasar Jaringan
+Dosen: NA",normal
+template,,Kamis,F4.003,15:30,16:20,Terpakai,TI205,D,Dasar Jaringan,"Nurwahyu Alamsyah, S.Kom., M.Kom., M.I.M., Ph.D","TI205 ( D )
+Dasar Jaringan
+Dosen: NA",normal
+template,,Kamis,F4.003,16:20,17:10,Terpakai,TI205,A,Dasar Jaringan,"Nurwahyu Alamsyah, S.Kom., M.Kom., M.I.M., Ph.D","TI205 ( A )
+Dasar Jaringan
+Dosen: NA",normal
+template,,Kamis,F4.003,17:10,18:00,Terpakai,TI205,A,Dasar Jaringan,"Nurwahyu Alamsyah, S.Kom., M.Kom., M.I.M., Ph.D","TI205 ( A )
+Dasar Jaringan
+Dosen: NA",normal
+template,,Kamis,F4.003,18:30,19:20,Terpakai,TI205,A,Dasar Jaringan,"Nurwahyu Alamsyah, S.Kom., M.Kom., M.I.M., Ph.D","TI205 ( A )
+Dasar Jaringan
+Dosen: NA",normal
+template,,Kamis,F4.003,19:20,20:10,Kosong,,,,,,normal
+template,,Kamis,F4.003,20:10,21:00,Kosong,,,,,,normal
+template,,Kamis,F6.002,7:00,7:50,Kosong,,,,,,normal
+template,,Kamis,F6.002,7:50,8:40,Kosong,,,,,,normal
+template,,Kamis,F6.002,8:50,9:40,Terpakai,TI202,C,Algoritma dan Struktur Data,"Haris Setyawan, S.T., M.Eng.","TI202 ( C )
+Algoritma dan Struktur Data
+Dosen: HS",normal
+template,,Kamis,F6.002,9:40,10:30,Terpakai,TI202,C,Algoritma dan Struktur Data,"Haris Setyawan, S.T., M.Eng.","TI202 ( C )
+Algoritma dan Struktur Data
+Dosen: HS",normal
+template,,Kamis,F6.002,10:40,11:30,Terpakai,TI202,C,Algoritma dan Struktur Data,"Haris Setyawan, S.T., M.Eng.","TI202 ( C )
+Algoritma dan Struktur Data
+Dosen: HS",normal
+template,,Kamis,F6.002,12:10,13:10,Kosong,,,,,,normal
+template,,Kamis,F6.002,13:20,14:10,Kosong,,,,,,normal
+template,,Kamis,F6.002,14:10,15:00,Kosong,,,,,,normal
+template,,Kamis,F6.002,15:30,16:20,Kosong,,,,,,normal
+template,,Kamis,F6.002,16:20,17:10,Kosong,,,,,,normal
+template,,Kamis,F6.002,17:10,18:00,Kosong,,,,,,normal
+template,,Kamis,F6.002,18:30,19:20,Kosong,,,,,,normal
+template,,Kamis,F6.002,19:20,20:10,Kosong,,,,,,normal
+template,,Kamis,F6.002,20:10,21:00,Kosong,,,,,,normal
+template,,Kamis,F6.003,7:00,7:50,Terpakai,TI401,D,Pengembangan Desain Web,"Ir. Asroni, S.T.,  M.Eng.","TI401 ( D )
+Pengembangan Desain Web
+Dosen: AS",normal
+template,,Kamis,F6.003,7:50,8:40,Terpakai,TI401,D,Pengembangan Desain Web,"Ir. Asroni, S.T.,  M.Eng.","TI401 ( D )
+Pengembangan Desain Web
+Dosen: AS",normal
+template,,Kamis,F6.003,8:50,9:40,Terpakai,TI401,D,Pengembangan Desain Web,"Ir. Asroni, S.T.,  M.Eng.","TI401 ( D )
+Pengembangan Desain Web
+Dosen: AS",normal
+template,,Kamis,F6.003,9:40,10:30,Terpakai,TI401,B,Pengembangan Desain Web,"Ir. Asroni, S.T.,  M.Eng.","TI401 ( B )
+Pengembangan Desain Web
+Dosen: AS",normal
+template,,Kamis,F6.003,10:40,11:30,Terpakai,TI401,B,Pengembangan Desain Web,"Ir. Asroni, S.T.,  M.Eng.","TI401 ( B )
+Pengembangan Desain Web
+Dosen: AS",normal
+template,,Kamis,F6.003,12:10,13:10,Terpakai,TI401,B,Pengembangan Desain Web,"Ir. Asroni, S.T.,  M.Eng.","TI401 ( B )
+Pengembangan Desain Web
+Dosen: AS",normal
+template,,Kamis,F6.003,13:20,14:10,Kosong,,,,,,normal
+template,,Kamis,F6.003,14:10,15:00,Kosong,,,,,,normal
+template,,Kamis,F6.003,15:30,16:20,Kosong,,,,,,normal
+template,,Kamis,F6.003,16:20,17:10,Kosong,,,,,,normal
+template,,Kamis,F6.003,17:10,18:00,Kosong,,,,,,normal
+template,,Kamis,F6.003,18:30,19:20,Kosong,,,,,,normal
+template,,Kamis,F6.003,19:20,20:10,Kosong,,,,,,normal
+template,,Kamis,F6.003,20:10,21:00,Kosong,,,,,,normal
+template,,Kamis,F6.004,7:00,7:50,Kosong,,,,,,normal
+template,,Kamis,F6.004,7:50,8:40,Kosong,,,,,,normal
+template,,Kamis,F6.004,8:50,9:40,Terpakai,TI402,A,Pengembangan Aplikasi Basis Data,"Aprilia Kurnianti, ST. M. Eng.","TI402 ( A )
+Pengembangan Aplikasi Basis Data
+Dosen: AK",normal
+template,,Kamis,F6.004,9:40,10:30,Terpakai,TI402,A,Pengembangan Aplikasi Basis Data,"Aprilia Kurnianti, ST. M. Eng.","TI402 ( A )
+Pengembangan Aplikasi Basis Data
+Dosen: AK",normal
+template,,Kamis,F6.004,10:40,11:30,Terpakai,TI402,A,Pengembangan Aplikasi Basis Data,"Aprilia Kurnianti, ST. M. Eng.","TI402 ( A )
+Pengembangan Aplikasi Basis Data
+Dosen: AK",normal
+template,,Kamis,F6.004,12:10,13:10,Kosong,,,,,,normal
+template,,Kamis,F6.004,13:20,14:10,Terpakai,TI402,B,Pengembangan Aplikasi Basis Data,"Aprilia Kurnianti, ST. M. Eng.","TI402 ( B )
+Pengembangan Aplikasi Basis Data
+Dosen: AK",normal
+template,,Kamis,F6.004,14:10,15:00,Terpakai,TI402,B,Pengembangan Aplikasi Basis Data,"Aprilia Kurnianti, ST. M. Eng.","TI402 ( B )
+Pengembangan Aplikasi Basis Data
+Dosen: AK",normal
+template,,Kamis,F6.004,15:30,16:20,Terpakai,TI402,B,Pengembangan Aplikasi Basis Data,"Aprilia Kurnianti, ST. M. Eng.","TI402 ( B )
+Pengembangan Aplikasi Basis Data
+Dosen: AK",normal
+template,,Kamis,F6.004,16:20,17:10,Terpakai,TI402,E,Pengembangan Aplikasi Basis Data,"Aprilia Kurnianti, ST. M. Eng.","TI402 ( E )
+Pengembangan Aplikasi Basis Data
+Dosen: AK",normal
+template,,Kamis,F6.004,17:10,18:00,Terpakai,TI402,E,Pengembangan Aplikasi Basis Data,"Aprilia Kurnianti, ST. M. Eng.","TI402 ( E )
+Pengembangan Aplikasi Basis Data
+Dosen: AK",normal
+template,,Kamis,F6.004,18:30,19:20,Terpakai,TI402,E,Pengembangan Aplikasi Basis Data,"Aprilia Kurnianti, ST. M. Eng.","TI402 ( E )
+Pengembangan Aplikasi Basis Data
+Dosen: AK",normal
+template,,Kamis,F6.004,19:20,20:10,Kosong,,,,,,normal
+template,,Kamis,F6.004,20:10,21:00,Kosong,,,,,,normal
+template,,Kamis,F6.101,7:00,7:50,Kosong,,,,,,normal
+template,,Kamis,F6.101,7:50,8:40,Kosong,,,,,,normal
+template,,Kamis,F6.101,8:50,9:40,Kosong,,,,,,normal
+template,,Kamis,F6.101,9:40,10:30,Kosong,,,,,,normal
+template,,Kamis,F6.101,10:40,11:30,Kosong,,,,,,normal
+template,,Kamis,F6.101,12:10,13:10,Kosong,,,,,,normal
+template,,Kamis,F6.101,13:20,14:10,Terpakai,TI406,C,Pengujian dan Penjaminan Mutu Perangkat Lunak,"Chayadi Oktomy N S, S.T., M.Eng. Ph.D","TI406 ( C )
+Pengujian dan Penjaminan Mutu Perangkat Lunak
+Dosen: CO",normal
+template,,Kamis,F6.101,14:10,15:00,Terpakai,TI406,C,Pengujian dan Penjaminan Mutu Perangkat Lunak,"Chayadi Oktomy N S, S.T., M.Eng. Ph.D","TI406 ( C )
+Pengujian dan Penjaminan Mutu Perangkat Lunak
+Dosen: CO",normal
+template,,Kamis,F6.101,15:30,16:20,Terpakai,TI406,C,Pengujian dan Penjaminan Mutu Perangkat Lunak,"Chayadi Oktomy N S, S.T., M.Eng. Ph.D","TI406 ( C )
+Pengujian dan Penjaminan Mutu Perangkat Lunak
+Dosen: CO",normal
+template,,Kamis,F6.101,16:20,17:10,Kosong,,,,,,normal
+template,,Kamis,F6.101,17:10,18:00,Kosong,,,,,,normal
+template,,Kamis,F6.101,18:30,19:20,Kosong,,,,,,normal
+template,,Kamis,F6.101,19:20,20:10,Kosong,,,,,,normal
+template,,Kamis,F6.101,20:10,21:00,Kosong,,,,,,normal
+template,,Kamis,F6.102,7:00,7:50,Kosong,,,,,,normal
+template,,Kamis,F6.102,7:50,8:40,Kosong,,,,,,normal
+template,,Kamis,F6.102,8:50,9:40,Kosong,,,,,,normal
+template,,Kamis,F6.102,9:40,10:30,Kosong,,,,,,normal
+template,,Kamis,F6.102,10:40,11:30,Kosong,,,,,,normal
+template,,Kamis,F6.102,12:10,13:10,Kosong,,,,,,normal
+template,,Kamis,F6.102,13:20,14:10,Kosong,,,,,,normal
+template,,Kamis,F6.102,14:10,15:00,Kosong,,,,,,normal
+template,,Kamis,F6.102,15:30,16:20,Kosong,,,,,,normal
+template,,Kamis,F6.102,16:20,17:10,Kosong,,,,,,normal
+template,,Kamis,F6.102,17:10,18:00,Kosong,,,,,,normal
+template,,Kamis,F6.102,18:30,19:20,Kosong,,,,,,normal
+template,,Kamis,F6.102,19:20,20:10,Kosong,,,,,,normal
+template,,Kamis,F6.102,20:10,21:00,Kosong,,,,,,normal
+template,,Kamis,F6.103,7:00,7:50,Kosong,,,,,,normal
+template,,Kamis,F6.103,7:50,8:40,Kosong,,,,,,normal
+template,,Kamis,F6.103,8:50,9:40,Kosong,,,,,,normal
+template,,Kamis,F6.103,9:40,10:30,Kosong,,,,,,normal
+template,,Kamis,F6.103,10:40,11:30,Kosong,,,,,,normal
+template,,Kamis,F6.103,12:10,13:10,Kosong,,,,,,normal
+template,,Kamis,F6.103,13:20,14:10,Kosong,,,,,,normal
+template,,Kamis,F6.103,14:10,15:00,Kosong,,,,,,normal
+template,,Kamis,F6.103,15:30,16:20,Kosong,,,,,,normal
+template,,Kamis,F6.103,16:20,17:10,Kosong,,,,,,normal
+template,,Kamis,F6.103,17:10,18:00,Kosong,,,,,,normal
+template,,Kamis,F6.103,18:30,19:20,Kosong,,,,,,normal
+template,,Kamis,F6.103,19:20,20:10,Kosong,,,,,,normal
+template,,Kamis,F6.103,20:10,21:00,Kosong,,,,,,normal
+template,,Kamis,F6.202,7:00,7:50,Kosong,,,,,,normal
+template,,Kamis,F6.202,7:50,8:40,Kosong,,,,,,normal
+template,,Kamis,F6.202,8:50,9:40,Terpakai,,,TW,,TW,normal
+template,,Kamis,F6.202,9:40,10:30,Terpakai,,,TW,,TW,normal
+template,,Kamis,F6.202,10:40,11:30,Terpakai,TI208,A,Bahasa Inggris Menengah,,"TI208 ( A )
+Bahasa Inggris Menengah
+Dosen: TIM",normal
+template,,Kamis,F6.202,12:10,13:10,Terpakai,TI208,A,Bahasa Inggris Menengah,,"TI208 ( A )
+Bahasa Inggris Menengah
+Dosen: TIM",normal
+template,,Kamis,F6.202,13:20,14:10,Terpakai,TI208,B,Bahasa Inggris Menengah,,"TI208 ( B )
+Bahasa Inggris Menengah
+Dosen: TIM",normal
+template,,Kamis,F6.202,14:10,15:00,Terpakai,TI208,B,Bahasa Inggris Menengah,,"TI208 ( B )
+Bahasa Inggris Menengah
+Dosen: TIM",normal
+template,,Kamis,F6.202,15:30,16:20,Kosong,,,,,,normal
+template,,Kamis,F6.202,16:20,17:10,Kosong,,,,,,normal
+template,,Kamis,F6.202,17:10,18:00,Kosong,,,,,,normal
+template,,Kamis,F6.202,18:30,19:20,Kosong,,,,,,normal
+template,,Kamis,F6.202,19:20,20:10,Kosong,,,,,,normal
+template,,Kamis,F6.202,20:10,21:00,Kosong,,,,,,normal
+template,,Kamis,F6.203,7:00,7:50,Terpakai,TI208,E,Bahasa Inggris Menengah,,"TI208 ( E )
+Bahasa Inggris Menengah
+Dosen: TIM",normal
+template,,Kamis,F6.203,7:50,8:40,Terpakai,TI208,E,Bahasa Inggris Menengah,,"TI208 ( E )
+Bahasa Inggris Menengah
+Dosen: TIM",normal
+template,,Kamis,F6.203,8:50,9:40,Kosong,,,,,,normal
+template,,Kamis,F6.203,9:40,10:30,Kosong,,,,,,normal
+template,,Kamis,F6.203,10:40,11:30,Kosong,,,,,,normal
+template,,Kamis,F6.203,12:10,13:10,Kosong,,,,,,normal
+template,,Kamis,F6.203,13:20,14:10,Kosong,,,,,,normal
+template,,Kamis,F6.203,14:10,15:00,Kosong,,,,,,normal
+template,,Kamis,F6.203,15:30,16:20,Kosong,,,,,,normal
+template,,Kamis,F6.203,16:20,17:10,Kosong,,,,,,normal
+template,,Kamis,F6.203,17:10,18:00,Kosong,,,,,,normal
+template,,Kamis,F6.203,18:30,19:20,Kosong,,,,,,normal
+template,,Kamis,F6.203,19:20,20:10,Kosong,,,,,,normal
+template,,Kamis,F6.203,20:10,21:00,Kosong,,,,,,normal
+template,,Kamis,RKBesar/F6.001,7:00,7:50,Kosong,,,,,,normal
+template,,Kamis,RKBesar/F6.001,7:50,8:40,Kosong,,,,,,normal
+template,,Kamis,RKBesar/F6.001,8:50,9:40,Kosong,,,,,,normal
+template,,Kamis,RKBesar/F6.001,9:40,10:30,Kosong,,,,,,normal
+template,,Kamis,RKBesar/F6.001,10:40,11:30,Kosong,,,,,,normal
+template,,Kamis,RKBesar/F6.001,12:10,13:10,Kosong,,,,,,normal
+template,,Kamis,RKBesar/F6.001,13:20,14:10,Kosong,,,,,,normal
+template,,Kamis,RKBesar/F6.001,14:10,15:00,Kosong,,,,,,normal
+template,,Kamis,RKBesar/F6.001,15:30,16:20,Kosong,,,,,,normal
+template,,Kamis,RKBesar/F6.001,16:20,17:10,Kosong,,,,,,normal
+template,,Kamis,RKBesar/F6.001,17:10,18:00,Kosong,,,,,,normal
+template,,Kamis,RKBesar/F6.001,18:30,19:20,Kosong,,,,,,normal
+template,,Kamis,RKBesar/F6.001,19:20,20:10,Kosong,,,,,,normal
+template,,Kamis,RKBesar/F6.001,20:10,21:00,Kosong,,,,,,normal
+template,,Jumat,F4.001,7:00,7:50,Kosong,,,,,,normal
+template,,Jumat,F4.001,7:50,8:40,Kosong,,,,,,normal
+template,,Jumat,F4.001,8:50,9:40,Kosong,,,,,,normal
+template,,Jumat,F4.001,9:40,10:30,Kosong,,,,,,normal
+template,,Jumat,F4.001,10:40,11:30,Kosong,,,,,,normal
+template,,Jumat,F4.001,12:10,13:10,Kosong,,,,,,normal
+template,,Jumat,F4.001,13:20,14:10,Kosong,,,,,,normal
+template,,Jumat,F4.001,14:10,15:00,Kosong,,,,,,normal
+template,,Jumat,F4.001,15:30,16:20,Kosong,,,,,,normal
+template,,Jumat,F4.001,16:20,17:10,Kosong,,,,,,normal
+template,,Jumat,F4.001,17:10,18:00,Kosong,,,,,,normal
+template,,Jumat,F4.001,18:30,19:20,Kosong,,,,,,normal
+template,,Jumat,F4.001,19:20,20:10,Kosong,,,,,,normal
+template,,Jumat,F4.001,20:10,21:00,Kosong,,,,,,normal
+template,,Jumat,F4.002,7:00,7:50,Kosong,,,,,,normal
+template,,Jumat,F4.002,7:50,8:40,Kosong,,,,,,normal
+template,,Jumat,F4.002,8:50,9:40,Kosong,,,,,,normal
+template,,Jumat,F4.002,9:40,10:30,Kosong,,,,,,normal
+template,,Jumat,F4.002,10:40,11:30,Kosong,,,,,,normal
+template,,Jumat,F4.002,12:10,13:10,Kosong,,,,,,normal
+template,,Jumat,F4.002,13:20,14:10,Terpakai,TIUX04,A,Desain Game,"Dr. Reza Giga Isnanda, S.T., M.Sc.","TIUX04 ( A )
+Desain Game
+Dosen: RG",normal
+template,,Jumat,F4.002,14:10,15:00,Terpakai,TIUX04,A,Desain Game,"Dr. Reza Giga Isnanda, S.T., M.Sc.","TIUX04 ( A )
+Desain Game
+Dosen: RG",normal
+template,,Jumat,F4.002,15:30,16:20,Terpakai,TIUX04,A,Desain Game,"Dr. Reza Giga Isnanda, S.T., M.Sc.","TIUX04 ( A )
+Desain Game
+Dosen: RG",normal
+template,,Jumat,F4.002,16:20,17:10,Kosong,,,,,,normal
+template,,Jumat,F4.002,17:10,18:00,Kosong,,,,,,normal
+template,,Jumat,F4.002,18:30,19:20,Kosong,,,,,,normal
+template,,Jumat,F4.002,19:20,20:10,Kosong,,,,,,normal
+template,,Jumat,F4.002,20:10,21:00,Kosong,,,,,,normal
+template,,Jumat,F4.003,7:00,7:50,Kosong,,,,,,normal
+template,,Jumat,F4.003,7:50,8:40,Kosong,,,,,,normal
+template,,Jumat,F4.003,8:50,9:40,Terpakai,TIPR04,A,Pengembangan Aplikasi Mobile Lanjut,"Haris Setyawan, S.T., M.Eng.","TIPR04 ( A )
+Pengembangan Aplikasi Mobile Lanjut
+Dosen: HS",normal
+template,,Jumat,F4.003,9:40,10:30,Terpakai,TIPR04,A,Pengembangan Aplikasi Mobile Lanjut,"Haris Setyawan, S.T., M.Eng.","TIPR04 ( A )
+Pengembangan Aplikasi Mobile Lanjut
+Dosen: HS",normal
+template,,Jumat,F4.003,10:40,11:30,Terpakai,TIPR04,A,Pengembangan Aplikasi Mobile Lanjut,"Haris Setyawan, S.T., M.Eng.","TIPR04 ( A )
+Pengembangan Aplikasi Mobile Lanjut
+Dosen: HS",normal
+template,,Jumat,F4.003,12:10,13:10,Kosong,,,,,,normal
+template,,Jumat,F4.003,13:20,14:10,Terpakai,TI202,D,Algoritma dan Struktur Data,"Haris Setyawan, S.T., M.Eng.","TI202 ( D )
+Algoritma dan Struktur Data
+Dosen: HS",normal
+template,,Jumat,F4.003,14:10,15:00,Terpakai,TI202,D,Algoritma dan Struktur Data,"Haris Setyawan, S.T., M.Eng.","TI202 ( D )
+Algoritma dan Struktur Data
+Dosen: HS",normal
+template,,Jumat,F4.003,15:30,16:20,Terpakai,TI202,D,Algoritma dan Struktur Data,"Haris Setyawan, S.T., M.Eng.","TI202 ( D )
+Algoritma dan Struktur Data
+Dosen: HS",normal
+template,,Jumat,F4.003,16:20,17:10,Kosong,,,,,,normal
+template,,Jumat,F4.003,17:10,18:00,Kosong,,,,,,normal
+template,,Jumat,F4.003,18:30,19:20,Kosong,,,,,,normal
+template,,Jumat,F4.003,19:20,20:10,Kosong,,,,,,normal
+template,,Jumat,F4.003,20:10,21:00,Kosong,,,,,,normal
+template,,Jumat,F6.002,7:00,7:50,Kosong,,,,,,normal
+template,,Jumat,F6.002,7:50,8:40,Kosong,,,,,,normal
+template,,Jumat,F6.002,8:50,9:40,Terpakai,TI402,D,Pengembangan Aplikasi Basis Data,"Aprilia Kurnianti, ST. M. Eng.","TI402 ( D )
+Pengembangan Aplikasi Basis Data
+Dosen: AK",normal
+template,,Jumat,F6.002,9:40,10:30,Terpakai,TI402,D,Pengembangan Aplikasi Basis Data,"Aprilia Kurnianti, ST. M. Eng.","TI402 ( D )
+Pengembangan Aplikasi Basis Data
+Dosen: AK",normal
+template,,Jumat,F6.002,10:40,11:30,Terpakai,TI402,D,Pengembangan Aplikasi Basis Data,"Aprilia Kurnianti, ST. M. Eng.","TI402 ( D )
+Pengembangan Aplikasi Basis Data
+Dosen: AK",normal
+template,,Jumat,F6.002,12:10,13:10,Kosong,,,,,,normal
+template,,Jumat,F6.002,13:20,14:10,Terpakai,TI402,C,Pengembangan Aplikasi Basis Data,"Aprilia Kurnianti, ST. M. Eng.","TI402 ( C )
+Pengembangan Aplikasi Basis Data
+Dosen: AK",normal
+template,,Jumat,F6.002,14:10,15:00,Terpakai,TI402,C,Pengembangan Aplikasi Basis Data,"Aprilia Kurnianti, ST. M. Eng.","TI402 ( C )
+Pengembangan Aplikasi Basis Data
+Dosen: AK",normal
+template,,Jumat,F6.002,15:30,16:20,Terpakai,TI402,C,Pengembangan Aplikasi Basis Data,"Aprilia Kurnianti, ST. M. Eng.","TI402 ( C )
+Pengembangan Aplikasi Basis Data
+Dosen: AK",normal
+template,,Jumat,F6.002,16:20,17:10,Kosong,,,,,,normal
+template,,Jumat,F6.002,17:10,18:00,Kosong,,,,,,normal
+template,,Jumat,F6.002,18:30,19:20,Kosong,,,,,,normal
+template,,Jumat,F6.002,19:20,20:10,Kosong,,,,,,normal
+template,,Jumat,F6.002,20:10,21:00,Kosong,,,,,,normal
+template,,Jumat,F6.003,7:00,7:50,Kosong,,,,,,normal
+template,,Jumat,F6.003,7:50,8:40,Kosong,,,,,,normal
+template,,Jumat,F6.003,8:50,9:40,Terpakai,,,AS,,AS,normal
+template,,Jumat,F6.003,9:40,10:30,Terpakai,,,AS,,AS,normal
+template,,Jumat,F6.003,10:40,11:30,Terpakai,,,AS,,AS,normal
+template,,Jumat,F6.003,12:10,13:10,Kosong,,,,,,normal
+template,,Jumat,F6.003,13:20,14:10,Kosong,,,,,,normal
+template,,Jumat,F6.003,14:10,15:00,Kosong,,,,,,normal
+template,,Jumat,F6.003,15:30,16:20,Terpakai,,,,,,normal
+template,,Jumat,F6.003,16:20,17:10,Terpakai,,,,,,normal
+template,,Jumat,F6.003,17:10,18:00,Terpakai,,,,,,normal
+template,,Jumat,F6.003,18:30,19:20,Kosong,,,,,,normal
+template,,Jumat,F6.003,19:20,20:10,Kosong,,,,,,normal
+template,,Jumat,F6.003,20:10,21:00,Kosong,,,,,,normal
+template,,Jumat,F6.004,7:00,7:50,Kosong,,,,,,normal
+template,,Jumat,F6.004,7:50,8:40,Kosong,,,,,,normal
+template,,Jumat,F6.004,8:50,9:40,Kosong,,,,,,normal
+template,,Jumat,F6.004,9:40,10:30,Kosong,,,,,,normal
+template,,Jumat,F6.004,10:40,11:30,Kosong,,,,,,normal
+template,,Jumat,F6.004,12:10,13:10,Kosong,,,,,,normal
+template,,Jumat,F6.004,13:20,14:10,Kosong,,,,,,normal
+template,,Jumat,F6.004,14:10,15:00,Kosong,,,,,,normal
+template,,Jumat,F6.004,15:30,16:20,Kosong,,,,,,normal
+template,,Jumat,F6.004,16:20,17:10,Kosong,,,,,,normal
+template,,Jumat,F6.004,17:10,18:00,Kosong,,,,,,normal
+template,,Jumat,F6.004,18:30,19:20,Kosong,,,,,,normal
+template,,Jumat,F6.004,19:20,20:10,Kosong,,,,,,normal
+template,,Jumat,F6.004,20:10,21:00,Kosong,,,,,,normal
+template,,Jumat,F6.101,7:00,7:50,Kosong,,,,,,normal
+template,,Jumat,F6.101,7:50,8:40,Kosong,,,,,,normal
+template,,Jumat,F6.101,8:50,9:40,Terpakai,TI406,B,Pengujian dan Penjaminan Mutu Perangkat Lunak,"Chayadi Oktomy N S, S.T., M.Eng. Ph.D","TI406 ( B )
+Pengujian dan Penjaminan Mutu Perangkat Lunak
+Dosen: CO",normal
+template,,Jumat,F6.101,9:40,10:30,Terpakai,TI406,B,Pengujian dan Penjaminan Mutu Perangkat Lunak,"Chayadi Oktomy N S, S.T., M.Eng. Ph.D","TI406 ( B )
+Pengujian dan Penjaminan Mutu Perangkat Lunak
+Dosen: CO",normal
+template,,Jumat,F6.101,10:40,11:30,Terpakai,TI406,B,Pengujian dan Penjaminan Mutu Perangkat Lunak,"Chayadi Oktomy N S, S.T., M.Eng. Ph.D","TI406 ( B )
+Pengujian dan Penjaminan Mutu Perangkat Lunak
+Dosen: CO",normal
+template,,Jumat,F6.101,12:10,13:10,Kosong,,,,,,normal
+template,,Jumat,F6.101,13:20,14:10,Kosong,,,,,,normal
+template,,Jumat,F6.101,14:10,15:00,Kosong,,,,,,normal
+template,,Jumat,F6.101,15:30,16:20,Kosong,,,,,,normal
+template,,Jumat,F6.101,16:20,17:10,Kosong,,,,,,normal
+template,,Jumat,F6.101,17:10,18:00,Kosong,,,,,,normal
+template,,Jumat,F6.101,18:30,19:20,Kosong,,,,,,normal
+template,,Jumat,F6.101,19:20,20:10,Kosong,,,,,,normal
+template,,Jumat,F6.101,20:10,21:00,Kosong,,,,,,normal
+template,,Jumat,F6.102,7:00,7:50,Kosong,,,,,,normal
+template,,Jumat,F6.102,7:50,8:40,Kosong,,,,,,normal
+template,,Jumat,F6.102,8:50,9:40,Kosong,,,,,,normal
+template,,Jumat,F6.102,9:40,10:30,Kosong,,,,,,normal
+template,,Jumat,F6.102,10:40,11:30,Kosong,,,,,,normal
+template,,Jumat,F6.102,12:10,13:10,Kosong,,,,,,normal
+template,,Jumat,F6.102,13:20,14:10,Kosong,,,,,,normal
+template,,Jumat,F6.102,14:10,15:00,Kosong,,,,,,normal
+template,,Jumat,F6.102,15:30,16:20,Kosong,,,,,,normal
+template,,Jumat,F6.102,16:20,17:10,Kosong,,,,,,normal
+template,,Jumat,F6.102,17:10,18:00,Kosong,,,,,,normal
+template,,Jumat,F6.102,18:30,19:20,Kosong,,,,,,normal
+template,,Jumat,F6.102,19:20,20:10,Kosong,,,,,,normal
+template,,Jumat,F6.102,20:10,21:00,Kosong,,,,,,normal
+template,,Jumat,F6.103,7:00,7:50,Terpakai,TIPR03,C,Pemrograman Web Framework,"Ir. Asroni, S.T.,  M.Eng.","TIPR03 ( C )
+Pemrograman Web Framework
+Dosen: AS",normal
+template,,Jumat,F6.103,7:50,8:40,Terpakai,TIPR03,C,Pemrograman Web Framework,"Ir. Asroni, S.T.,  M.Eng.","TIPR03 ( C )
+Pemrograman Web Framework
+Dosen: AS",normal
+template,,Jumat,F6.103,8:50,9:40,Terpakai,TIPR03,C,Pemrograman Web Framework,"Ir. Asroni, S.T.,  M.Eng.","TIPR03 ( C )
+Pemrograman Web Framework
+Dosen: AS",normal
+template,,Jumat,F6.103,9:40,10:30,Kosong,,,,,,normal
+template,,Jumat,F6.103,10:40,11:30,Kosong,,,,,,normal
+template,,Jumat,F6.103,12:10,13:10,Kosong,,,,,,normal
+template,,Jumat,F6.103,13:20,14:10,Terpakai,TI404,E,Keamanan Siber,"Cahya Damarjati, S.T. M. Eng., Ph.D.","TI404 ( E )
+Keamanan Siber
+Dosen: CD",normal
+template,,Jumat,F6.103,14:10,15:00,Terpakai,TI404,E,Keamanan Siber,"Cahya Damarjati, S.T. M. Eng., Ph.D.","TI404 ( E )
+Keamanan Siber
+Dosen: CD",normal
+template,,Jumat,F6.103,15:30,16:20,Terpakai,TI404,E,Keamanan Siber,"Cahya Damarjati, S.T. M. Eng., Ph.D.","TI404 ( E )
+Keamanan Siber
+Dosen: CD",normal
+template,,Jumat,F6.103,16:20,17:10,Kosong,,,,,,normal
+template,,Jumat,F6.103,17:10,18:00,Kosong,,,,,,normal
+template,,Jumat,F6.103,18:30,19:20,Kosong,,,,,,normal
+template,,Jumat,F6.103,19:20,20:10,Kosong,,,,,,normal
+template,,Jumat,F6.103,20:10,21:00,Kosong,,,,,,normal
+template,,Jumat,F6.202,7:00,7:50,Kosong,,,,,,normal
+template,,Jumat,F6.202,7:50,8:40,Kosong,,,,,,normal
+template,,Jumat,F6.202,8:50,9:40,Kosong,,,,,,normal
+template,,Jumat,F6.202,9:40,10:30,Kosong,,,,,,normal
+template,,Jumat,F6.202,10:40,11:30,Kosong,,,,,,normal
+template,,Jumat,F6.202,12:10,13:10,Kosong,,,,,,normal
+template,,Jumat,F6.202,13:20,14:10,Terpakai,,,TW,,TW,normal
+template,,Jumat,F6.202,14:10,15:00,Terpakai,,,TW,,TW,normal
+template,,Jumat,F6.202,15:30,16:20,Kosong,,,,,,normal
+template,,Jumat,F6.202,16:20,17:10,Kosong,,,,,,normal
+template,,Jumat,F6.202,17:10,18:00,Kosong,,,,,,normal
+template,,Jumat,F6.202,18:30,19:20,Kosong,,,,,,normal
+template,,Jumat,F6.202,19:20,20:10,Kosong,,,,,,normal
+template,,Jumat,F6.202,20:10,21:00,Kosong,,,,,,normal
+template,,Jumat,F6.203,7:00,7:50,Kosong,,,,,,normal
+template,,Jumat,F6.203,7:50,8:40,Kosong,,,,,,normal
+template,,Jumat,F6.203,8:50,9:40,Kosong,,,,,,normal
+template,,Jumat,F6.203,9:40,10:30,Kosong,,,,,,normal
+template,,Jumat,F6.203,10:40,11:30,Kosong,,,,,,normal
+template,,Jumat,F6.203,12:10,13:10,Kosong,,,,,,normal
+template,,Jumat,F6.203,13:20,14:10,Kosong,,,,,,normal
+template,,Jumat,F6.203,14:10,15:00,Kosong,,,,,,normal
+template,,Jumat,F6.203,15:30,16:20,Kosong,,,,,,normal
+template,,Jumat,F6.203,16:20,17:10,Kosong,,,,,,normal
+template,,Jumat,F6.203,17:10,18:00,Kosong,,,,,,normal
+template,,Jumat,F6.203,18:30,19:20,Kosong,,,,,,normal
+template,,Jumat,F6.203,19:20,20:10,Kosong,,,,,,normal
+template,,Jumat,F6.203,20:10,21:00,Kosong,,,,,,normal
+template,,Jumat,RKBesar/F6.001,7:00,7:50,Kosong,,,,,,normal
+template,,Jumat,RKBesar/F6.001,7:50,8:40,Kosong,,,,,,normal
+template,,Jumat,RKBesar/F6.001,8:50,9:40,Kosong,,,,,,normal
+template,,Jumat,RKBesar/F6.001,9:40,10:30,Kosong,,,,,,normal
+template,,Jumat,RKBesar/F6.001,10:40,11:30,Kosong,,,,,,normal
+template,,Jumat,RKBesar/F6.001,12:10,13:10,Kosong,,,,,,normal
+template,,Jumat,RKBesar/F6.001,13:20,14:10,Kosong,,,,,,normal
+template,,Jumat,RKBesar/F6.001,14:10,15:00,Kosong,,,,,,normal
+template,,Jumat,RKBesar/F6.001,15:30,16:20,Kosong,,,,,,normal
+template,,Jumat,RKBesar/F6.001,16:20,17:10,Kosong,,,,,,normal
+template,,Jumat,RKBesar/F6.001,17:10,18:00,Kosong,,,,,,normal
+template,,Jumat,RKBesar/F6.001,18:30,19:20,Kosong,,,,,,normal
+template,,Jumat,RKBesar/F6.001,19:20,20:10,Kosong,,,,,,normal
+template,,Jumat,RKBesar/F6.001,20:10,21:00,Kosong,,,,,,normal
+template,,Sabtu,F4.001,7:00,7:50,Terpakai,TIPR03,A,Pemrograman Web Framework,"Ir. Asroni, S.T.,  M.Eng.","TIPR03 ( A )
+Pemrograman Web Framework
+Dosen: AS",normal
+template,,Sabtu,F4.001,7:50,8:40,Terpakai,TIPR03,A,Pemrograman Web Framework,"Ir. Asroni, S.T.,  M.Eng.","TIPR03 ( A )
+Pemrograman Web Framework
+Dosen: AS",normal
+template,,Sabtu,F4.001,8:50,9:40,Terpakai,TIPR03,A,Pemrograman Web Framework,"Ir. Asroni, S.T.,  M.Eng.","TIPR03 ( A )
+Pemrograman Web Framework
+Dosen: AS",normal
+template,,Sabtu,F4.001,9:40,10:30,Terpakai,TIPR03,B,Pemrograman Web Framework,"Ir. Asroni, S.T.,  M.Eng.","TIPR03 ( B )
+Pemrograman Web Framework
+Dosen: AS",normal
+template,,Sabtu,F4.001,10:40,11:30,Terpakai,TIPR03,B,Pemrograman Web Framework,"Ir. Asroni, S.T.,  M.Eng.","TIPR03 ( B )
+Pemrograman Web Framework
+Dosen: AS",normal
+template,,Sabtu,F4.001,12:10,13:10,Terpakai,TIPR03,B,Pemrograman Web Framework,"Ir. Asroni, S.T.,  M.Eng.","TIPR03 ( B )
+Pemrograman Web Framework
+Dosen: AS",normal
+template,,Sabtu,F4.001,13:20,14:10,Kosong,,,,,,normal
+template,,Sabtu,F4.001,14:10,15:00,Kosong,,,,,,normal
+template,,Sabtu,F4.001,15:30,16:20,Kosong,,,,,,normal
+template,,Sabtu,F4.001,16:20,17:10,Kosong,,,,,,normal
+template,,Sabtu,F4.001,17:10,18:00,Kosong,,,,,,normal
+template,,Sabtu,F4.001,18:30,19:20,Kosong,,,,,,normal
+template,,Sabtu,F4.001,19:20,20:10,Kosong,,,,,,normal
+template,,Sabtu,F4.001,20:10,21:00,Kosong,,,,,,normal
+template,,Sabtu,F4.002,7:00,7:50,Kosong,,,,,,normal
+template,,Sabtu,F4.002,7:50,8:40,Kosong,,,,,,normal
+template,,Sabtu,F4.002,8:50,9:40,Kosong,,,,,,normal
+template,,Sabtu,F4.002,9:40,10:30,Kosong,,,,,,normal
+template,,Sabtu,F4.002,10:40,11:30,Kosong,,,,,,normal
+template,,Sabtu,F4.002,12:10,13:10,Kosong,,,,,,normal
+template,,Sabtu,F4.002,13:20,14:10,Kosong,,,,,,normal
+template,,Sabtu,F4.002,14:10,15:00,Kosong,,,,,,normal
+template,,Sabtu,F4.002,15:30,16:20,Kosong,,,,,,normal
+template,,Sabtu,F4.002,16:20,17:10,Kosong,,,,,,normal
+template,,Sabtu,F4.002,17:10,18:00,Kosong,,,,,,normal
+template,,Sabtu,F4.002,18:30,19:20,Kosong,,,,,,normal
+template,,Sabtu,F4.002,19:20,20:10,Kosong,,,,,,normal
+template,,Sabtu,F4.002,20:10,21:00,Kosong,,,,,,normal
+template,,Sabtu,F4.003,7:00,7:50,Kosong,,,,,,normal
+template,,Sabtu,F4.003,7:50,8:40,Kosong,,,,,,normal
+template,,Sabtu,F4.003,8:50,9:40,Kosong,,,,,,normal
+template,,Sabtu,F4.003,9:40,10:30,Kosong,,,,,,normal
+template,,Sabtu,F4.003,10:40,11:30,Kosong,,,,,,normal
+template,,Sabtu,F4.003,12:10,13:10,Kosong,,,,,,normal
+template,,Sabtu,F4.003,13:20,14:10,Kosong,,,,,,normal
+template,,Sabtu,F4.003,14:10,15:00,Kosong,,,,,,normal
+template,,Sabtu,F4.003,15:30,16:20,Kosong,,,,,,normal
+template,,Sabtu,F4.003,16:20,17:10,Kosong,,,,,,normal
+template,,Sabtu,F4.003,17:10,18:00,Kosong,,,,,,normal
+template,,Sabtu,F4.003,18:30,19:20,Kosong,,,,,,normal
+template,,Sabtu,F4.003,19:20,20:10,Kosong,,,,,,normal
+template,,Sabtu,F4.003,20:10,21:00,Kosong,,,,,,normal
+template,,Sabtu,F6.002,7:00,7:50,Kosong,,,,,,normal
+template,,Sabtu,F6.002,7:50,8:40,Kosong,,,,,,normal
+template,,Sabtu,F6.002,8:50,9:40,Kosong,,,,,,normal
+template,,Sabtu,F6.002,9:40,10:30,Terpakai,TI605,C,Persiapan Toefl,TIM Teaching,"TI605 ( C )
+Persiapan Toefl
+Dosen: TIM",normal
+template,,Sabtu,F6.002,10:40,11:30,Terpakai,TI605,C,Persiapan Toefl,TIM Teaching,"TI605 ( C )
+Persiapan Toefl
+Dosen: TIM",normal
+template,,Sabtu,F6.002,12:10,13:10,Terpakai,TI605,A,Persiapan Toefl,TIM Teaching,"TI605 ( A )
+Persiapan Toefl
+Dosen: TIM",normal
+template,,Sabtu,F6.002,13:20,14:10,Terpakai,TI605,A,Persiapan Toefl,TIM Teaching,"TI605 ( A )
+Persiapan Toefl
+Dosen: TIM",normal
+template,,Sabtu,F6.002,14:10,15:00,Kosong,,,,,,normal
+template,,Sabtu,F6.002,15:30,16:20,Kosong,,,,,,normal
+template,,Sabtu,F6.002,16:20,17:10,Kosong,,,,,,normal
+template,,Sabtu,F6.002,17:10,18:00,Kosong,,,,,,normal
+template,,Sabtu,F6.002,18:30,19:20,Kosong,,,,,,normal
+template,,Sabtu,F6.002,19:20,20:10,Kosong,,,,,,normal
+template,,Sabtu,F6.002,20:10,21:00,Kosong,,,,,,normal
+template,,Sabtu,F6.003,7:00,7:50,Kosong,,,,,,normal
+template,,Sabtu,F6.003,7:50,8:40,Kosong,,,,,,normal
+template,,Sabtu,F6.003,8:50,9:40,Kosong,,,,,,normal
+template,,Sabtu,F6.003,9:40,10:30,Kosong,,,,,,normal
+template,,Sabtu,F6.003,10:40,11:30,Kosong,,,,,,normal
+template,,Sabtu,F6.003,12:10,13:10,Kosong,,,,,,normal
+template,,Sabtu,F6.003,13:20,14:10,Kosong,,,,,,normal
+template,,Sabtu,F6.003,14:10,15:00,Kosong,,,,,,normal
+template,,Sabtu,F6.003,15:30,16:20,Kosong,,,,,,normal
+template,,Sabtu,F6.003,16:20,17:10,Kosong,,,,,,normal
+template,,Sabtu,F6.003,17:10,18:00,Kosong,,,,,,normal
+template,,Sabtu,F6.003,18:30,19:20,Kosong,,,,,,normal
+template,,Sabtu,F6.003,19:20,20:10,Kosong,,,,,,normal
+template,,Sabtu,F6.003,20:10,21:00,Kosong,,,,,,normal
+template,,Sabtu,F6.004,7:00,7:50,Kosong,,,,,,normal
+template,,Sabtu,F6.004,7:50,8:40,Kosong,,,,,,normal
+template,,Sabtu,F6.004,8:50,9:40,Terpakai,TI408,B,Bahasa Inggris untuk Profesional Bidang Teknologi Informasi,TIM Teaching,"TI408 ( B )
+Bahasa Inggris untuk Profesional Bidang Teknologi Informasi
+Dosen: TIM",normal
+template,,Sabtu,F6.004,9:40,10:30,Terpakai,TI408,B,Bahasa Inggris untuk Profesional Bidang Teknologi Informasi,TIM Teaching,"TI408 ( B )
+Bahasa Inggris untuk Profesional Bidang Teknologi Informasi
+Dosen: TIM",normal
+template,,Sabtu,F6.004,10:40,11:30,Terpakai,TI408,F,Bahasa Inggris untuk Profesional Bidang Teknologi Informasi,TIM Teaching,"TI408 ( F )
+Bahasa Inggris untuk Profesional Bidang Teknologi Informasi
+Dosen: TIM",normal
+template,,Sabtu,F6.004,12:10,13:10,Terpakai,TI408,F,Bahasa Inggris untuk Profesional Bidang Teknologi Informasi,TIM Teaching,"TI408 ( F )
+Bahasa Inggris untuk Profesional Bidang Teknologi Informasi
+Dosen: TIM",normal
+template,,Sabtu,F6.004,13:20,14:10,Kosong,,,,,,normal
+template,,Sabtu,F6.004,14:10,15:00,Kosong,,,,,,normal
+template,,Sabtu,F6.004,15:30,16:20,Kosong,,,,,,normal
+template,,Sabtu,F6.004,16:20,17:10,Kosong,,,,,,normal
+template,,Sabtu,F6.004,17:10,18:00,Kosong,,,,,,normal
+template,,Sabtu,F6.004,18:30,19:20,Kosong,,,,,,normal
+template,,Sabtu,F6.004,19:20,20:10,Kosong,,,,,,normal
+template,,Sabtu,F6.004,20:10,21:00,Kosong,,,,,,normal
+template,,Sabtu,F6.101,7:00,7:50,Kosong,,,,,,normal
+template,,Sabtu,F6.101,7:50,8:40,Kosong,,,,,,normal
+template,,Sabtu,F6.101,8:50,9:40,Terpakai,TI408,A,Bahasa Inggris untuk Profesional Bidang Teknologi Informasi,TIM Teaching,"TI408 ( A )
+Bahasa Inggris untuk Profesional Bidang Teknologi Informasi
+Dosen: TIM",normal
+template,,Sabtu,F6.101,9:40,10:30,Terpakai,TI408,A,Bahasa Inggris untuk Profesional Bidang Teknologi Informasi,TIM Teaching,"TI408 ( A )
+Bahasa Inggris untuk Profesional Bidang Teknologi Informasi
+Dosen: TIM",normal
+template,,Sabtu,F6.101,10:40,11:30,Terpakai,TI408,E,Bahasa Inggris untuk Profesional Bidang Teknologi Informasi,TIM Teaching,"TI408 ( E )
+Bahasa Inggris untuk Profesional Bidang Teknologi Informasi
+Dosen: TIM",normal
+template,,Sabtu,F6.101,12:10,13:10,Terpakai,TI408,E,Bahasa Inggris untuk Profesional Bidang Teknologi Informasi,TIM Teaching,"TI408 ( E )
+Bahasa Inggris untuk Profesional Bidang Teknologi Informasi
+Dosen: TIM",normal
+template,,Sabtu,F6.101,13:20,14:10,Kosong,,,,,,normal
+template,,Sabtu,F6.101,14:10,15:00,Kosong,,,,,,normal
+template,,Sabtu,F6.101,15:30,16:20,Kosong,,,,,,normal
+template,,Sabtu,F6.101,16:20,17:10,Kosong,,,,,,normal
+template,,Sabtu,F6.101,17:10,18:00,Kosong,,,,,,normal
+template,,Sabtu,F6.101,18:30,19:20,Kosong,,,,,,normal
+template,,Sabtu,F6.101,19:20,20:10,Kosong,,,,,,normal
+template,,Sabtu,F6.101,20:10,21:00,Kosong,,,,,,normal
+template,,Sabtu,F6.102,7:00,7:50,Terpakai,TI605,B,Persiapan Toefl,TIM Teaching,"TI605 ( B )
+Persiapan Toefl
+Dosen: TIM",normal
+template,,Sabtu,F6.102,7:50,8:40,Terpakai,TI605,B,Persiapan Toefl,TIM Teaching,"TI605 ( B )
+Persiapan Toefl
+Dosen: TIM",normal
+template,,Sabtu,F6.102,8:50,9:40,Terpakai,TI605,D,Persiapan Toefl,TIM Teaching,"TI605 ( D )
+Persiapan Toefl
+Dosen: TIM",normal
+template,,Sabtu,F6.102,9:40,10:30,Terpakai,TI605,D,Persiapan Toefl,TIM Teaching,"TI605 ( D )
+Persiapan Toefl
+Dosen: TIM",normal
+template,,Sabtu,F6.102,10:40,11:30,Kosong,,,,,,normal
+template,,Sabtu,F6.102,12:10,13:10,Kosong,,,,,,normal
+template,,Sabtu,F6.102,13:20,14:10,Kosong,,,,,,normal
+template,,Sabtu,F6.102,14:10,15:00,Kosong,,,,,,normal
+template,,Sabtu,F6.102,15:30,16:20,Kosong,,,,,,normal
+template,,Sabtu,F6.102,16:20,17:10,Kosong,,,,,,normal
+template,,Sabtu,F6.102,17:10,18:00,Kosong,,,,,,normal
+template,,Sabtu,F6.102,18:30,19:20,Kosong,,,,,,normal
+template,,Sabtu,F6.102,19:20,20:10,Kosong,,,,,,normal
+template,,Sabtu,F6.102,20:10,21:00,Kosong,,,,,,normal
+template,,Sabtu,F6.103,7:00,7:50,Kosong,,,,,,normal
+template,,Sabtu,F6.103,7:50,8:40,Kosong,,,,,,normal
+template,,Sabtu,F6.103,8:50,9:40,Kosong,,,,,,normal
+template,,Sabtu,F6.103,9:40,10:30,Terpakai,TI605,E,Persiapan Toefl,TIM Teaching,"TI605 ( E )
+Persiapan Toefl
+Dosen: TIM",normal
+template,,Sabtu,F6.103,10:40,11:30,Terpakai,TI605,E,Persiapan Toefl,TIM Teaching,"TI605 ( E )
+Persiapan Toefl
+Dosen: TIM",normal
+template,,Sabtu,F6.103,12:10,13:10,Kosong,,,,,,normal
+template,,Sabtu,F6.103,13:20,14:10,Kosong,,,,,,normal
+template,,Sabtu,F6.103,14:10,15:00,Kosong,,,,,,normal
+template,,Sabtu,F6.103,15:30,16:20,Kosong,,,,,,normal
+template,,Sabtu,F6.103,16:20,17:10,Kosong,,,,,,normal
+template,,Sabtu,F6.103,17:10,18:00,Kosong,,,,,,normal
+template,,Sabtu,F6.103,18:30,19:20,Kosong,,,,,,normal
+template,,Sabtu,F6.103,19:20,20:10,Kosong,,,,,,normal
+template,,Sabtu,F6.103,20:10,21:00,Kosong,,,,,,normal
+template,,Sabtu,F6.202,7:00,7:50,Kosong,,,,,,normal
+template,,Sabtu,F6.202,7:50,8:40,Kosong,,,,,,normal
+template,,Sabtu,F6.202,8:50,9:40,Terpakai,TI408,D,Bahasa Inggris untuk Profesional Bidang Teknologi Informasi,TIM Teaching,"TI408 ( D )
+Bahasa Inggris untuk Profesional Bidang Teknologi Informasi
+Dosen: TIM",normal
+template,,Sabtu,F6.202,9:40,10:30,Terpakai,TI408,D,Bahasa Inggris untuk Profesional Bidang Teknologi Informasi,TIM Teaching,"TI408 ( D )
+Bahasa Inggris untuk Profesional Bidang Teknologi Informasi
+Dosen: TIM",normal
+template,,Sabtu,F6.202,10:40,11:30,Terpakai,TI408,C,Bahasa Inggris untuk Profesional Bidang Teknologi Informasi,TIM Teaching,"TI408 ( C )
+Bahasa Inggris untuk Profesional Bidang Teknologi Informasi
+Dosen: TIM",normal
+template,,Sabtu,F6.202,12:10,13:10,Terpakai,TI408,C,Bahasa Inggris untuk Profesional Bidang Teknologi Informasi,TIM Teaching,"TI408 ( C )
+Bahasa Inggris untuk Profesional Bidang Teknologi Informasi
+Dosen: TIM",normal
+template,,Sabtu,F6.202,13:20,14:10,Kosong,,,,,,normal
+template,,Sabtu,F6.202,14:10,15:00,Kosong,,,,,,normal
+template,,Sabtu,F6.202,15:30,16:20,Kosong,,,,,,normal
+template,,Sabtu,F6.202,16:20,17:10,Kosong,,,,,,normal
+template,,Sabtu,F6.202,17:10,18:00,Kosong,,,,,,normal
+template,,Sabtu,F6.202,18:30,19:20,Kosong,,,,,,normal
+template,,Sabtu,F6.202,19:20,20:10,Kosong,,,,,,normal
+template,,Sabtu,F6.202,20:10,21:00,Kosong,,,,,,normal
+template,,Sabtu,F6.203,7:00,7:50,Kosong,,,,,,normal
+template,,Sabtu,F6.203,7:50,8:40,Kosong,,,,,,normal
+template,,Sabtu,F6.203,8:50,9:40,Kosong,,,,,,normal
+template,,Sabtu,F6.203,9:40,10:30,Kosong,,,,,,normal
+template,,Sabtu,F6.203,10:40,11:30,Kosong,,,,,,normal
+template,,Sabtu,F6.203,12:10,13:10,Kosong,,,,,,normal
+template,,Sabtu,F6.203,13:20,14:10,Kosong,,,,,,normal
+template,,Sabtu,F6.203,14:10,15:00,Kosong,,,,,,normal
+template,,Sabtu,F6.203,15:30,16:20,Kosong,,,,,,normal
+template,,Sabtu,F6.203,16:20,17:10,Kosong,,,,,,normal
+template,,Sabtu,F6.203,17:10,18:00,Kosong,,,,,,normal
+template,,Sabtu,F6.203,18:30,19:20,Kosong,,,,,,normal
+template,,Sabtu,F6.203,19:20,20:10,Kosong,,,,,,normal
+template,,Sabtu,F6.203,20:10,21:00,Kosong,,,,,,normal
+template,,Sabtu,RKBesar/F6.001,7:00,7:50,Kosong,,,,,,normal
+template,,Sabtu,RKBesar/F6.001,7:50,8:40,Kosong,,,,,,normal
+template,,Sabtu,RKBesar/F6.001,8:50,9:40,Kosong,,,,,,normal
+template,,Sabtu,RKBesar/F6.001,9:40,10:30,Kosong,,,,,,normal
+template,,Sabtu,RKBesar/F6.001,10:40,11:30,Kosong,,,,,,normal
+template,,Sabtu,RKBesar/F6.001,12:10,13:10,Kosong,,,,,,normal
+template,,Sabtu,RKBesar/F6.001,13:20,14:10,Kosong,,,,,,normal
+template,,Sabtu,RKBesar/F6.001,14:10,15:00,Kosong,,,,,,normal
+template,,Sabtu,RKBesar/F6.001,15:30,16:20,Kosong,,,,,,normal
+template,,Sabtu,RKBesar/F6.001,16:20,17:10,Kosong,,,,,,normal
+template,,Sabtu,RKBesar/F6.001,17:10,18:00,Kosong,,,,,,normal
+template,,Sabtu,RKBesar/F6.001,18:30,19:20,Kosong,,,,,,normal
+template,,Sabtu,RKBesar/F6.001,19:20,20:10,Kosong,,,,,,normal
+template,,Sabtu,RKBesar/F6.001,20:10,21:00,Kosong,,,,,,normal
+khusus,4/24/2026,Jumat,F6.003,15:30,16:20,Kosong,,,,,Kelas dibatalkan,override
+khusus,4/25/2026,Sabtu,F4.002,9:40,10:30,Terpakai,,,,,Workshop Python,tambahan
